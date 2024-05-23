@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import chuds from '../chuds.jpeg'
+import {chudsphoto} from './index'
 
 const Home = () => {
   return (
     <div className="home-page">
       <div className="image-container">
         <img
-          src={chuds}
+          src={chudsphoto}
           alt="Home"
           className="background-image"
         />

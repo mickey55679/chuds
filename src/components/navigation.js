@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {logo} from './index'
 
 const NavigationBar = () => {
   return (
@@ -7,7 +8,7 @@ const NavigationBar = () => {
       <div className="logo">
         <Link to="/">
           <img
-            src="https://scontent.ffsd2-1.fna.fbcdn.net/v/t39.30808-6/356211382_6543829322305672_8207548586151616097_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=WLiqJiVW7pAQ7kNvgFg10if&_nc_ht=scontent.ffsd2-1.fna&oh=00_AfCTfmMsNtzekGu1kQrCn5ZVK-UjmiImZuuZodKOxowjiQ&oe=663ED6A2"
+            src={logo}
             alt="Chuds"
             className="logo"
           />
