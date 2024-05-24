@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -14,7 +13,7 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can handle form submission logic here, like sending data to a server
+    //  handle form submission logic here, like sending data to a server
     console.log(formData);
     // Reset form after submission
     setFormData({ name: "", email: "", message: "" });

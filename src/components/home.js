@@ -13,7 +13,7 @@ const Home = () => {
             delicious homemade food and a full bar!
           </p>
           <Link to="/menu">
-            <button className="button-30">Check out the Menu</button>
+            <button className="button-27">Check out the Menu</button>
           </Link>
         </div>
       </div>
