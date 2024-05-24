@@ -5,10 +5,7 @@
   --color-grey: #5f5655;
   --color-purple: #5721ee;
 }
-body {
-  background-color: var(--color-light);
-  color: var(--color-grey);
-}
+/* Navigation Bar */
 
 .navbar {
   background-color: white;
@@ -20,30 +17,24 @@ body {
   z-index: 1000;
   position: relative;
 }
-
-.nav-brand a {
-  text-decoration: none;
-  font-size: 15px;
-}
-
 .nav-items {
   list-style: none;
   display: flex;
 }
-
 .nav-item a {
   text-decoration: none;
   padding: 0.5rem 0.8rem;
   margin: 0 0.2rem;
 }
-
 .nav-item a:hover {
-  background-color: #42b6fc;
+  background: linear-gradient(to right, #73ccfd, #42b6fc, #2190e6);
 }
 .logo img {
   width: 200px;
   height: auto;
 }
+
+/* Home Page */
 .home-page {
   display: flex;
   justify-content: center;
@@ -56,6 +47,7 @@ body {
   height: auto;
   display: block;
 }
+/* Home Page Paragraph box */
 .image-container {
   position: relative;
   width: 100%;
@@ -64,7 +56,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .overlay-text {
   position: absolute;
   color: white;
@@ -77,16 +68,9 @@ body {
   box-sizing: border-box;
   border: 1px solid black;
 }
-.menu-button {
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 18px;
-  border: 0;
-  width: 30%;
-}
-.menu-button:hover {
-  background-color: #42b6fc;
-}
+
+/* This is the menu button nested in the overlay-text/image-container */
+
 .button-30 {
   align-items: center;
   appearance: none;
@@ -134,15 +118,7 @@ body {
   box-shadow: #d6d6e7 0 3px 7px inset;
   transform: translateY(2px);
 }
-.social-media {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  text-align: center;
-  padding: 10px 0;
-}
+/* This is the footer  */
 .footer {
   width: 100%;
   padding: 20px 10px;
@@ -154,7 +130,7 @@ body {
   text-align: center;
   z-index: 1000;
 }
-
+/* This is the facebook icon  */
 .social-media a {
   color: #4267b2;
 }
@@ -164,13 +140,12 @@ body {
 }
 
 /* contact form  */
-/* ContactForm.css */
 
 .contact-form {
   max-width: 400px;
   margin: 200px auto;
 }
-
+/* adds space between each, name, email, message  */
 .form-group {
   margin-bottom: 20px;
 }
@@ -191,13 +166,11 @@ body {
 .textarea {
   height: 150px;
 }
-/* Bordered form */
-form {
-  border: 3px solid #f1f1f1;
-}
+
 
 /* Full-width inputs */
-input[type=text], input[type=password] {
+input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -206,9 +179,9 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
+/* This is the login form */
 button {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
