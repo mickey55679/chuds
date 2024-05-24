@@ -1,30 +1,57 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { logo } from "./images/index";
 
 const NavigationBar = () => {
+  const [activeLink, setActiveLink] = useState("");
+
+  const handleSetActiveLink = (link) => {
+    setActiveLink(link);
+  };
   return (
     <nav className="navbar">
       <div className="logo">
-        <Link to="/">
+        <NavLink to="/" onClick={() => handleSetActiveLink("home")}>
           <img src={logo} alt="Chuds" className="logo" />
-        </Link>
+        </NavLink>
       </div>
       <ul className="nav-items">
-        <li className="nav-item">
-          <Link to="/">Home</Link>
+        <li
+          className={`nav-item ${activeLink === "home" ? "active-link" : ""}`}
+        >
+          <NavLink to="/" exact onClick={() => handleSetActiveLink("home")}>
+            Home
+          </NavLink>
         </li>
-        <li className="nav-item">
-          <Link to="/menu">Menu</Link>
+        <li
+          className={`nav-item ${activeLink === "menu" ? "active-link" : ""}`}
+        >
+          <NavLink to="/menu" onClick={() => handleSetActiveLink("menu")}>
+            Menu
+          </NavLink>
         </li>
-        <li className="nav-item">
-          <Link to="/contact">Contact</Link>
+        <li
+          className={`nav-item ${
+            activeLink === "contact" ? "active-link" : ""
+          }`}
+        >
+          <NavLink to="/contact" onClick={() => handleSetActiveLink("contact")}>
+            Contact
+          </NavLink>
         </li>
-        <li className="nav-item">
-          <Link to="/more">More</Link>
+        <li
+          className={`nav-item ${activeLink === "more" ? "active-link" : ""}`}
+        >
+          <NavLink to="/more" onClick={() => handleSetActiveLink("more")}>
+            More
+          </NavLink>
         </li>
-        <li className="nav-item">
-          <Link to="/login">Login</Link>
+        <li
+          className={`nav-item ${activeLink === "login" ? "active-link" : ""}`}
+        >
+          <NavLink to="/login" onClick={() => handleSetActiveLink("login")}>
+            Login
+          </NavLink>
         </li>
       </ul>
     </nav>

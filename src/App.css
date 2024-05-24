@@ -6,10 +6,9 @@
   --color-purple: #5721ee;
 }
 /* Navigation Bar */
-
 .navbar {
-  background-color: white;
-  color: #5721ee;
+  background-color: var(--color-light);
+  color: var(--color-blue);
   display: flex;
   justify-content: space-between;
   padding: 0.8rem 1.2rem;
@@ -20,14 +19,20 @@
 .nav-items {
   list-style: none;
   display: flex;
+  gap: 15px;
 }
+.active-link {
+  color: var(--color-purple);
+  font-weight: bold;
+}
+
 .nav-item a {
   text-decoration: none;
   padding: 0.5rem 0.8rem;
   margin: 0 0.2rem;
 }
 .nav-item a:hover {
-  background: linear-gradient(to right, #73ccfd, #42b6fc, #2190e6);
+  color: var(--color-purple);
 }
 .logo img {
   width: 200px;
@@ -50,8 +55,6 @@
 /* Home Page Paragraph box */
 .image-container {
   position: relative;
-  /* width: 100%; */
-  /* height: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
