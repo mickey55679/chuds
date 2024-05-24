@@ -1,16 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {chudsphoto} from './index'
+import { chudsphoto } from "./images/index";
 
 const Home = () => {
   return (
     <div className="home-page">
       <div className="image-container">
-        <img
-          src={chudsphoto}
-          alt="Home"
-          className="background-image"
-        />
+        <img src={chudsphoto} alt="Home" className="background-image" />
         <div className="overlay-text">
           <p>
             CHUDs Pub and Grub is a family friendly restaurant that offers
