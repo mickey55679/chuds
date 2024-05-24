@@ -7,11 +7,7 @@ const NavigationBar = () => {
     <nav className="navbar">
       <div className="logo">
         <Link to="/">
-          <img
-            src={logo}
-            alt="Chuds"
-            className="logo"
-          />
+          <img src={logo} alt="Chuds" className="logo" />
         </Link>
       </div>
       <ul className="nav-items">
@@ -26,6 +22,9 @@ const NavigationBar = () => {
         </li>
         <li className="nav-item">
           <Link to="/more">More</Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/login">Login</Link>
         </li>
       </ul>
     </nav>

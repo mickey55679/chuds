@@ -6,6 +6,7 @@ import Home from "./components/home";
 import Menu from "./components/menu"; 
 import Footer from "./components/footer";
 import ContactForm from "./components/contact";
+import Login from './components/Login'
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
           <Routes>
             <Route path="/menu" element={<Menu />} />
             <Route path="/" element={<Home />} />
-            <Route path='/contact' element={<ContactForm />} />
+            <Route path="/contact" element={<ContactForm />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </Router>
         <Footer />
