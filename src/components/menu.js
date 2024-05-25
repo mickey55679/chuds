@@ -1,62 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Menu = () => {
-  const menuItems = [
-    {
-      href: "",
-      src: "https://cdn.pixabay.com/photo/2021/01/06/10/11/burger-5893927_1280.jpg",
-      alt: "",
-      desc: "Add a description of the image here",
-    },
-    {
-      href: "",
-      src: "",
-      alt: "",
-      desc: "Add a description of the image here",
-    },
-    {
-      href: "",
-      src: "",
-      alt: "",
-      desc: "Add a description of the image here",
-    },
-    {
-      href: "",
-      src: "",
-      alt: "",
-      desc: "Add a description of the image here",
-    },
-    {
-      href: "",
-      src: "",
-      alt: "",
-      desc: "Add a description of the image here",
-    },
-    {
-      href: "",
-      src: "",
-      alt: "",
-      desc: "Add a description of the image here",
-    },
-    {
-      href: "",
-      src: "",
-      alt: "",
-      desc: "Add a description of the image here",
-    },
-    {
-      href: "",
-      src: "",
-      alt: "",
-      desc: "Add a description of the image here",
-    },
-    {
-      href: "",
-      src: "",
-      alt: "",
-      desc: "Add a description of the image here",
-    },
-  ];
+  const [menuItems, setMenuItems] = useState([]);
+
+   useEffect(() => {
+     fetch("http://localhost:3000/menu")
+       .then((response) => response.json())
+       .then((data) => setMenuItems(data))
+       .catch((error) => console.error("Error:", error));
+   }, []);
 
   return (
     <div>

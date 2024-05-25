@@ -3,14 +3,22 @@ const app = express();
 const port = 3000;
 const knexConfig = require("./knexfile").development;
 const knex = require("knex")(knexConfig);
+const cors = require("cors");
 
 
 app.use(express.json()); // for parsing application/json
+app.use(cors());
 
 app.post("/menu", async (req, res) => {
-  const { name, description, price } = req.body;
+  const { name, description, price, category, special } = req.body;
   try {
-    const [id] = await knex("menu").insert({ name, description, price });
+    const [id] = await knex("menu").insert({
+      name,
+      description,
+      price,
+      category,
+      special,
+    });
     res.status(201).send(`Menu item created with ID: ${id}`);
   } catch (error) {
     res.status(500).send(error.message);

@@ -4,8 +4,12 @@ module.exports = {
     connection: {
       filename: "./chuds1.sqlite3",
     },
+
     migrations: {
       directory: "./data/migrations",
+    },
+    seeds: {
+      directory: "./seeds",
     },
   },
 };
