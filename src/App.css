@@ -5,9 +5,11 @@
   --color-grey: #5f5655;
   --color-purple: #5721ee;
 }
-body{
+
+body {
   background-color: var(--color-light);
 }
+
 /* Navigation Bar */
 .navbar {
   background-color: var(--color-light);
@@ -19,11 +21,13 @@ body{
   z-index: 1000;
   position: relative;
 }
+
 .nav-items {
   list-style: none;
   display: flex;
   gap: 15px;
 }
+
 .active-link {
   color: var(--color-purple);
   font-weight: bold;
@@ -34,14 +38,70 @@ body{
   padding: 0.5rem 0.8rem;
   margin: 0 0.2rem;
 }
+
 .nav-item a:hover {
   color: var(--color-purple);
 }
+
 .logo img {
   width: 200px;
   height: auto;
 }
 
+@media screen and (max-width: 900px) {
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-light);
+  }
+
+  .nav-items.show-nav {
+    display: flex;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+}
+
+.navbar-toggler {
+  /* display: none; */
+  color: var(--color-blue);
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+@media screen and (max-width: 900px) {
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-light);
+  }
+
+  .nav-items.show-nav {
+    display: flex;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .navbar-toggler {
+    display: none;
+  }
+}
 /* Home Page */
 .home-page {
   display: flex;

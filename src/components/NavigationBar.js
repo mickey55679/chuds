@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { logo } from "./images/index";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const NavigationBar = () => {
   const [activeLink, setActiveLink] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => setIsOpen(!isOpen);
 
   const handleSetActiveLink = (link) => {
     setActiveLink(link);
@@ -15,7 +20,10 @@ const NavigationBar = () => {
           <img src={logo} alt="Chuds" className="logo" />
         </NavLink>
       </div>
-      <ul className="nav-items">
+      <button className="navbar-toggler" type="button" onClick={handleToggle}>
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+      <ul className={`nav-items ${isOpen ? "show-nav" : ""}`}>
         <li
           className={`nav-item ${activeLink === "home" ? "active-link" : ""}`}
         >
