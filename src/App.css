@@ -8,11 +8,8 @@
 html {
   margin-bottom: 100px;
   padding-bottom: 100px;
-}
-body {
   background-color: var(--color-light);
 }
-
 /* Navigation Bar */
 .navbar {
   background-color: var(--color-light);
@@ -23,35 +20,30 @@ body {
   z-index: 1000;
   position: relative;
 }
-
 .nav-items {
   list-style: none;
   display: flex;
   gap: 15px;
 }
-
 .nav-item a {
   text-decoration: none;
   padding: 0.5rem 0.8rem;
   margin: 0 0.2rem;
-  color: black; /* Default color for links */
-  font-weight: normal; /* Ensure normal weight by default */
+  color: var(--color-grey);
+  font-weight: normal;
 }
-
 .nav-item a:hover {
-  color: var(--color-blue); /* Hover color for links */
+  color: var(--color-blue);
 }
-
 .nav-item a.active-link {
-  color: var(--color-red); /* Color for the active link */
-  font-weight: bold; /* Bold weight for active link */
+  color: var(--color-red);
+  font-weight: bold;
 }
-
 .logo img {
   width: 200px;
   height: auto;
 }
-
+/* navbar smaller for cellphone  */
 @media screen and (max-width: 900px) {
   .nav-items {
     display: none;
@@ -62,16 +54,13 @@ body {
     width: 100%;
     background-color: var(--color-light);
   }
-
   .nav-items.show-nav {
     display: flex;
   }
-
   .navbar-toggler {
     display: block;
   }
 }
-
 .navbar-toggler {
   color: var(--color-blue);
   font-size: 1.5rem;
@@ -119,8 +108,7 @@ body {
   padding-top: 10px;
   margin: 50px 0px 50px 0px;
 }
-
-/* CSS */
+/* CSS for button on home page*/
 .button-27 {
   appearance: none;
   background-color: #000000;
@@ -148,21 +136,17 @@ body {
   width: 50%;
   will-change: transform;
 }
-
 .button-27:disabled {
   pointer-events: none;
 }
-
 .button-27:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
-
 .button-27:active {
   box-shadow: none;
   transform: translateY(0);
 }
-
 /* This is the footer  */
 .footer {
   width: 100%;
@@ -179,13 +163,11 @@ body {
 .social-media a {
   color: #4267b2;
 }
-
 .social-media a:hover {
   color: #365899;
 }
 
 /* contact form  */
-
 .contact-form {
   max-width: 400px;
   margin: 200px auto;
@@ -211,7 +193,6 @@ body {
 .textarea {
   height: 150px;
 }
-
 /* Full-width inputs */
 input[type="text"],
 input[type="password"] {
@@ -247,19 +228,14 @@ input[type="password"] {
   will-change: transform;
   margin-right: 10px;
 }
-/* this is the login  */
-/* Center the avatar image inside this container */
+/* Center the image inside this container */
 .imgcontainer {
   text-align: center;
   margin: 25px 0 12px 0;
 }
-
-/* Avatar image */
 img.avatar {
   width: 40%;
-  /* border-radius: 50%; */
 }
-
 .container {
   padding: 16px;
   margin-left: 200px;
@@ -282,17 +258,17 @@ span.psw {
     width: 100%;
   }
 }
-
 /* menu items  */
 .menu-items {
   margin: 5px;
-  border: 1px solid #ccc;
+  border: 3px solid #ccc;
   float: left;
   width: 180px;
+  color: var(--color-grey)
 }
 
 .menu-items:hover {
-  border: 1px solid #777;
+  border: 3px solid #777;
 }
 
 .menu-items img {

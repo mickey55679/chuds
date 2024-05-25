@@ -1,32 +1,23 @@
-exports.seed = function (knex) {
-  return knex("menu")
-    .del()
-    .then(function () {
-      return knex("menu").insert([
-        {
-          id: 1,
-          name: "Pizza",
-          description: "Delicious cheese pizza",
-          category: "Main Course",
-          special: false,
-          price: 10.99,
-        },
-        {
-          id: 2,
-          name: "Burger",
-          description: "Juicy beef burger",
-          category: "Main Course",
-          special: true,
-          price: 8.99,
-        },
-        {
-          id: 3,
-          name: "Ice Cream",
-          description: "Vanilla ice cream",
-          category: "Dessert",
-          special: false,
-          price: 3.99,
-        },
-      ]);
-    });
+/**
+ * @param { import("knex").Knex } knex
+ * @returns { Promise<void> }
+ */
+exports.seed = async function (knex) {
+  // Deletes ALL existing entries
+  await knex("menu").del();
+
+  // Inserts seed entries
+  await knex("menu").insert([
+    {
+      id: 1,
+      name: "Build Your Own Burger",
+      description:
+        "Comes on a toasted ciabatta roll includes lettuce, tomato, onion, and pickle.",
+      category: "Burgers",
+      price: 12.0,
+      image_url:
+        "https://cdn.pixabay.com/photo/2021/01/19/08/47/sandwich-5930496_1280.jpg", // URL included here
+    },
+    // Add more menu items as needed
+  ]);
 };
