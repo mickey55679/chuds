@@ -297,3 +297,25 @@ span.psw {
     width: 100%;
   }
 }
+
+/* menu items  */
+.menu-items {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+.menu-items:hover {
+  border: 1px solid #777;
+}
+
+.menu-items img {
+  width: 100%;
+  height: auto;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
