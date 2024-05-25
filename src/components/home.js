@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { chudsphoto } from "./images/index";
 
-const Home = () => {
+const Home = (props) => {
+
   return (
     <div className="home-page">
       <div className="image-container">
@@ -10,10 +11,15 @@ const Home = () => {
         <div className="overlay-text">
           <p>
             CHUDs Pub and Grub is a family friendly restaurant that offers
-            delicious homemade food and a full bar! 
+            delicious homemade food and a full bar!
           </p>
           <Link to="/menu">
-            <button className="button-27">Check out the Menu!</button>
+            <button
+              className="button-27"
+              onClick={() => props.handleClick("/menu")}
+            >
+              Check out the Menu!
+            </button>
           </Link>
         </div>
       </div>

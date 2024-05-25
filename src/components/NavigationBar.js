@@ -1,20 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { logo } from "./images/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-const NavigationBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("");
-
-  const handleToggle = () => setIsOpen(!isOpen);
-
-  const handleClick = (path) => {
-    setActiveLink(path);
-    setIsOpen(false);
-  };
-
+const NavigationBar = (props) => {
   return (
     <nav className="navbar">
       <div className="logo">
@@ -22,16 +12,20 @@ const NavigationBar = () => {
           <img src={logo} alt="Chuds" className="logo" />
         </NavLink>
       </div>
-      <button className="navbar-toggler" type="button" onClick={handleToggle}>
+      <button
+        className="navbar-toggler"
+        type="button"
+        onClick={props.handleToggle}
+      >
         <FontAwesomeIcon icon={faBars} />
       </button>
-      <ul className={`nav-items ${isOpen ? "show-nav" : ""}`}>
+      <ul className={`nav-items ${props.isOpen ? "show-nav" : ""}`}>
         <li className="nav-item">
           <NavLink
             to="/"
             exact
-            className={activeLink === "/" ? "active-link" : ""}
-            onClick={() => handleClick("/")}
+            className={props.activeLink === "/" ? "active-link" : ""}
+            onClick={() => props.handleClick("/")}
           >
             Home
           </NavLink>
@@ -40,8 +34,8 @@ const NavigationBar = () => {
           <NavLink
             to="/menu"
             exact
-            className={activeLink === "/menu" ? "active-link" : ""}
-            onClick={() => handleClick("/menu")}
+            className={props.activeLink === "/menu" ? "active-link" : ""}
+            onClick={() => props.handleClick("/menu")}
           >
             Menu
           </NavLink>
@@ -50,8 +44,8 @@ const NavigationBar = () => {
           <NavLink
             to="/contact"
             exact
-            className={activeLink === "/contact" ? "active-link" : ""}
-            onClick={() => handleClick("/contact")}
+            className={props.activeLink === "/contact" ? "active-link" : ""}
+            onClick={() => props.handleClick("/contact")}
           >
             Contact
           </NavLink>
@@ -60,8 +54,8 @@ const NavigationBar = () => {
           <NavLink
             to="/more"
             exact
-            className={activeLink === "/more" ? "active-link" : ""}
-            onClick={() => handleClick("/more")}
+            className={props.activeLink === "/more" ? "active-link" : ""}
+            onClick={() => props.handleClick("/more")}
           >
             More
           </NavLink>
@@ -70,8 +64,8 @@ const NavigationBar = () => {
           <NavLink
             to="/login"
             exact
-            className={activeLink === "/login" ? "active-link" : ""}
-            onClick={() => handleClick("/login")}
+            className={props.activeLink === "/login" ? "active-link" : ""}
+            onClick={() => props.handleClick("/login")}
           >
             Login
           </NavLink>

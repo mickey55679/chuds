@@ -53,7 +53,7 @@ const ContactForm = () => {
           required
         />
       </div>
-      <button type="submit" className="button-30">
+      <button type="submit" className="button-27">
         Submit
       </button>
     </form>
