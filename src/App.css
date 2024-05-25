@@ -11,13 +11,11 @@ html {
 }
 body {
   background-color: var(--color-light);
-
 }
 
 /* Navigation Bar */
 .navbar {
   background-color: var(--color-light);
-  color: var(--color-blue);
   display: flex;
   justify-content: space-between;
   padding: 0.8rem 1.2rem;
@@ -32,19 +30,21 @@ body {
   gap: 15px;
 }
 
-.active-link {
-  color: var(--color-purple);
-  font-weight: bold;
-}
-
 .nav-item a {
   text-decoration: none;
   padding: 0.5rem 0.8rem;
   margin: 0 0.2rem;
+  color: black; /* Default color for links */
+  font-weight: normal; /* Ensure normal weight by default */
 }
 
 .nav-item a:hover {
-  color: var(--color-purple);
+  color: var(--color-blue); /* Hover color for links */
+}
+
+.nav-item a.active-link {
+  color: var(--color-red); /* Color for the active link */
+  font-weight: bold; /* Bold weight for active link */
 }
 
 .logo img {
@@ -73,32 +73,11 @@ body {
 }
 
 .navbar-toggler {
-  /* display: none; */
   color: var(--color-blue);
   font-size: 1.5rem;
   cursor: pointer;
   border: none;
   background: transparent;
-}
-
-@media screen and (max-width: 900px) {
-  .nav-items {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--color-light);
-  }
-
-  .nav-items.show-nav {
-    display: flex;
-  }
-
-  .navbar-toggler {
-    display: block;
-  }
 }
 
 @media screen and (min-width: 901px) {

@@ -5,18 +5,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const NavigationBar = () => {
-  const [activeLink, setActiveLink] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
 
   const handleToggle = () => setIsOpen(!isOpen);
 
-  const handleSetActiveLink = (link) => {
-    setActiveLink(link);
+  const handleClick = (path) => {
+    setActiveLink(path);
+    setIsOpen(false);
   };
+
   return (
     <nav className="navbar">
       <div className="logo">
-        <NavLink to="/" onClick={() => handleSetActiveLink("home")}>
+        <NavLink to="/" exact>
           <img src={logo} alt="Chuds" className="logo" />
         </NavLink>
       </div>
@@ -24,40 +26,53 @@ const NavigationBar = () => {
         <FontAwesomeIcon icon={faBars} />
       </button>
       <ul className={`nav-items ${isOpen ? "show-nav" : ""}`}>
-        <li
-          className={`nav-item ${activeLink === "home" ? "active-link" : ""}`}
-        >
-          <NavLink to="/" exact onClick={() => handleSetActiveLink("home")}>
+        <li className="nav-item">
+          <NavLink
+            to="/"
+            exact
+            className={activeLink === "/" ? "active-link" : ""}
+            onClick={() => handleClick("/")}
+          >
             Home
           </NavLink>
         </li>
-        <li
-          className={`nav-item ${activeLink === "menu" ? "active-link" : ""}`}
-        >
-          <NavLink to="/menu" onClick={() => handleSetActiveLink("menu")}>
+        <li className="nav-item">
+          <NavLink
+            to="/menu"
+            exact
+            className={activeLink === "/menu" ? "active-link" : ""}
+            onClick={() => handleClick("/menu")}
+          >
             Menu
           </NavLink>
         </li>
-        <li
-          className={`nav-item ${
-            activeLink === "contact" ? "active-link" : ""
-          }`}
-        >
-          <NavLink to="/contact" onClick={() => handleSetActiveLink("contact")}>
+        <li className="nav-item">
+          <NavLink
+            to="/contact"
+            exact
+            className={activeLink === "/contact" ? "active-link" : ""}
+            onClick={() => handleClick("/contact")}
+          >
             Contact
           </NavLink>
         </li>
-        <li
-          className={`nav-item ${activeLink === "more" ? "active-link" : ""}`}
-        >
-          <NavLink to="/more" onClick={() => handleSetActiveLink("more")}>
+        <li className="nav-item">
+          <NavLink
+            to="/more"
+            exact
+            className={activeLink === "/more" ? "active-link" : ""}
+            onClick={() => handleClick("/more")}
+          >
             More
           </NavLink>
         </li>
-        <li
-          className={`nav-item ${activeLink === "login" ? "active-link" : ""}`}
-        >
-          <NavLink to="/login" onClick={() => handleSetActiveLink("login")}>
+        <li className="nav-item">
+          <NavLink
+            to="/login"
+            exact
+            className={activeLink === "/login" ? "active-link" : ""}
+            onClick={() => handleClick("/login")}
+          >
             Login
           </NavLink>
         </li>
