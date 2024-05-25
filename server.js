@@ -27,8 +27,10 @@ app.post("/menu", async (req, res) => {
 app.get("/menu", async (req, res) => {
   try {
     const menuItems = await knex("menu").select("*");
+    console.log("Menu items:", menuItems); // log the menu items
     res.status(200).json(menuItems);
   } catch (error) {
+      console.error("Error fetching menu items:", error); 
     res.status(500).send(error.message);
   }
 });

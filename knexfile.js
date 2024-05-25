@@ -4,12 +4,12 @@ module.exports = {
     connection: {
       filename: "./chuds1.sqlite3",
     },
+    useNullAsDefault: true, // add this line
     migrations: {
       directory: "./data/migrations",
     },
     seeds: {
       directory: "./seeds",
     },
-    useNullAsDefault: true, // add this line to avoid the warning about default values
   },
 };
