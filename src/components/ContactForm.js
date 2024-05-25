@@ -7,6 +7,7 @@ const ContactForm = () => {
     message: "",
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [formMessage, setFormMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,11 +16,35 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    // handle form submission logic here, like sending data to a server
-    console.log(formData);
-    // Reset form after submission
-    setFormData({ name: "", email: "", message: "" });
-    setIsLoading(false); // reset isLoading after submission is done
+    setFormMessage(""); // Clear previous form message
+
+    fetch(process.env.REACT_APP_BACKEND_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        senderEmail: formData.email,
+        message: formData.message,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setFormMessage(data.message);
+        console.log(data);
+        setFormData({ name: "", email: "", message: "" }); // Reset form
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setFormMessage("Something went wrong. Please try again later.");
+      })
+      .finally(() => setIsLoading(false)); // Reset loading state whether fetch succeeded or failed
   };
 
   return (
@@ -59,6 +84,7 @@ const ContactForm = () => {
       <button type="submit" className="button-27" disabled={isLoading}>
         {isLoading ? "Sending..." : "Submit"}
       </button>
+      {formMessage && <p>{formMessage}</p>} {/* Display form message */}
     </form>
   );
 };
