@@ -5,6 +5,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [isRemembered, setIsRemembered] = useState(false);
 
   const centerStyle = {
     display: "flex",
@@ -85,8 +86,13 @@ const Login = () => {
             {isLogin ? "Login" : "Sign Up"}
           </button>
           <label>
-            <input type="checkbox" checked="checked" name="remember" /> Remember
-            me
+            <input
+              type="checkbox"
+              checked={isRemembered} // Use the state variable here
+              onChange={() => setIsRemembered(!isRemembered)} // Update the state when the checkbox is clicked
+              name="remember"
+            />
+            Remember me
           </label>
         </div>
 
