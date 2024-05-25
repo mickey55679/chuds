@@ -82,7 +82,7 @@ const Login = () => {
           />
 
           {/* Change the button text based on the form mode */}
-          <button type="submit" className="button-28">
+          <button type="submit" className="button-log">
             {isLogin ? "Login" : "Sign Up"}
           </button>
           <label>
@@ -97,7 +97,7 @@ const Login = () => {
         </div>
 
         <div className="container" style={{ backgroundColor: "#f1f1f1" }}>
-          <button type="button" className="button-28" onClick={clearForm}>
+          <button type="button" className="button-log" onClick={clearForm}>
             Cancel
           </button>
           <span className="psw">
@@ -105,7 +105,7 @@ const Login = () => {
           </span>
           <button
             type="button"
-            className="button-28"
+            className="button-log"
             onClick={() => setIsLogin(!isLogin)}
           >
             Switch to {isLogin ? "Sign Up" : "Login"}
