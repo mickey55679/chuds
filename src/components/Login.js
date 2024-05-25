@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Login = () => {
+  const [isLogin, setIsLogin] = useState(true);
   const centerStyle = {
     display: "flex",
     justifyContent: "center",
@@ -46,6 +47,15 @@ const Login = () => {
             placeholder="Enter Username"
             required
           />
+          {/* Add an email field for sign up form */}
+          {!isLogin && (
+            <input
+              style={inputStyle}
+              type="email"
+              placeholder="Enter Email"
+              required
+            />
+          )}
 
           <input
             style={inputStyle}
@@ -54,8 +64,9 @@ const Login = () => {
             required
           />
 
+          {/* Change the button text based on the form mode */}
           <button type="submit" className="button-28">
-            Login
+            {isLogin ? "Login" : "Sign Up"}
           </button>
           <label>
             <input type="checkbox" checked="checked" name="remember" /> Remember
@@ -64,12 +75,15 @@ const Login = () => {
         </div>
 
         <div className="container" style={{ backgroundColor: "#f1f1f1" }}>
-          <button type="button" className="button-28">
+          {/* <button type="button" className="button-28">
             Cancel
-          </button>
+          </button> */}
           <span className="psw">
             Forgot <a href="#">password?</a>
           </span>
+          <button type="button" className="button-28" onClick={() => setIsLogin(!isLogin)}>
+            Switch to {isLogin ? "Sign Up" : "Login"}
+          </button>
         </div>
       </form>
     </div>
