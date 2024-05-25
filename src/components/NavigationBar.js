@@ -51,14 +51,14 @@ const NavigationBar = (props) => {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
+          {/* <NavLink
             to="/more"
             exact
             className={props.activeLink === "/more" ? "active-link" : ""}
             onClick={() => props.handleClick("/more")}
           >
             More
-          </NavLink>
+          </NavLink> */}
         </li>
         <li className="nav-item">
           <NavLink
