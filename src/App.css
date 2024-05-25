@@ -5,9 +5,13 @@
   --color-grey: #5f5655;
   --color-purple: #5721ee;
 }
-
+html {
+  margin-bottom: 100px;
+  padding-bottom: 100px;
+}
 body {
   background-color: var(--color-light);
+
 }
 
 /* Navigation Bar */
