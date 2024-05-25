@@ -6,6 +6,7 @@ const ContactForm = () => {
     email: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -13,10 +14,12 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //  handle form submission logic here, like sending data to a server
+    setIsLoading(true);
+    // handle form submission logic here, like sending data to a server
     console.log(formData);
     // Reset form after submission
     setFormData({ name: "", email: "", message: "" });
+    setIsLoading(false); // reset isLoading after submission is done
   };
 
   return (
@@ -53,8 +56,8 @@ const ContactForm = () => {
           required
         />
       </div>
-      <button type="submit" className="button-27">
-        Submit
+      <button type="submit" className="button-27" disabled={isLoading}>
+        {isLoading ? "Sending..." : "Submit"}
       </button>
     </form>
   );
