@@ -247,6 +247,7 @@ input[type="password"] {
   touch-action: manipulation;
   width: 30%;
   will-change: transform;
+  margin-right: 10px;
 }
 /* this is the login  */
 /* Center the avatar image inside this container */
