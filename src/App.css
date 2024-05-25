@@ -5,6 +5,9 @@
   --color-grey: #5f5655;
   --color-purple: #5721ee;
 }
+body{
+  background-color: var(--color-light);
+}
 /* Navigation Bar */
 .navbar {
   background-color: var(--color-light);
@@ -100,7 +103,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 100%;
+  width: 50%;
   will-change: transform;
 }
 
