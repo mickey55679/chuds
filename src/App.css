@@ -245,7 +245,7 @@ input[type="password"] {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 20%;
+  width: 30%;
   will-change: transform;
 }
 /* this is the login  */

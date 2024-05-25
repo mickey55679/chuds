@@ -2,6 +2,10 @@ import React, { useState } from "react";
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
   const centerStyle = {
     display: "flex",
     justifyContent: "center",
@@ -26,6 +30,11 @@ const Login = () => {
     border: "1px solid #ccc",
     boxSizing: "border-box",
   };
+  const clearForm = () => {
+    setUsername("");
+    setPassword("");
+    setEmail("");
+  };
 
   return (
     <div style={centerStyle}>
@@ -46,6 +55,8 @@ const Login = () => {
             style={inputStyle}
             type="text"
             placeholder="Enter Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             required
           />
           {/* Add an email field for sign up form */}
@@ -54,6 +65,8 @@ const Login = () => {
               style={inputStyle}
               type="email"
               placeholder="Enter Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           )}
@@ -62,6 +75,8 @@ const Login = () => {
             style={inputStyle}
             type="password"
             placeholder="Enter Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
 
@@ -76,13 +91,17 @@ const Login = () => {
         </div>
 
         <div className="container" style={{ backgroundColor: "#f1f1f1" }}>
-          {/* <button type="button" className="button-28">
+          <button type="button" className="button-28" onClick={clearForm}>
             Cancel
-          </button> */}
+          </button>
           <span className="psw">
             Forgot <a href="#">password?</a>
           </span>
-          <button type="button" className="button-28" onClick={() => setIsLogin(!isLogin)}>
+          <button
+            type="button"
+            className="button-28"
+            onClick={() => setIsLogin(!isLogin)}
+          >
             Switch to {isLogin ? "Sign Up" : "Login"}
           </button>
         </div>
