@@ -5,28 +5,29 @@ const ResetPassword = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
 
-const handleSubmit = async (event) => {
-  event.preventDefault();
-  try {
-    const response = await fetch("/api/send-reset-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email: email }),
-    });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // Assuming you have a backend API to handle the email submission
+    try {
+      // Example: POST request to your API endpoint
+      const response = await fetch("/api/send-reset-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
 
-    if (response.ok) {
-      setSubmitted(true);
-      setError("");
-    } else {
-      throw new Error("Failed to send reset email.");
+      if (response.ok) {
+        setSubmitted(true);
+        setError("");
+      } else {
+        throw new Error("Failed to send reset email.");
+      }
+    } catch (err) {
+      setError(err.message);
     }
-  } catch (err) {
-    setError(err.message);
-  }
-};
-
+  };
 
   if (submitted) {
     return (
