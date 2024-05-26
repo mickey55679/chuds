@@ -4,18 +4,27 @@ const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
 
   useEffect(() => {
+    // Fetch the data from the server
     fetch("http://localhost:3000/menu")
-      .then((response) => response.json())
-      .then((data) => setMenuItems(data))
-      .catch((error) => console.error("Error:", error));
-  }, []);
+      .then((response) => {
+        // Parse the response as JSON
+        return response.json();
+      })
+      .then((data) => {
+        // Update the state with the fetched data
+        setMenuItems(data);
+      })
+      .catch((error) => {
+        // Handle any errors that occur during the fetch
+        console.error("Error:", error);
+      });
+  }, []); // Empty dependency array ensures this runs only once on component mount
 
   return (
     <div>
       {menuItems.map((item, index) => (
         <div key={index} className="menu-item">
           <h2>{item.name}</h2>
-          {/* Updated alt text to describe what the image represents */}
           <img
             src={item.image_url}
             alt={`${item.name} served on a plate`}
