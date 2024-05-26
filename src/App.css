@@ -249,7 +249,8 @@ input[type="password"] {
   touch-action: manipulation;
   width: 30%; /* Button width */
   will-change: transform;
-  margin-right: 10px; /* Space between buttons */
+  margin-right: 20px; /* Space between buttons */
+  margin-bottom: 20px; /* Space between buttons when small screen*/
 }
 h3{
   text-align: center;

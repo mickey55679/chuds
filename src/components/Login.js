@@ -13,12 +13,30 @@ const Login = () => {
     setEmail("");
   };
 
+  const toggleLogin = () => {
+    setIsLogin(!isLogin);
+    clearForm(); // Optionally clear form when switching modes
+  };
+
   return (
     <div className="center-style">
       <form className="form-style" action="action_page.php" method="post">
         <h3>
-          Don't have an account yet?{" "}
-          <a href="/create-account">Create an account</a>
+          {isLogin ? (
+            <>
+              Don't have an account yet?{" "}
+              <a href="#" onClick={toggleLogin}>
+                Create an account
+              </a>
+            </>
+          ) : (
+            <>
+              Already have an account?{" "}
+              <a href="#" onClick={toggleLogin}>
+                Log in
+              </a>
+            </>
+          )}
         </h3>
 
         <div className="imgcontainer">
@@ -84,13 +102,6 @@ const Login = () => {
           <span className="psw">
             Forgot <a href="#">password?</a>
           </span>
-          <button
-            type="button"
-            className="button-log"
-            onClick={() => setIsLogin(!isLogin)}
-          >
-            Switch to {isLogin ? "Sign Up" : "Login"}
-          </button>
         </div>
       </form>
     </div>
