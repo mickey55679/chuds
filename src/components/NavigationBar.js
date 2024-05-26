@@ -8,10 +8,12 @@ const NavigationBar = (props) => {
   return (
     <nav className="navbar">
       <div className="logo">
+        {/* Link to the home page with the logo image */}
         <NavLink to="/" exact>
           <img src={logo} alt="Chuds" className="logo" />
         </NavLink>
       </div>
+      {/* Button for toggling the navigation menu on smaller screens */}
       <button
         className="navbar-toggler"
         type="button"
@@ -19,8 +21,10 @@ const NavigationBar = (props) => {
       >
         <FontAwesomeIcon icon={faBars} />
       </button>
+      {/* Navigation items, conditionally shown based on `props.isOpen` */}
       <ul className={`nav-items ${props.isOpen ? "show-nav" : ""}`}>
         <li className="nav-item">
+          {/* Link to the home page */}
           <NavLink
             to="/"
             exact
@@ -31,6 +35,7 @@ const NavigationBar = (props) => {
           </NavLink>
         </li>
         <li className="nav-item">
+          {/* Link to the menu page */}
           <NavLink
             to="/menu"
             exact
@@ -41,6 +46,7 @@ const NavigationBar = (props) => {
           </NavLink>
         </li>
         <li className="nav-item">
+          {/* Link to the contact page */}
           <NavLink
             to="/contact"
             exact
@@ -51,16 +57,7 @@ const NavigationBar = (props) => {
           </NavLink>
         </li>
         <li className="nav-item">
-          {/* <NavLink
-            to="/more"
-            exact
-            className={props.activeLink === "/more" ? "active-link" : ""}
-            onClick={() => props.handleClick("/more")}
-          >
-            More
-          </NavLink> */}
-        </li>
-        <li className="nav-item">
+          {/* Link to the login page */}
           <NavLink
             to="/login"
             exact
