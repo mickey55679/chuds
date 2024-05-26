@@ -53,6 +53,11 @@ const Login = () => {
   return (
     <div style={centerStyle}>
       <form style={formStyle} action="action_page.php" method="post">
+        <h3>
+          Don't have an account yet?{" "}
+          <a href="/create-account">Create an account</a>
+        </h3>
+
         <div className="imgcontainer">
           {/* Display an avatar image */}
           <img
