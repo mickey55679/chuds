@@ -15,6 +15,7 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = (path) => {
+    console.log("Navigating to:", path);
     setActiveLink(path);
     setIsOpen(false);
   };
