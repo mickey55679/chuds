@@ -100,7 +100,7 @@ const Login = () => {
             Cancel
           </button>
           <span className="psw">
-            Forgot <a href="#">password?</a>
+            Forgot <a href="/reset-password">password?</a>
           </span>
         </div>
       </form>

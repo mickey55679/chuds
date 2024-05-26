@@ -6,6 +6,7 @@ import Menu from './Menu'
 import NavigationBar from './NavigationBar'
 import Signup from './Signup'
 import ReviewSlideshow from './ ReviewSlideshow'
+import ResetPassword from '../ResetPassword'
 
 
 export {
@@ -17,4 +18,5 @@ export {
   NavigationBar,
   Signup,
   ReviewSlideshow,
+  ResetPassword,
 };
