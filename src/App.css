@@ -253,10 +253,34 @@ input[type="password"] {
 }
 h3{
   text-align: center;
-  background-color: var(--color-grey);
+  background-color: var(--color-red);
    color: white;
    padding: 40px;
 }
+.center-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  flex-direction: column;
+}
+
+.form-style {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.input-style {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
 
 /* Center the image inside this container */
 .imgcontainer {
