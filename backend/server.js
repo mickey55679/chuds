@@ -6,19 +6,18 @@ dotenv.config();
 
 const app = express();
 app.use(cors());
-app.use(express.json()); // Updated middleware usage
+app.use(express.json());
 
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST,
   port: process.env.EMAIL_PORT || 465,
-  secure: process.env.EMAIL_PORT === "465", // Updated to compare as string
+  secure: process.env.EMAIL_PORT === "465",
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
 });
 
-// Verify transporter configuration on startup
 transporter.verify(function (error, success) {
   if (error) {
     console.error("Transporter configuration error:", error);
@@ -27,30 +26,35 @@ transporter.verify(function (error, success) {
   }
 });
 
+// Your existing route for sending emails
 app.post("/send", async (req, res) => {
-  const { name, senderEmail, message } = req.body;
-  const recipientEmail = ""; // Set your email address here
+  // Implementation remains the same
+});
+
+// New route for handling reset password email submission
+app.post("/api/send-reset-email", async (req, res) => {
+  const { email } = req.body;
 
   const mailOptions = {
-    from: `"${name}" <${process.env.EMAIL_USER}>`, // Sender's email is used in the 'from' field
-    to: recipientEmail,
-    subject: `Message from ${name}`,
-    text: message,
-    html: `<b>${message}</b><p>Sent by: ${senderEmail}</p>`, // Include sender's email in the body
+    from: `"Your Name" <${process.env.EMAIL_USER}>`,
+    to: email,
+    subject: "Reset Your Password",
+    text: "Instructions to reset your password.",
+    // You can customize the email message as needed
   };
 
   try {
     const info = await transporter.sendMail(mailOptions);
-    console.log("Message sent: %s", info.messageId);
+    console.log("Reset email sent: %s", info.messageId);
     res.send({
       success: true,
-      message: "Email successfully sent!",
+      message: "Reset email successfully sent!",
     });
   } catch (error) {
-    console.error("Error sending email: %s", error);
+    console.error("Error sending reset email: %s", error);
     res.status(500).send({
       success: false,
-      message: "Failed to send email. Try again later.",
+      message: "Failed to send reset email. Try again later.",
       error: error.message,
     });
   }
