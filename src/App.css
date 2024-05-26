@@ -64,6 +64,8 @@ html {
     transition: transform 0.3s ease;
     transform: translateX(100%); /* Starts hidden off the screen to the right */
     z-index: 1000;
+     border: 1px solid var(--color-blue); /* Add border style */
+  border-radius: 5px; /* Optional: Add border radius for rounded corners */
   }
   .nav-items.show-nav {
     display: flex; /* Shows the navigation when toggled */
