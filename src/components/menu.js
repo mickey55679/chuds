@@ -23,16 +23,22 @@ const Menu = () => {
   return (
     <div>
       {menuItems.map((item, index) => (
+        // Each menu item is rendered inside a div with a unique key
         <div key={index} className="menu-item">
+          {/* Display the name of the menu item */}
           <h2>{item.name}</h2>
+          {/* Display the image of the menu item */}
           <img
             src={item.image_url}
             alt={`${item.name} served on a plate`}
             width="600"
             height="400"
           />
+          {/* Display the description of the menu item */}
           <p>{item.description}</p>
+          {/* Display the category of the menu item */}
           <p>Category: {item.category}</p>
+          {/* Display the price of the menu item, formatted to two decimal places */}
           <p>Price: ${item.price.toFixed(2)}</p>
           {/* If `desc` is not needed, you can remove this div */}
           <div className="desc">{item.desc}</div>
