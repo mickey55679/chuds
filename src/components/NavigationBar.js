@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const NavigationBar = (props) => {
-  
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -23,7 +23,7 @@ const NavigationBar = (props) => {
         <FontAwesomeIcon icon={faBars} />
       </button>
       {/* Navigation items, conditionally shown based on `props.isOpen` */}
-      <ul className={`nav-items ${props.isOpen ? "show-nav" : ""}`}>
+      <ul className={`nav-items ${props.isOpen ? "show-nav ml-auto" : ""}`}>
         <li className="nav-item">
           {/* Link to the home page */}
           <NavLink

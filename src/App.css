@@ -16,7 +16,7 @@ html {
 .navbar {
   background-color: var(--color-light); /* Light background color */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* This should push logo to the left and nav-items to the right */
   padding: 0.8rem 1.2rem;
   align-items: center;
   z-index: 1000;
@@ -27,6 +27,7 @@ html {
   list-style: none; /* Remove default list styling */
   display: flex;
   gap: 15px; /* Space between nav items */
+  margin-left: auto; /* Pushes the navigation to the right */
 }
 
 .nav-item a {
@@ -54,16 +55,19 @@ html {
 /* Navbar styling for smaller screens */
 @media screen and (max-width: 900px) {
   .nav-items {
-    display: none; /* Hide nav items by default */
+    display: none;
     flex-direction: column;
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--color-light); /* Light background for dropdown */
+    top: 100%; /* Aligns right below the navbar */
+    right: 0; /* Aligns dropdown to the right edge of the navbar */
+    background-color: var(--color-light);
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* Starts hidden off the screen to the right */
+    z-index: 1000;
   }
   .nav-items.show-nav {
-    display: flex; /* Show nav items when toggled */
+    display: flex; /* Shows the navigation when toggled */
+    transform: translateX(0); /* Brings into view */
   }
   .navbar-toggler {
     display: block; /* Show toggler button */
@@ -215,6 +219,8 @@ html {
   height: 150px; /* Fixed height for textareas */
 }
 
+/*
+
 /* Full-width inputs */
 input[type="text"],
 input[type="password"] {
@@ -252,11 +258,11 @@ input[type="password"] {
   margin-right: 20px; /* Space between buttons */
   margin-bottom: 20px; /* Space between buttons when small screen*/
 }
-h3{
+h3 {
   text-align: center;
   background-color: var(--color-red);
-   color: white;
-   padding: 40px;
+  color: white;
+  padding: 40px;
 }
 .center-style {
   display: flex;
@@ -270,7 +276,7 @@ h3{
   background-color: white;
   padding: 16px;
   border-radius: 8px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
 .input-style {
@@ -282,12 +288,10 @@ h3{
   box-sizing: border-box;
 }
 
-
 /* Center the image inside this container */
 .imgcontainer {
   text-align: center;
   margin: 25px 0 12px 0;
- 
 }
 
 img.avatar {
