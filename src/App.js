@@ -20,6 +20,9 @@ function App() {
     setActiveLink(path);
     setIsOpen(false);
   };
+    const handleToggle = () => {
+      setIsOpen(!isOpen); // This toggles the visibility of the menu
+    };
 
   return (
     <div className="App">
@@ -28,6 +31,7 @@ function App() {
           <NavigationBar
             activeLink={activeLink}
             handleClick={handleClick}
+            handleToggle={handleToggle}
             isOpen={isOpen}
           />
           <Routes>
