@@ -40,7 +40,7 @@ const Menu = () => {
           <p>Category: {item.category}</p>
           {/* Display the price of the menu item, formatted to two decimal places */}
           <p>Price: ${item.price.toFixed(2)}</p>
-          {/* If `desc` is not needed, you can remove this div */}
+          {/* Display the item description */}
           <div className="desc">{item.desc}</div>
         </div>
       ))}
