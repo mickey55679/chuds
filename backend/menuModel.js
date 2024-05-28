@@ -15,7 +15,7 @@ module.exports = {
       // Using knex to insert a new record into the 'menu' table with the provided menuItemData.
       // The [id] syntax is used to destructure the result array and extract the first element,
       // which is the ID of the newly inserted menu item.
-      const [id] = await db("menu").insert(menuItemData);
+      const [id] = await db("burgers").insert(menuItemData);
 
       // Returning the ID of the newly inserted menu item.
       return id;
@@ -29,7 +29,7 @@ module.exports = {
   getAllMenuItems: async () => {
     try {
       // Using knex to select all records (*) from the 'menu' table.
-      const menuItems = await db("menu").select("*");
+      const menuItems = await db("burgers").select("*");
 
       // Returning the array of menu items fetched from the database.
       return menuItems;

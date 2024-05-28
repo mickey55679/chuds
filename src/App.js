@@ -8,7 +8,6 @@ import {
   Home,
   Login,
   NavigationBar,
-  ResetPassword,
 } from "./components/index";
 
 function App() {
@@ -39,7 +38,6 @@ function App() {
             <Route path="/menu" element={<Menu />} />
             <Route path="/contact" element={<ContactForm />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/reset-password" element={<ResetPassword />} />
           </Routes>
         </Router>
         <Footer />

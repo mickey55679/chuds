@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 
+
+
 const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
+  const [orderItems, setOrderItems] = useState({});
 
   useEffect(() => {
     // Fetch the data from the server
@@ -19,7 +22,21 @@ const Menu = () => {
         console.error("Error:", error);
       });
   }, []); // Empty dependency array ensures this runs only once on component mount
-
+ const updateOrder = (id, operation) => {
+  let updatedOrder =  {...orderItems}
+  if (operation === '+'){
+   if(id in updatedOrder) {
+    updatedOrder[id] = updatedOrder[id] + 1
+   } else {
+    updatedOrder[id] = 1;
+   }
+  } else {
+   if (id in updatedOrder) {
+     updatedOrder[id] = updatedOrder[id] === 0 ? 0 :updatedOrder[id] - 1;
+   }
+  }
+  setOrderItems(updatedOrder)
+ }
   return (
     <div className="menu-container">
       {menuItems.map((item, index) => (
@@ -29,7 +46,7 @@ const Menu = () => {
           <h2>{item.name}</h2>
           {/* Display the image of the menu item */}
           <img
-            src={item.image_url}
+            src={item.imgurl}
             alt={`${item.name} served on a plate`}
             width="180"
             height="auto"
@@ -42,6 +59,9 @@ const Menu = () => {
           <p>Price: ${item.price.toFixed(2)}</p>
           {/* Display the item description */}
           <div className="desc">{item.desc}</div>
+          <button onClick={() => updateOrder(item.id, '-')}>-</button>
+          <span>{orderItems[item.id] || '0'}</span>
+          <button onClick={() => updateOrder(item.id, '+')}>+</button>
         </div>
       ))}
     </div>
