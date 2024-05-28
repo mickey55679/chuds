@@ -4,10 +4,13 @@ const port = 3000;
 const knexConfig = require("./knexfile").development;
 const knex = require("knex")(knexConfig);
 const cors = require("cors");
+const menuRouter = require("./backend/routes/menuRouter");
 
 
 app.use(express.json()); // for parsing application/json
 app.use(cors());
+
+app.use("/menu", menuRouter);
 
 app.post("/menu", async (req, res) => {
   const { name, description, price, category, special } = req.body;
