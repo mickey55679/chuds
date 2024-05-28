@@ -21,18 +21,18 @@ const Menu = () => {
   }, []); // Empty dependency array ensures this runs only once on component mount
 
   return (
-    <div>
+    <div className="menu-container">
       {menuItems.map((item, index) => (
         // Each menu item is rendered inside a div with a unique key
-        <div key={index} className="menu-item">
+        <div key={index} className="menu-item menu-items">
           {/* Display the name of the menu item */}
           <h2>{item.name}</h2>
           {/* Display the image of the menu item */}
           <img
             src={item.image_url}
             alt={`${item.name} served on a plate`}
-            width="600"
-            height="400"
+            width="180"
+            height="auto"
           />
           {/* Display the description of the menu item */}
           <p>{item.description}</p>
