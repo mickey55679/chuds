@@ -25,6 +25,14 @@ exports.up = function (knex) {
         table.decimal("price").notNullable();
         table.string("imgurl").notNullable();
       });
+    })
+    .then(function () {
+      return knex.schema.createTable("drinks", function (table) {
+        table.increments("id").primary();
+        table.string("drink_name").notNullable();
+        table.decimal("price").notNullable();
+        table.string("imgurl").notNullable();
+      });
     });
 };
 
