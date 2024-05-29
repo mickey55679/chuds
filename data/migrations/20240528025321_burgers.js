@@ -48,5 +48,8 @@ exports.down = function (knex) {
     })
     .then(function () {
       return knex.schema.dropTableIfExists("burgers");
-    });
+    })
+    .then(function () {
+      return knex.schema.dropTableIfExists("drinks")
+    })
 };
