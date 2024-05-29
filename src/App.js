@@ -8,6 +8,7 @@ import {
   Home,
   Login,
   NavigationBar,
+  Checkout,
 } from "./components/index";
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             <Route path="/menu" element={<Menu />} />
             <Route path="/contact" element={<ContactForm />} />
             <Route path="/login" element={<Login />} />
+            <Route path='/checkout' element={<Checkout />} />
           </Routes>
         </Router>
         <Footer />

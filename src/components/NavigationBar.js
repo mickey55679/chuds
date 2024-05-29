@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { logo } from "./images/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"; // Importing shopping cart icon
+
 
 const NavigationBar = (props) => {
 
@@ -66,6 +68,15 @@ const NavigationBar = (props) => {
             onClick={() => props.handleClick("/login")}
           >
             Login
+          </NavLink>
+          <NavLink to="/checkout">
+            {/* Shopping cart icon */}
+            <FontAwesomeIcon
+              icon={faShoppingCart}
+              style={{ color: "palevioletred" }} // Styling for the icon color
+            />
+            {/* Display cart count if it's greater than 0 */}
+            {/* {cartCount > 0 && <span className="cart-count">{cartCount}</span>} */}
           </NavLink>
         </li>
       </ul>

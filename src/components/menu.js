@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-
-
 const Menu = () => {
-  const [menuItems, setMenuItems] = useState([]);
+  const [menuItems, setMenuItems] = useState({});
   const [orderItems, setOrderItems] = useState({});
 
   useEffect(() => {
@@ -22,48 +20,135 @@ const Menu = () => {
         console.error("Error:", error);
       });
   }, []); // Empty dependency array ensures this runs only once on component mount
- const updateOrder = (id, operation) => {
-  let updatedOrder =  {...orderItems}
-  if (operation === '+'){
-   if(id in updatedOrder) {
-    updatedOrder[id] = updatedOrder[id] + 1
-   } else {
-    updatedOrder[id] = 1;
-   }
-  } else {
-   if (id in updatedOrder) {
-     updatedOrder[id] = updatedOrder[id] === 0 ? 0 :updatedOrder[id] - 1;
-   }
-  }
-  setOrderItems(updatedOrder)
- }
+  const updateOrder = (id, operation) => {
+    let updatedOrder = { ...orderItems };
+    if (operation === "+") {
+      if (id in updatedOrder) {
+        updatedOrder[id] = updatedOrder[id] + 1;
+      } else {
+        updatedOrder[id] = 1;
+      }
+    } else {
+      if (id in updatedOrder) {
+        updatedOrder[id] = updatedOrder[id] === 0 ? 0 : updatedOrder[id] - 1;
+      }
+    }
+    setOrderItems(updatedOrder);
+  };
   return (
-    <div className="menu-container">
-      {menuItems.map((item, index) => (
-        // Each menu item is rendered inside a div with a unique key
-        <div key={index} className="menu-item menu-items">
-          {/* Display the name of the menu item */}
-          <h2>{item.name}</h2>
-          {/* Display the image of the menu item */}
-          <img
-            src={item.imgurl}
-            alt={`${item.name} served on a plate`}
-            width="180"
-            height="auto"
-          />
-          {/* Display the description of the menu item */}
-          <p>{item.description}</p>
-          {/* Display the category of the menu item */}
-          <p>Category: {item.category}</p>
-          {/* Display the price of the menu item, formatted to two decimal places */}
-          <p>Price: ${item.price.toFixed(2)}</p>
-          {/* Display the item description */}
-          <div className="desc">{item.desc}</div>
-          <button onClick={() => updateOrder(item.id, '-')}>-</button>
-          <span>{orderItems[item.id] || '0'}</span>
-          <button onClick={() => updateOrder(item.id, '+')}>+</button>
-        </div>
-      ))}
+    <div style={{ display: 'flex', flexDirection: "column" }}>
+      <div className="menu-container">
+        <h2>Burgers</h2>
+        {(menuItems?.burgerItems || []).map((item, index) => (
+          // Each menu item is rendered inside a div with a unique key
+          <div key={index} className="menu-item menu-items">
+            {/* Display the name of the menu item */}
+            <h2>{item.name}</h2>
+            {/* Display the image of the menu item */}
+            <img
+              src={item.imgurl}
+              alt={`${item.name} served on a plate`}
+              width="180"
+              height="auto"
+            />
+            {/* Display the description of the menu item */}
+            <p>{item.description}</p>
+            {/* Display the category of the menu item */}
+            <p>Category: {item.category}</p>
+            {/* Display the price of the menu item, formatted to two decimal places */}
+            <p>Price: ${item.price.toFixed(2)}</p>
+            {/* Display the item description */}
+            <div className="desc">{item.desc}</div>
+            <button onClick={() => updateOrder(item.id, "-")}>-</button>
+            <span>{orderItems[item.id] || "0"}</span>
+            <button onClick={() => updateOrder(item.id, "+")}>+</button>
+          </div>
+        ))}
+      </div>
+      <div className="menu-container">
+        <h2>Sandwiches</h2>
+        {(menuItems?.sandwichItems || []).map((item, index) => (
+          // Each menu item is rendered inside a div with a unique key
+          <div key={index} className="menu-item menu-items">
+            {/* Display the name of the menu item */}
+            <h2>{item.name}</h2>
+            {/* Display the image of the menu item */}
+            <img
+              src={item.imgurl}
+              alt={`${item.name} served on a plate`}
+              width="180"
+              height="auto"
+            />
+            {/* Display the description of the menu item */}
+            <p>{item.description}</p>
+            {/* Display the category of the menu item */}
+            <p>Category: {item.category}</p>
+            {/* Display the price of the menu item, formatted to two decimal places */}
+            <p>Price: ${item.price.toFixed(2)}</p>
+            {/* Display the item description */}
+            <div className="desc">{item.desc}</div>
+            <button onClick={() => updateOrder(item.id, "-")}>-</button>
+            <span>{orderItems[item.id] || "0"}</span>
+            <button onClick={() => updateOrder(item.id, "+")}>+</button>
+          </div>
+        ))}
+      </div>
+      <div className="menu-container">
+        <h2>Drink Items</h2>
+        {(menuItems?.drinkItems || []).map((item, index) => (
+          // Each menu item is rendered inside a div with a unique key
+          <div key={index} className="menu-item menu-items">
+            {/* Display the name of the menu item */}
+            <h2>{item.name}</h2>
+            {/* Display the image of the menu item */}
+            <img
+              src={item.imgurl}
+              alt={`${item.name} served on a plate`}
+              width="180"
+              height="auto"
+            />
+            {/* Display the description of the menu item */}
+            <p>{item.description}</p>
+            {/* Display the category of the menu item */}
+            <p>Category: {item.category}</p>
+            {/* Display the price of the menu item, formatted to two decimal places */}
+            <p>Price: ${item.price.toFixed(2)}</p>
+            {/* Display the item description */}
+            <div className="desc">{item.desc}</div>
+            <button onClick={() => updateOrder(item.id, "-")}>-</button>
+            <span>{orderItems[item.id] || "0"}</span>
+            <button onClick={() => updateOrder(item.id, "+")}>+</button>
+          </div>
+        ))}
+      </div>
+      <div className="menu-container">
+        <h2>Sides</h2>
+        {(menuItems?.sideItems || []).map((item, index) => (
+          // Each menu item is rendered inside a div with a unique key
+          <div key={index} className="menu-item menu-items">
+            {/* Display the name of the menu item */}
+            <h2>{item.name}</h2>
+            {/* Display the image of the menu item */}
+            <img
+              src={item.imgurl}
+              alt={`${item.name} served on a plate`}
+              width="180"
+              height="auto"
+            />
+            {/* Display the description of the menu item */}
+            <p>{item.description}</p>
+            {/* Display the category of the menu item */}
+            <p>Category: {item.category}</p>
+            {/* Display the price of the menu item, formatted to two decimal places */}
+            <p>Price: ${item.price.toFixed(2)}</p>
+            {/* Display the item description */}
+            <div className="desc">{item.desc}</div>
+            <button onClick={() => updateOrder(item.id, "-")}>-</button>
+            <span>{orderItems[item.id] || "0"}</span>
+            <button onClick={() => updateOrder(item.id, "+")}>+</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import Menu from './Menu'
 import NavigationBar from './NavigationBar'
 import Signup from './Signup'
 import ReviewSlideshow from './ ReviewSlideshow'
-
+import Checkout from './Checkout'
 
 
 export {
@@ -18,5 +18,6 @@ export {
   NavigationBar,
   Signup,
   ReviewSlideshow,
+  Checkout
 
 };

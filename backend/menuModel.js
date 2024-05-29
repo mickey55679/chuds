@@ -16,6 +16,7 @@ module.exports = {
       // The [id] syntax is used to destructure the result array and extract the first element,
       // which is the ID of the newly inserted menu item.
       const [id] = await db("burgers").insert(menuItemData);
+      // const [id] = awiat db("drinks").insert(menuItemData);
 
       // Returning the ID of the newly inserted menu item.
       return id;
@@ -29,10 +30,15 @@ module.exports = {
   getAllMenuItems: async () => {
     try {
       // Using knex to select all records (*) from the 'menu' table.
-      const menuItems = await db("burgers").select("*");
+      const burgerItems = await db("burgers").select("*");
+      const drinkItems = await db("drinks").select("*")
+      const sideItems = await db("sides").select("*");
+      const sandwichItems = await db("sandwiches").select("*");
+
+
 
       // Returning the array of menu items fetched from the database.
-      return menuItems;
+      return {burgerItems, drinkItems, sideItems, sandwichItems}
     } catch (error) {
       // If an error occurs during the selection, it is thrown to be caught by the caller.
       throw error;
