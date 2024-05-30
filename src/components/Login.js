@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import chudsBar from './images/chudsbar.jpeg'
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [username, setUsername] = useState("");
@@ -24,14 +24,14 @@ const Login = () => {
         <h3>
           {isLogin ? (
             <>
-              Don't have an account yet?{" "}
+              Don't have an account yet?
               <a href="#" onClick={toggleLogin}>
                 Create an account
               </a>
             </>
           ) : (
             <>
-              Already have an account?{" "}
+              Already have an account?
               <a href="#" onClick={toggleLogin}>
                 Log in
               </a>
@@ -41,7 +41,7 @@ const Login = () => {
 
         <div className="imgcontainer">
           <img
-            src="https://scontent.ffsd2-1.fna.fbcdn.net/v/t39.30808-6/436415599_407791682035993_8168994351067320526_n.jpg?stp=cp6_dst-jpg&_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=C2ZS5NYEhEgQ7kNvgE-hSSS&_nc_ht=scontent.ffsd2-1.fna&oh=00_AYB8JZpx43fbwn7eK0Ek0XPsth_cFxI3_ZgzMnA1OrNoCg&oe=665708A9"
+            src={chudsBar}
             alt="Avatar"
             className="avatar"
           />
