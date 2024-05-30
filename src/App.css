@@ -11,6 +11,24 @@ html {
   padding-bottom: 100px;
   background-color: var(--color-light); /* Set the background color */
 }
+  .navbar-toggler {
+    display: block; /* Show toggler button */
+  }
+  
+
+@media screen and (min-width: 901px) {
+  .navbar-toggler {
+    display: none; /* Hide toggler button on larger screens */
+  }
+}
+
+.navbar-toggler {
+  color: var(--color-blue); /* Blue color for toggler icon */
+  font-size: 1.5rem; /* Size of toggler icon */
+  cursor: pointer;
+  border: none;
+  background: transparent; /* Transparent background */
+}
 
 /* Navigation Bar */
 .navbar {
