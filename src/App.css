@@ -1,24 +1,24 @@
 :root {
-  --color-light: #fbfcfc; /* Light color for backgrounds */
-  --color-blue: #42b6fc; /* Blue color for highlights and buttons */
-  --color-red: #ef1511; /* Red color for active links */
-  --color-grey: #5f5655; /* Grey color for text */
+  --color-light: #fbfcfc; 
+  --color-blue: #42b6fc; 
+  --color-red: #ef1511; 
+  --color-grey: #5f5655; 
   --color-purple: #5721ee;
 }
 
 html {
   margin-bottom: 100px;
   padding-bottom: 100px;
-  background-color: var(--color-light); /* Set the background color */
+  background-color: var(--color-light); 
 }
-  .navbar-toggler {
-    display: block; /* Show toggler button */
+.navbar-toggler {
+    display: block;
   }
   
 
 @media screen and (min-width: 901px) {
   .navbar-toggler {
-    display: none; /* Hide toggler button on larger screens */
+    display: none;
   }
 }
 
