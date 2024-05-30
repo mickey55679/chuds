@@ -40,7 +40,6 @@ const Menu = () => {
       <div className="menu-container">
         <h2>Create your own Burgers</h2>
         {(menuItems?.burgerItems || []).map((item, index) => (
-          // Each menu item is rendered inside a div with a unique key
           <div key={index} className="menu-item menu-items">
             <h2>{item.burger_name}</h2>
             <img
