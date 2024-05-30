@@ -42,7 +42,7 @@ const Menu = () => {
         {(menuItems?.burgerItems || []).map((item, index) => (
           // Each menu item is rendered inside a div with a unique key
           <div key={index} className="menu-item menu-items">
-            <h2>{item.name}</h2>
+            <h2>{item.burger_name}</h2>
             <img
               src={item.imgurl}
               alt={`${item.name} served on a plate`}
@@ -52,7 +52,6 @@ const Menu = () => {
             <p>{item.description}</p>
             <p>Category: {item.category}</p>
             <p>Price: ${item.price.toFixed(2)}</p>
-            {/* Display the item description */}
             <div className="desc">{item.desc}</div>
             <div className="menu-item-controls">
               <button
@@ -77,24 +76,17 @@ const Menu = () => {
       <div className="menu-container">
         <h2>Sandwiches</h2>
         {(menuItems?.sandwichItems || []).map((item, index) => (
-          // Each menu item is rendered inside a div with a unique key
           <div key={index} className="menu-item menu-items">
-            {/* Display the name of the menu item */}
-            <h2>{item.name}</h2>
-            {/* Display the image of the menu item */}
+            <h2>{item.sandwich_name}</h2>
             <img
               src={item.imgurl}
-              alt={`${item.name} served on a plate`}
+              alt={`${item.sandwich_name} served on a plate`}
               width="180"
               height="auto"
             />
-            {/* Display the description of the menu item */}
             <p>{item.description}</p>
-            {/* Display the category of the menu item */}
             <p>Category: {item.category}</p>
-            {/* Display the price of the menu item, formatted to two decimal places */}
             <p>Price: ${item.price.toFixed(2)}</p>
-            {/* Display the item description */}
             <div className="desc">{item.desc}</div>
             <div className="menu-item-controls">
               <button
@@ -119,24 +111,17 @@ const Menu = () => {
       <div className="menu-container">
         <h2>Drink Items</h2>
         {(menuItems?.drinkItems || []).map((item, index) => (
-          // Each menu item is rendered inside a div with a unique key
           <div key={index} className="menu-item menu-items">
-            {/* Display the name of the menu item */}
-            <h2>{item.name}</h2>
-            {/* Display the image of the menu item */}
+            <h2>{item.drink_name}</h2>
             <img
               src={item.imgurl}
               alt={`${item.name} served on a plate`}
               width="180"
               height="auto"
             />
-            {/* Display the description of the menu item */}
             <p>{item.description}</p>
-            {/* Display the category of the menu item */}
             <p>Category: {item.category}</p>
-            {/* Display the price of the menu item, formatted to two decimal places */}
             <p>Price: ${item.price.toFixed(2)}</p>
-            {/* Display the item description */}
             <div className="desc">{item.desc}</div>
             <div className="menu-item-controls">
               <button
@@ -162,7 +147,7 @@ const Menu = () => {
         <h2>Sides</h2>
         {(menuItems?.sideItems || []).map((item, index) => (
           <div key={index} className="menu-item menu-items">
-            <h2>{item.name}</h2>
+            <h2>{item.side_name}</h2>
             <img
               src={item.imgurl}
               alt={`${item.name} served on a plate`}
@@ -171,9 +156,7 @@ const Menu = () => {
             />
             <p>{item.description}</p>
             <p>Category: {item.category}</p>
-            {/* Display the price of the menu item, formatted to two decimal places */}
             <p>Price: ${item.price.toFixed(2)}</p>
-            {/* Display the item description */}
             <div className="desc">{item.desc}</div>
             <div className="menu-item-controls">
               <button
