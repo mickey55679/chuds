@@ -14,14 +14,18 @@ import {
 function App() {
   const [activeLink, setActiveLink] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
 
   const handleClick = (path) => {
     console.log("Navigating to:", path);
     setActiveLink(path);
     setIsOpen(false);
   };
-    const handleToggle = () => {
-      setIsOpen(!isOpen); // This toggles the visibility of the menu
+  const handleToggle = () => {
+    setIsOpen(!isOpen); // This toggles the visibility of the menu
+  };
+    const removeFromCart = (title, id) => {
+      setCartItems(cartItems.filter((item) => item.id !== id));
     };
 
   return (
@@ -39,7 +43,15 @@ function App() {
             <Route path="/menu" element={<Menu />} />
             <Route path="/contact" element={<ContactForm />} />
             <Route path="/login" element={<Login />} />
-            <Route path='/checkout' element={<Checkout />} />
+            <Route
+              path="/checkout"
+              element={
+                <Checkout
+                  cartItems={cartItems}
+                  removeFromCart={removeFromCart}
+                />
+              }
+            />
           </Routes>
         </Router>
         <Footer />
