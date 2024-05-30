@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import chudsBar from './images/chudsbar.jpeg'
+import chudsBar from "./images/chudsbar.jpeg";
+
+
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [username, setUsername] = useState("");
@@ -7,34 +9,42 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [isRemembered, setIsRemembered] = useState(false);
 
-  const clearForm = () => {
-    setUsername("");
-    setPassword("");
-    setEmail("");
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    if (isLogin) {
+      // Logic for login
+      console.log("Logging in with:", username, password);
+    } else {
+      // Logic for sign-up
+      console.log("Signing up with:", username, email, password);
+    }
   };
 
   const toggleLogin = () => {
     setIsLogin(!isLogin);
-    clearForm(); // Optionally clear form when switching modes
   };
 
   return (
     <div className="center-style">
-      <form className="form-style" action="action_page.php" method="post">
+      <form className="form-style" onSubmit={handleFormSubmit}>
         <h3>
           {isLogin ? (
             <>
               Don't have an account yet?
-              <a href="#" onClick={toggleLogin} style={{ marginLeft: "10px" }}>
+              <button
+                onClick={toggleLogin}
+                style={{ marginLeft: "10px" }}
+                className="link-button"
+              >
                 Create an account
-              </a>
+              </button>
             </>
           ) : (
             <>
               Already have an account?
-              <a href="#" onClick={toggleLogin}>
+              <button onClick={toggleLogin} className="link-button">
                 Log in
-              </a>
+              </button>
             </>
           )}
         </h3>
@@ -92,7 +102,11 @@ const Login = () => {
         </div>
 
         <div className="container" style={{ backgroundColor: "#f1f1f1" }}>
-          <button type="button" className="button-log" onClick={clearForm}>
+          <button
+            type="button"
+            className="button-log"
+            onClick={() => setUsername("") || setPassword("") || setEmail("")}
+          >
             Cancel
           </button>
           <span className="psw">
