@@ -13,19 +13,22 @@ exports.seed = function (knex) {
           id: 1,
           drink_name: "Coke",
           price: 1.99,
-          imgurl: "http://example.com/coke.jpg",
+          imgurl:
+            "https://cdn.pixabay.com/photo/2019/11/06/01/40/coca-cola-4604990_1280.jpg",
         },
         {
           id: 2,
           drink_name: "Lemonade",
           price: 2.49,
-          imgurl: "http://example.com/lemonade.jpg",
+          imgurl:
+            "https://cdn.pixabay.com/photo/2019/11/06/01/40/coca-cola-4604990_1280.jpg",
         },
         {
           id: 3,
           drink_name: "Iced Tea",
           price: 2.49,
-          imgurl: "http://example.com/iced_tea.jpg",
+          imgurl:
+            "https://cdn.pixabay.com/photo/2017/05/19/07/34/teacup-2325722_1280.jpg",
         },
       ]);
     });

@@ -13,19 +13,22 @@ exports.seed = function (knex) {
           id: 1,
           side_name: "Fries",
           price: 2.99,
-          imgurl: "http://example.com/fries.jpg",
+          imgurl:
+            "https://cdn.pixabay.com/photo/2020/06/23/14/33/french-fries-5332766_1280.jpg",
         },
         {
           id: 2,
           side_name: "Onion Rings",
           price: 3.49,
-          imgurl: "http://example.com/onion_rings.jpg",
+          imgurl:
+            "https://cdn.pixabay.com/photo/2020/06/23/14/33/french-fries-5332766_1280.jpg",
         },
         {
           id: 3,
           side_name: "Salad",
           price: 3.99,
-          imgurl: "http://example.com/salad.jpg",
+          imgurl:
+            "https://cdn.pixabay.com/photo/2020/06/23/14/33/french-fries-5332766_1280.jpg",
         },
       ]);
     });

@@ -24,7 +24,7 @@ exports.seed = async function (knex) {
       burger_name: "Vegan Burger",
       price: 10.99,
       imgurl:
-        "https://cdn.pixabay.com/photo/2023/10/08/13/03/ai-generated-8302143_1280.jpg",
+        "https://cdn.pixabay.com/photo/2023/05/29/17/01/hamburger-8026582_1280.jpg",
     },
   ]);
 };

@@ -350,16 +350,18 @@ span.psw {
 }
 
 .menu-items:hover {
-  background-color: var(--color-red);
+  background-color: var(--color-grey);
   color: var(--color-light);
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
 .menu-items img {
-  width: 100%;
-  height: auto;
+  width: 100%; /* Ensure the image always takes up the full width of the container */
+  height: 120px; /* Fixed height for all images */
+  object-fit: cover; /* Ensures the image covers the designated area without distorting aspect ratio */
 }
+
 
 .desc {
   padding: 15px;
