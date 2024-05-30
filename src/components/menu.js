@@ -38,7 +38,7 @@ const Menu = () => {
   return (
     <div style={{ display: 'flex', flexDirection: "column" }}>
       <div className="menu-container">
-        <h2>Burgers</h2>
+        <h2>Create your own Burgers</h2>
         {(menuItems?.burgerItems || []).map((item, index) => (
           // Each menu item is rendered inside a div with a unique key
           <div key={index} className="menu-item menu-items">

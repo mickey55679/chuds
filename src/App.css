@@ -3,7 +3,7 @@
   --color-blue: #42b6fc; /* Blue color for highlights and buttons */
   --color-red: #ef1511; /* Red color for active links */
   --color-grey: #5f5655; /* Grey color for text */
-  --color-purple: #5721ee; /* Purple color (not used in this snippet) */
+  --color-purple: #5721ee; 
 }
 
 html {
