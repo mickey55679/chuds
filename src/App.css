@@ -52,41 +52,138 @@ html {
   height: auto;
 }
 
+/* Media Queries */
+@media (min-width: 320px) and (max-width: 375px) {
+  /* Mobile Small */
+  .navbar {
+    flex-direction: column; /* Stack navbar items vertically */
+    align-items: flex-start;
+  }
+  .nav-items {
+    flex-direction: column; /* Stack nav items vertically */
+    width: 100%;
+  }
+  .logo img {
+    width: 150px; /* Smaller logo size */
+  }
+  .button-27 {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 414px) {
+  /* Mobile Medium */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-items {
+    flex-direction: column;
+    width: 100%;
+  }
+  .logo img {
+    width: 160px;
+  }
+  .button-27 {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+@media (min-width: 415px) and (max-width: 480px) {
+  /* Mobile Large */
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+  }
+  .nav-items {
+    flex-direction: row;
+    width: auto;
+  }
+  .logo img {
+    width: 170px;
+  }
+  .button-27 {
+    width: 80%;
+    font-size: 15px;
+    padding: 14px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Tablet Small */
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+  }
+  .nav-items {
+    flex-direction: row;
+    width: auto;
+  }
+  .logo img {
+    width: 180px;
+  }
+  .button-27 {
+    width: 60%;
+    font-size: 16px;
+    padding: 16px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Tablet Large */
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+  }
+  .nav-items {
+    flex-direction: row;
+    width: auto;
+  }
+  .logo img {
+    width: 200px;
+  }
+  .button-27 {
+    width: 50%;
+    font-size: 16px;
+    padding: 16px;
+  }
+}
+
 /* Navbar styling for smaller screens */
 @media screen and (max-width: 900px) {
   .nav-items {
-    display: none;
+    display: none; /* Hidden by default */
     flex-direction: column;
     position: absolute;
-    top: 100%; /* Aligns right below the navbar */
-    right: 0; /* Aligns dropdown to the right edge of the navbar */
+    top: 100%;
+    right: 0;
     background-color: var(--color-light);
     transition: transform 0.3s ease;
-    transform: translateX(100%); /* Starts hidden off the screen to the right */
+    transform: translateX(100%);
     z-index: 1000;
-    border: 1px solid var(--color-blue); /* Add border style */
-    border-radius: 5px; /* Optional: Add border radius for rounded corners */
+    border: 1px solid var(--color-blue);
+    border-radius: 5px;
+    width: 100%; /* Full width for better touch support */
   }
+
   .nav-items.show-nav {
-    display: flex; /* Shows the navigation when toggled */
-    transform: translateX(0); /* Brings into view */
+    display: flex;
+    transform: translateX(0);
   }
+
   .navbar-toggler {
-    display: block; /* Show toggler button */
+    display: block;
   }
 }
 
-.navbar-toggler {
-  color: var(--color-blue); /* Blue color for toggler icon */
-  font-size: 1.5rem; /* Size of toggler icon */
-  cursor: pointer;
-  border: none;
-  background: transparent; /* Transparent background */
-}
-
+/* Toggler button hidden on larger screens */
 @media screen and (min-width: 901px) {
   .navbar-toggler {
-    display: none; /* Hide toggler button on larger screens */
+    display: none;
   }
 }
 
@@ -221,8 +318,6 @@ html {
   height: 150px; /* Fixed height for textareas */
 }
 
-/*
-
 /* Full-width inputs */
 input[type="text"],
 input[type="password"] {
@@ -258,14 +353,16 @@ input[type="password"] {
   width: 30%; /* Button width */
   will-change: transform;
   margin-right: 20px; /* Space between buttons */
-  margin-bottom: 20px; /* Space between buttons when small screen*/
+  margin-bottom: 20px; /* Space between buttons when small screen */
 }
+
 h3 {
   text-align: center;
   background-color: var(--color-red);
   color: white;
   padding: 40px;
 }
+
 .center-style {
   display: flex;
   justify-content: center;
@@ -335,6 +432,7 @@ span.psw {
   min-width: 30px; /* Ensures the quantity display doesn't shrink */
   text-align: center; /* Centers the text within the span */
 }
+
 /* Menu items */
 .menu-items {
   margin: 5px;
@@ -362,26 +460,13 @@ span.psw {
   object-fit: cover; 
 }
 
-
 .desc {
   padding: 15px;
   text-align: center;
 }
 
-.menu-item-controls {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.item-quantity {
-  min-width: 30px;
-  text-align: center;
-}
-
 @media screen and (max-width: 600px) {
-  .menu-item {
+  .menu-items {
     width: 100%;
     margin-bottom: 20px;
   }
