@@ -25,7 +25,7 @@ const Login = () => {
           {isLogin ? (
             <>
               Don't have an account yet?
-              <a href="#" onClick={toggleLogin}>
+              <a href="#" onClick={toggleLogin} style={{ marginLeft: "10px" }}>
                 Create an account
               </a>
             </>
@@ -40,11 +40,7 @@ const Login = () => {
         </h3>
 
         <div className="imgcontainer">
-          <img
-            src={chudsBar}
-            alt="Avatar"
-            className="avatar"
-          />
+          <img src={chudsBar} alt="Avatar" className="avatar" />
         </div>
 
         <div className="container">
