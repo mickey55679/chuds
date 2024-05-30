@@ -350,7 +350,7 @@ span.psw {
 }
 
 .menu-items:hover {
-  background-color: var(--color-blue);
+  background-color: var(--color-red);
   color: var(--color-light);
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2);
