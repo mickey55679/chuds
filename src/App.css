@@ -355,6 +355,54 @@ input[type="password"] {
   margin-right: 20px; /* Space between buttons */
   margin-bottom: 20px; /* Space between buttons when small screen */
 }
+/* Button adjustments for better responsiveness */
+.button-log {
+  width: auto; /* Allow button to grow with text */
+  min-width: 150px; /* Minimum width to maintain usability */
+  padding: 8px 20px; /* Increased padding for better touch targets */
+  margin: 0 10px 20px 10px; /* Adjusted margins for better spacing */
+}
+
+/* Updated form container for better edge-to-edge design */
+.container {
+  padding: 16px;
+  margin: 16px; /* Smaller margin for better use of space */
+}
+
+/* Responsive avatar image */
+img.avatar {
+  width: 80%; /* Make the avatar larger on smaller screens */
+  max-width: 200px; /* Limit size on larger screens */
+}
+
+/* Responsive design adjustments */
+@media screen and (max-width: 600px) {
+  .container {
+    margin: 16px 0; /* Adjust margins to 0 on the sides for small devices */
+  }
+
+  .button-log {
+    margin-right: 0; /* Stack buttons vertically without right margin */
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    padding: 20px; /* Smaller padding on smaller screens */
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .center-style {
+    max-width: 500px; /* Limiting max width of the form on larger screens */
+    margin: auto; /* Centering the form horizontally */
+  }
+}
+
+/* Ensure menu items are full width on smaller screens */
+.menu-items {
+  width: 100%; /* Full width to use available space */
+}
+
 
 h3 {
   text-align: center;
