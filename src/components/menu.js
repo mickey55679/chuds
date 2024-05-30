@@ -36,32 +36,41 @@ const Menu = () => {
     setOrderItems(updatedOrder);
   };
   return (
-    <div style={{ display: 'flex', flexDirection: "column" }}>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <div className="menu-container">
         <h2>Create your own Burgers</h2>
         {(menuItems?.burgerItems || []).map((item, index) => (
           // Each menu item is rendered inside a div with a unique key
           <div key={index} className="menu-item menu-items">
-            {/* Display the name of the menu item */}
             <h2>{item.name}</h2>
-            {/* Display the image of the menu item */}
             <img
               src={item.imgurl}
               alt={`${item.name} served on a plate`}
               width="180"
               height="auto"
             />
-            {/* Display the description of the menu item */}
             <p>{item.description}</p>
-            {/* Display the category of the menu item */}
             <p>Category: {item.category}</p>
-            {/* Display the price of the menu item, formatted to two decimal places */}
             <p>Price: ${item.price.toFixed(2)}</p>
             {/* Display the item description */}
             <div className="desc">{item.desc}</div>
-            <button onClick={() => updateOrder(item.id, "-")}>-</button>
-            <span>{orderItems[item.id] || "0"}</span>
-            <button onClick={() => updateOrder(item.id, "+")}>+</button>
+            <div className="menu-item-controls">
+              <button
+                className="update_order_subtract"
+                onClick={() => updateOrder(item.id, "-")}
+              >
+                -
+              </button>
+              <span className="item-quantity">
+                {orderItems[item.id] || "0"}
+              </span>
+              <button
+                className="update_order_add"
+                onClick={() => updateOrder(item.id, "+")}
+              >
+                +
+              </button>
+            </div>
           </div>
         ))}
       </div>
@@ -87,9 +96,23 @@ const Menu = () => {
             <p>Price: ${item.price.toFixed(2)}</p>
             {/* Display the item description */}
             <div className="desc">{item.desc}</div>
-            <button onClick={() => updateOrder(item.id, "-")}>-</button>
-            <span>{orderItems[item.id] || "0"}</span>
-            <button onClick={() => updateOrder(item.id, "+")}>+</button>
+            <div className="menu-item-controls">
+              <button
+                className="update_order_subtract"
+                onClick={() => updateOrder(item.id, "-")}
+              >
+                -
+              </button>
+              <span className="item-quantity">
+                {orderItems[item.id] || "0"}
+              </span>
+              <button
+                className="update_order_add"
+                onClick={() => updateOrder(item.id, "+")}
+              >
+                +
+              </button>
+            </div>
           </div>
         ))}
       </div>
@@ -115,37 +138,60 @@ const Menu = () => {
             <p>Price: ${item.price.toFixed(2)}</p>
             {/* Display the item description */}
             <div className="desc">{item.desc}</div>
-            <button onClick={() => updateOrder(item.id, "-")}>-</button>
-            <span>{orderItems[item.id] || "0"}</span>
-            <button onClick={() => updateOrder(item.id, "+")}>+</button>
+            <div className="menu-item-controls">
+              <button
+                className="update_order_subtract"
+                onClick={() => updateOrder(item.id, "-")}
+              >
+                -
+              </button>
+              <span className="item-quantity">
+                {orderItems[item.id] || "0"}
+              </span>
+              <button
+                className="update_order_add"
+                onClick={() => updateOrder(item.id, "+")}
+              >
+                +
+              </button>
+            </div>
           </div>
         ))}
       </div>
       <div className="menu-container">
         <h2>Sides</h2>
         {(menuItems?.sideItems || []).map((item, index) => (
-          // Each menu item is rendered inside a div with a unique key
           <div key={index} className="menu-item menu-items">
-            {/* Display the name of the menu item */}
             <h2>{item.name}</h2>
-            {/* Display the image of the menu item */}
             <img
               src={item.imgurl}
               alt={`${item.name} served on a plate`}
               width="180"
               height="auto"
             />
-            {/* Display the description of the menu item */}
             <p>{item.description}</p>
-            {/* Display the category of the menu item */}
             <p>Category: {item.category}</p>
             {/* Display the price of the menu item, formatted to two decimal places */}
             <p>Price: ${item.price.toFixed(2)}</p>
             {/* Display the item description */}
             <div className="desc">{item.desc}</div>
-            <button onClick={() => updateOrder(item.id, "-")}>-</button>
-            <span>{orderItems[item.id] || "0"}</span>
-            <button onClick={() => updateOrder(item.id, "+")}>+</button>
+            <div className="menu-item-controls">
+              <button
+                className="update_order_subtract"
+                onClick={() => updateOrder(item.id, "-")}
+              >
+                -
+              </button>
+              <span className="item-quantity">
+                {orderItems[item.id] || "0"}
+              </span>
+              <button
+                className="update_order_add"
+                onClick={() => updateOrder(item.id, "+")}
+              >
+                +
+              </button>
+            </div>
           </div>
         ))}
       </div>
