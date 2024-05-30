@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import chudsBar from "./images/chudsbar.jpeg";
 
-
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [username, setUsername] = useState("");
@@ -33,8 +32,8 @@ const Login = () => {
               Don't have an account yet?
               <button
                 onClick={toggleLogin}
-                style={{ marginLeft: "10px" }}
-                className="link-button"
+                style={{ marginLeft: "20px" }}
+                className="button-log"
               >
                 Create an account
               </button>
@@ -42,7 +41,7 @@ const Login = () => {
           ) : (
             <>
               Already have an account?
-              <button onClick={toggleLogin} className="link-button">
+              <button onClick={toggleLogin} className="button-log">
                 Log in
               </button>
             </>
