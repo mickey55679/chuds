@@ -44,7 +44,7 @@ const Menu = () => {
             <h2>{item.burger_name}</h2>
             <img
               src={item.imgurl}
-              alt={`${item.name} served on a plate`}
+              alt={`${item.burger_name} served on a plate`}
               width="180"
               height="auto"
             />
@@ -114,7 +114,7 @@ const Menu = () => {
             <h2>{item.drink_name}</h2>
             <img
               src={item.imgurl}
-              alt={`${item.name} served on a plate`}
+              alt={`${item.drink_name} served on a plate`}
               width="180"
               height="auto"
             />
@@ -149,7 +149,7 @@ const Menu = () => {
             <h2>{item.side_name}</h2>
             <img
               src={item.imgurl}
-              alt={`${item.name} served on a plate`}
+              alt={`${item.side_name} served on a plate`}
               width="180"
               height="auto"
             />
