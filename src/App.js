@@ -14,7 +14,8 @@ import {
 function App() {
   const [activeLink, setActiveLink] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState({});
+  const [items, setItems] = useState([]);
 
   const handleClick = (path) => {
     console.log("Navigating to:", path);
@@ -40,7 +41,7 @@ function App() {
           />
           <Routes>
             <Route path="/" element={<Home handleClick={handleClick} />} />
-            <Route path="/menu" element={<Menu />} />
+            <Route path="/menu" element={<Menu setCartItems={setCartItems} setItems={setItems} />} />
             <Route path="/contact" element={<ContactForm />} />
             <Route path="/login" element={<Login />} />
             <Route
@@ -49,6 +50,7 @@ function App() {
                 <Checkout
                   cartItems={cartItems}
                   removeFromCart={removeFromCart}
+                  items={items}
                 />
               }
             />

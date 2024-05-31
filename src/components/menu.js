@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Menu = () => {
+const Menu = ({setCartItems, setItems}) => {
   const [menuItems, setMenuItems] = useState({});
   const [orderItems, setOrderItems] = useState({});
 
@@ -14,6 +14,7 @@ const Menu = () => {
       .then((data) => {
         // Update the state with the fetched data
         setMenuItems(data);
+        setItems(data)
       })
       .catch((error) => {
         // Handle any errors that occur during the fetch
@@ -34,6 +35,7 @@ const Menu = () => {
       }
     }
     setOrderItems(updatedOrder);
+    setCartItems(updatedOrder)
   };
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
@@ -41,10 +43,10 @@ const Menu = () => {
         <h2>Build your own burger</h2>
         {(menuItems?.burgerItems || []).map((item, index) => (
           <div key={index} className="menu-item menu-items">
-            <h2>{item.burger_name}</h2>
+            <h2>{item.name}</h2>
             <img
               src={item.imgurl}
-              alt={`${item.burger_name} served on a plate`}
+              alt={`${item.name} served on a plate`}
               width="180"
               height="auto"
             />
@@ -76,10 +78,10 @@ const Menu = () => {
         <h2>Sandwiches</h2>
         {(menuItems?.sandwichItems || []).map((item, index) => (
           <div key={index} className="menu-item menu-items">
-            <h2>{item.sandwich_name}</h2>
+            <h2>{item.name}</h2>
             <img
               src={item.imgurl}
-              alt={`${item.sandwich_name} served on a plate`}
+              alt={`${item.name} served on a plate`}
               width="180"
               height="auto"
             />
@@ -111,10 +113,10 @@ const Menu = () => {
         <h2>Drink Items</h2>
         {(menuItems?.drinkItems || []).map((item, index) => (
           <div key={index} className="menu-item menu-items">
-            <h2>{item.drink_name}</h2>
+            <h2>{item.name}</h2>
             <img
               src={item.imgurl}
-              alt={`${item.drink_name} served on a plate`}
+              alt={`${item.name} served on a plate`}
               width="180"
               height="auto"
             />
@@ -146,10 +148,10 @@ const Menu = () => {
         <h2>Sides</h2>
         {(menuItems?.sideItems || []).map((item, index) => (
           <div key={index} className="menu-item menu-items">
-            <h2>{item.side_name}</h2>
+            <h2>{item.name}</h2>
             <img
               src={item.imgurl}
-              alt={`${item.side_name} served on a plate`}
+              alt={`${item.name} served on a plate`}
               width="180"
               height="auto"
             />
