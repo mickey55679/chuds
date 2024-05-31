@@ -1,54 +1,66 @@
 import React, { useEffect, useState } from "react";
 
-function Checkout({ cartItems, removeFromCart, items }) {
+function Checkout({ cartItems, setCartItems, items }) {
   const [order, setOrder] = useState([]);
   const [total, setTotal] = useState(0);
-
-  // Function to handle the checkout process
-  const handleCheckout = () => {
-    alert("Checkout successful!");
-  };
 
   useEffect(() => {
     let newTotal = 0;
     const formattedOrder = [];
 
-    // Iterate over each item category in 'items'
-    for (let item in items) {
-      const menu = items[item];
-      // Iterate over each item in the category
-      for (let menuItem of menu) {
-        // Check if the menuItem.id exists in cartItems object
-        if (menuItem.id in cartItems) {
-          const quantity = cartItems[menuItem.id]; // Get the quantity directly from cartItems
-          newTotal += menuItem.price * quantity;
-          formattedOrder.push({
-            ...menuItem,
-            quantity: quantity,
-          });
-        }
+    // Convert items object to an array
+    const itemsArray = Object.values(items).flatMap((category) => category);
+
+    for (const menuItem of itemsArray) {
+      if (menuItem.id in cartItems) {
+        const quantity = cartItems[menuItem.id];
+        newTotal += menuItem.price * quantity;
+        formattedOrder.push({
+          ...menuItem,
+          quantity,
+        });
       }
     }
 
     setTotal(newTotal);
     setOrder(formattedOrder);
-  }, [cartItems, items]); // Ensure correct dependencies are listed
+  }, [cartItems, items]);
+
+  const handleQuantityChange = (id, delta) => {
+    const newCartItems = { ...cartItems };
+    if (newCartItems[id] + delta > 0) {
+      newCartItems[id] += delta;
+    } else {
+      // Optionally remove the item if the quantity goes to zero
+      delete newCartItems[id];
+    }
+    console.log("setCartItems before calling:", setCartItems);
+    setCartItems(newCartItems);
+  };
 
   return (
     <div className="checkout">
       <h2>Checkout</h2>
-      <ul>
+      <div className="items-container">
         {order.map((item, index) => (
-          <li key={index}>
-            {item.name} - quantity: {item.quantity}
-            <button onClick={() => removeFromCart(item.name, item.id)}>
-              Remove from cart
-            </button>
-          </li>
+          <div key={index} className="item-card">
+            <h3>{item.name}</h3>
+            <img src={item.imgurl} alt={item.name} width="100" height="auto" />
+            <p>Price: ${item.price.toFixed(2)}</p>
+            <p>Quantity: {item.quantity}</p>
+            <div className="item-actions">
+              <button onClick={() => handleQuantityChange(item.id, -1)}>
+                -
+              </button>
+              <button onClick={() => handleQuantityChange(item.id, 1)}>
+                +
+              </button>
+            </div>
+          </div>
         ))}
-      </ul>
-      Total: {total}$
-      <button onClick={handleCheckout} className="button-75">
+      </div>
+      <p>Total: ${total.toFixed(2)}</p>
+      <button onClick={() => alert("Checkout successful!")}>
         Confirm and Pay
       </button>
     </div>

@@ -31,7 +31,6 @@ function App() {
     setCartItems(updatedCartItems);
   };
 
-
   return (
     <div className="App">
       <header className="App-header">
@@ -44,7 +43,10 @@ function App() {
           />
           <Routes>
             <Route path="/" element={<Home handleClick={handleClick} />} />
-            <Route path="/menu" element={<Menu setCartItems={setCartItems} setItems={setItems} />} />
+            <Route
+              path="/menu"
+              element={<Menu setCartItems={setCartItems} setItems={setItems} />}
+            />
             <Route path="/contact" element={<ContactForm />} />
             <Route path="/login" element={<Login />} />
             <Route
@@ -54,6 +56,7 @@ function App() {
                   cartItems={cartItems}
                   removeFromCart={removeFromCart}
                   items={items}
+                  setCartItems={setCartItems}
                 />
               }
             />
