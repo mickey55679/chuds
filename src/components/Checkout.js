@@ -1,31 +1,38 @@
 import React, { useEffect, useState } from "react";
 
-// The Checkout component receives 'cartItems' and 'removeFromCart' props from its parent component
 function Checkout({ cartItems, removeFromCart, items }) {
   const [order, setOrder] = useState([]);
   const [total, setTotal] = useState(0);
+
   // Function to handle the checkout process
   const handleCheckout = () => {
-    // This could be expanded to include real payment processing logic
     alert("Checkout successful!");
   };
 
   useEffect(() => {
+    let newTotal = 0;
     const formattedOrder = [];
+
+    // Iterate over each item category in 'items'
     for (let item in items) {
       const menu = items[item];
+      // Iterate over each item in the category
       for (let menuItem of menu) {
+        // Check if the menuItem.id exists in cartItems object
         if (menuItem.id in cartItems) {
-          setTotal(total + menuItem.price * cartItems[menuItem.id]);
+          const quantity = cartItems[menuItem.id]; // Get the quantity directly from cartItems
+          newTotal += menuItem.price * quantity;
           formattedOrder.push({
             ...menuItem,
-            quantity: cartItems[menuItem.id],
+            quantity: quantity,
           });
         }
       }
     }
+
+    setTotal(newTotal);
     setOrder(formattedOrder);
-  }, []);
+  }, [cartItems, items]); // Ensure correct dependencies are listed
 
   return (
     <div className="checkout">

@@ -25,9 +25,12 @@ function App() {
   const handleToggle = () => {
     setIsOpen(!isOpen); // This toggles the visibility of the menu
   };
-    const removeFromCart = (title, id) => {
-      setCartItems(cartItems.filter((item) => item.id !== id));
-    };
+  const removeFromCart = (title, id) => {
+    const updatedCartItems = { ...cartItems };
+    delete updatedCartItems[id]; // Delete the item from the object by key
+    setCartItems(updatedCartItems);
+  };
+
 
   return (
     <div className="App">
