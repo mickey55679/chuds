@@ -30,7 +30,7 @@ html {
 .navbar {
   background-color: var(--color-light);
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   padding: 0.8rem 1.2rem;
   align-items: center;
   z-index: 1000;
@@ -38,26 +38,26 @@ html {
 }
 
 .nav-items {
-  list-style: none; 
+  list-style: none;
   display: flex;
-  gap: 15px; 
-  margin-left: auto; 
+  gap: 15px;
+  margin-left: auto;
 }
 
 .nav-item a {
-  text-decoration: none; 
+  text-decoration: none;
   padding: 0.5rem 0.8rem;
   margin: 0 0.2rem;
-  color: var(--color-grey); 
+  color: var(--color-grey);
   font-weight: normal;
 }
 
 .nav-item a:hover {
-  color: var(--color-blue); 
+  color: var(--color-blue);
 }
 
 .nav-item a.active-link {
-  color: var(--color-red); 
+  color: var(--color-red);
   font-weight: bold;
 }
 /* Chuds logo img */
@@ -70,15 +70,15 @@ html {
 @media (min-width: 320px) and (max-width: 375px) {
   /* Mobile Small */
   .navbar {
-    flex-direction: column; 
+    flex-direction: column;
     align-items: flex-start;
   }
   .nav-items {
-    flex-direction: column; 
+    flex-direction: column;
     width: 100%;
   }
   .logo img {
-    width: 150px; 
+    width: 150px;
   }
   .button-27 {
     width: 100%;
@@ -530,7 +530,7 @@ span.psw {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .menu-items {
     width: 100%;
     margin-bottom: 20px;
@@ -579,4 +579,25 @@ span.psw {
 
 .item-quantity {
   margin: 0 10px;
+}
+.login-logout-buttons {
+  appearance: none;
+  background-color: #000000; /* Black background */
+  border: 2px solid #1a1a1a;
+  box-sizing: border-box;
+  color: #ffffff; /* White text */
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1); /* Smooth transition */
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
