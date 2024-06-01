@@ -232,10 +232,9 @@ html {
   max-width: 500px;
   font-size: 30px;
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  padding: 10px;
+  padding: 20px;
   box-sizing: border-box;
   border: 1px solid black;
-  padding-top: 10px;
   margin: 50px 0px 50px 0px;
 }
 
@@ -600,4 +599,13 @@ span.psw {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+.phone-icon {
+  margin-left: 25px;
+  color: #333; /* default icon color */
+  text-decoration: none; /* removes underline from the link */
+}
+
+.phone-icon:hover {
+  color: #0056b3; /* change color on hover */
 }
