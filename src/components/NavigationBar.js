@@ -4,79 +4,54 @@ import { logo } from "./images/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"; // Importing shopping cart icon
-
+import { useAuth0 } from "@auth0/auth0-react";
+import { LogoutButton } from "./index";
 
 const NavigationBar = (props) => {
+  const { isAuthenticated } = useAuth0();
 
   return (
     <nav className="navbar">
       <div className="logo">
-        {/* Link to the home page with the logo image */}
         <NavLink to="/" exact>
           <img src={logo} alt="Chuds" className="logo" />
         </NavLink>
       </div>
-      {/* Button for toggling the navigation menu on smaller screens */}
-      <button
-        className="navbar-toggler"
-        type="button"
-        onClick={props.handleToggle}
-      >
+      <button className="navbar-toggler" type="button" onClick={props.handleToggle}>
         <FontAwesomeIcon icon={faBars} />
       </button>
-      {/* Navigation items, conditionally shown based on `props.isOpen` */}
       <ul className={`nav-items ${props.isOpen ? "show-nav ml-auto" : ""}`}>
         <li className="nav-item">
-          {/* Link to the home page */}
-          <NavLink
-            to="/"
-            exact
-            className={props.activeLink === "/" ? "active-link" : ""}
-            onClick={() => props.handleClick("/")}
-          >
+          <NavLink to="/" exact className={props.activeLink === "/" ? "active-link" : ""} onClick={() => props.handleClick("/")}>
             Home
           </NavLink>
         </li>
         <li className="nav-item">
-          {/* Link to the menu page */}
-          <NavLink
-            to="/menu"
-            exact
-            className={props.activeLink === "/menu" ? "active-link" : ""}
-            onClick={() => props.handleClick("/menu")}
-          >
+          <NavLink to="/menu" exact className={props.activeLink === "/menu" ? "active-link" : ""} onClick={() => props.handleClick("/menu")}>
             Menu
           </NavLink>
         </li>
         <li className="nav-item">
-          {/* Link to the contact page */}
-          <NavLink
-            to="/contact"
-            exact
-            className={props.activeLink === "/contact" ? "active-link" : ""}
-            onClick={() => props.handleClick("/contact")}
-          >
+          <NavLink to="/contact" exact className={props.activeLink === "/contact" ? "active-link" : ""} onClick={() => props.handleClick("/contact")}>
             Contact
           </NavLink>
         </li>
+        {/* Conditionally render the Login or Logout based on the authentication status */}
+        {!isAuthenticated && (
+          <li className="nav-item">
+            <NavLink to="/login" exact className={props.activeLink === "/login" ? "active-link" : ""} onClick={() => props.handleClick("/login")}>
+              Login
+            </NavLink>
+          </li>
+        )}
+        {isAuthenticated && (
+          <li className="nav-item">
+            <LogoutButton />
+          </li>
+        )}
         <li className="nav-item">
-          {/* Link to the login page */}
-          <NavLink
-            to="/login"
-            exact
-            className={props.activeLink === "/login" ? "active-link" : ""}
-            onClick={() => props.handleClick("/login")}
-          >
-            Login
-          </NavLink>
           <NavLink to="/checkout">
-            {/* Shopping cart icon */}
-            <FontAwesomeIcon
-              icon={faShoppingCart}
-              style={{ color: "palevioletred" }} // Styling for the icon color
-            />
-            {/* Display cart count if it's greater than 0 */}
-            {/* {cartCount > 0 && <span className="cart-count">{cartCount}</span>} */}
+            <FontAwesomeIcon icon={faShoppingCart} style={{ color: "palevioletred" }} />
           </NavLink>
         </li>
       </ul>

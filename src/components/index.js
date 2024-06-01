@@ -8,6 +8,7 @@ import NavigationBar from "./NavigationBar";
 import Signup from "./Signup";
 import ReviewSlideshow from "./ ReviewSlideshow";
 import Checkout from "./Checkout";
+import Loading from "./Loading";
 
 export {
   ContactForm,
@@ -20,4 +21,5 @@ export {
   Signup,
   ReviewSlideshow,
   Checkout,
+  Loading,
 };
