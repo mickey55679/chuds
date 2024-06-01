@@ -1,6 +1,6 @@
 import ContactForm from './ContactForm'
 import Footer from './Footer'
-import Home from './Home'
+import Home from './home'
 import Login from './Login'
 import Menu from './menu'
 import NavigationBar from './NavigationBar'

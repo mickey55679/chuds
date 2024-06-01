@@ -39,31 +39,47 @@ function Checkout({ cartItems, setCartItems, items }) {
   };
 
   return (
+    <>
     <div className="checkout">
-      <h2>Checkout</h2>
-      <div className="items-container">
-        {order.map((item, index) => (
-          <div key={index} className="item-card">
-            <h3>{item.name}</h3>
-            <img src={item.imgurl} alt={item.name} width="100" height="auto" />
-            <p>Price: ${item.price.toFixed(2)}</p>
-            <p>Quantity: {item.quantity}</p>
-            <div className="item-actions">
-              <button onClick={() => handleQuantityChange(item.id, -1)}>
-                -
-              </button>
-              <button onClick={() => handleQuantityChange(item.id, 1)}>
-                +
-              </button>
-            </div>
+      {order.map((item, index) => (
+        <div key={index} className="menu-item menu-items">
+          <h2>{item.name}</h2>
+          <img
+            src={item.imgurl}
+            alt={`${item.name} served on a plate`}
+            width="180"
+            height="auto"
+          />
+          <p>{item.description}</p>
+          <p>Category: {item.category}</p>
+          <p>Price: ${item.price.toFixed(2)}</p>
+          <div className="desc">{item.desc}</div>
+          <div className="menu-item-controls">
+            <button
+              className="update_order_subtract"
+              onClick={() => handleQuantityChange(item.id, -1)}
+            >
+              -
+            </button>
+            <span className="item-quantity">{item.quantity || "0"}</span>
+            <button
+              className="update_order_add"
+              onClick={() => handleQuantityChange(item.id, 1)}
+            >
+              +
+            </button>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
+
+    </div>
+          <div className="checkout-details">
       <p>Total: ${total.toFixed(2)}</p>
       <button onClick={() => alert("Checkout successful!")}>
-        Confirm and Pay
+        confirm and pay
       </button>
     </div>
+    </>
   );
 }
 
