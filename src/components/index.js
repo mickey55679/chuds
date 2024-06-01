@@ -1,23 +1,23 @@
-import ContactForm from './ContactForm'
-import Footer from './Footer'
-import Home from './home'
-import Login from './Login'
-import Menu from './menu'
-import NavigationBar from './NavigationBar'
-import Signup from './Signup'
-import ReviewSlideshow from './ ReviewSlideshow'
-import Checkout from './Checkout'
-
+import ContactForm from "./ContactForm";
+import Footer from "./Footer";
+import Home from "./home";
+import LoginButton from "./LoginButton";
+import LogoutButton from "./LogoutButton";
+import Menu from "./menu";
+import NavigationBar from "./NavigationBar";
+import Signup from "./Signup";
+import ReviewSlideshow from "./ ReviewSlideshow";
+import Checkout from "./Checkout";
 
 export {
   ContactForm,
   Footer,
   Home,
-  Login,
+  LoginButton,
+  LogoutButton,
   Menu,
   NavigationBar,
   Signup,
   ReviewSlideshow,
-  Checkout
-
+  Checkout,
 };

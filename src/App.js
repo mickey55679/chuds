@@ -6,7 +6,8 @@ import {
   Footer,
   Menu,
   Home,
-  Login,
+  LoginButton,
+  LogoutButton,
   NavigationBar,
   Checkout,
 } from "./components/index";
@@ -48,7 +49,7 @@ function App() {
               element={<Menu setCartItems={setCartItems} setItems={setItems} />}
             />
             <Route path="/contact" element={<ContactForm />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<LoginButton />} />
             <Route
               path="/checkout"
               element={
