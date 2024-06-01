@@ -538,6 +538,14 @@ span.psw {
 }
 
 /* Button Styles */
+.menu-item-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
 .update_order_subtract,
 .update_order_add {
   padding: 5px 10px;
@@ -550,6 +558,14 @@ span.psw {
   transition: background-color 0.3s, transform 0.3s;
 }
 
+.update_order_subtract {
+  margin-right: 10px;
+}
+
+.update_order_add {
+  margin-left: 10px;
+}
+
 .update_order_subtract:hover,
 .update_order_add:hover {
   background-color: var(--color-purple);
@@ -559,4 +575,8 @@ span.psw {
 .update_order_subtract:focus,
 .update_order_add:focus {
   outline: none;
+}
+
+.item-quantity {
+  margin: 0 10px;
 }
