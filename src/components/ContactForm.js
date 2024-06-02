@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReviewSlideshow from "./ ReviewSlideshow"; // Import the ReviewSlideshow component
 
 const ContactForm = () => {
   // State for form data
@@ -62,46 +63,50 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="contact-form">
-      <div className="form-group">
-        <label className="label">Name:</label>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          className="input"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label className="label">Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="input"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label className="label">Message:</label>
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          className="input textarea"
-          required
-        />
-      </div>
-      {/* Submit button, disabled when loading */}
-      <button type="submit" className="button-27" disabled={isLoading}>
-        {isLoading ? "Sending..." : "Submit"}
-      </button>
-      {/* Display form message */}
-      {formMessage && <p>{formMessage}</p>}
-    </form>
+    <div>
+      {/* Contact form */}
+      <form onSubmit={handleSubmit} className="contact-form">
+        <div className="form-group">
+          <label className="label">Name:</label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className="input"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label className="label">Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="input"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label className="label">Message:</label>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            className="input textarea"
+            required
+          />
+        </div>
+        {/* Submit button, disabled when loading */}
+        <button type="submit" className="button-27" disabled={isLoading}>
+          {isLoading ? "Sending..." : "Submit"}
+        </button>
+        {/* Display form message */}
+        {formMessage && <p>{formMessage}</p>}
+      </form>
+      <ReviewSlideshow />
+    </div>
   );
 };
 
