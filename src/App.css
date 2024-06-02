@@ -53,12 +53,12 @@ html {
 }
 
 .nav-item a:hover {
-  color: var(--color-blue);
+  color: var(--color-purple);
 }
 
 .nav-item a.active-link {
-  color: var(--color-red);
-  font-weight: bold;
+  color: var(--color-purple);
+  /* font-weight: bold; */
 }
 /* Chuds logo img */
 .logo img {
@@ -669,7 +669,7 @@ span.psw {
 }
 
 .menu-highlights-item {
-  flex: 1 1 calc(50% - 40px);
+  flex: 1 1 calc(25% - 40px); /* Adjust the flex-basis to make items smaller */
   display: flex;
   flex-direction: column;
   align-items: center;
