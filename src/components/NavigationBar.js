@@ -25,7 +25,13 @@ const AuthenticationButton = () => {
   );
 };
 
-const NavigationBar = (props) => {
+const NavigationBar = ({
+  activeLink,
+  handleClick,
+  handleToggle,
+  isOpen,
+  totalItemsInCart,
+}) => {
   return (
     <nav className="navbar">
       <div className="logo">
@@ -33,20 +39,16 @@ const NavigationBar = (props) => {
           <img src={logo} alt="Logo" className="logo" />
         </NavLink>
       </div>
-      <button
-        className="navbar-toggler"
-        type="button"
-        onClick={props.handleToggle}
-      >
+      <button className="navbar-toggler" type="button" onClick={handleToggle}>
         <FontAwesomeIcon icon={faBars} />
       </button>
-      <ul className={`nav-items ${props.isOpen ? "show-nav ml-auto" : ""}`}>
+      <ul className={`nav-items ${isOpen ? "show-nav ml-auto" : ""}`}>
         <li className="nav-item">
           <NavLink
             to="/"
             exact
-            className={props.activeLink === "/" ? "active-link" : ""}
-            onClick={() => props.handleClick("/")}
+            className={activeLink === "/" ? "active-link" : ""}
+            onClick={() => handleClick("/")}
           >
             Home
           </NavLink>
@@ -55,8 +57,8 @@ const NavigationBar = (props) => {
           <NavLink
             to="/menu"
             exact
-            className={props.activeLink === "/menu" ? "active-link" : ""}
-            onClick={() => props.handleClick("/menu")}
+            className={activeLink === "/menu" ? "active-link" : ""}
+            onClick={() => handleClick("/menu")}
           >
             Menu
           </NavLink>
@@ -65,8 +67,8 @@ const NavigationBar = (props) => {
           <NavLink
             to="/contact"
             exact
-            className={props.activeLink === "/contact" ? "active-link" : ""}
-            onClick={() => props.handleClick("/contact")}
+            className={activeLink === "/contact" ? "active-link" : ""}
+            onClick={() => handleClick("/contact")}
           >
             Contact
           </NavLink>
@@ -75,11 +77,14 @@ const NavigationBar = (props) => {
           <AuthenticationButton />
         </li>
         <li className="nav-item">
-          <NavLink to="/checkout">
+          <NavLink to="/checkout" className="cart-icon-link">
             <FontAwesomeIcon
               icon={faShoppingCart}
-              style={{ color: "palevioletred" }}
+              style={{ color: "red" }}
             />
+            {totalItemsInCart > 0 && (
+              <span className="cart-badge">{totalItemsInCart}</span>
+            )}
           </NavLink>
         </li>
       </ul>

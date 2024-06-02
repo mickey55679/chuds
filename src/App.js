@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
@@ -17,6 +17,16 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [cartItems, setCartItems] = useState({});
   const [items, setItems] = useState([]);
+  const [totalItemsInCart, setTotalItemsInCart] = useState(0);
+
+  // Calculate total items in cart whenever cartItems change
+  useEffect(() => {
+    const totalItems = Object.values(cartItems).reduce(
+      (acc, curr) => acc + curr,
+      0
+    );
+    setTotalItemsInCart(totalItems);
+  }, [cartItems]);
 
   const handleClick = (path) => {
     console.log("Navigating to:", path);
@@ -41,6 +51,7 @@ function App() {
             handleClick={handleClick}
             handleToggle={handleToggle}
             isOpen={isOpen}
+            totalItemsInCart={totalItemsInCart}
           />
           <Routes>
             <Route path="/" element={<Home handleClick={handleClick} />} />
