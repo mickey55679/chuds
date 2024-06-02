@@ -611,12 +611,22 @@ span.psw {
   color: #0056b3; /* change color on hover */
 }
 /* MenuHighlights.css */
+.menu-highlights-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
 .menu-highlights-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    padding: 20px;
 }
 
 .menu-item {
@@ -654,4 +664,3 @@ span.psw {
 .menu-item button:hover {
     background-color: #e65a50; /* Darker button color on hover */
 }
-
