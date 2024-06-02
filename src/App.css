@@ -616,7 +616,7 @@ span.psw {
     text-align: center;
 }
 
-.menu-title {
+.menu-highlights-title {
     font-size: 2em;
     margin-bottom: 20px;
     color: #333;
@@ -629,7 +629,7 @@ span.psw {
     justify-content: center;
 }
 
-.menu-item {
+.menu-highlights-item {
     flex: 1 1 calc(50% - 40px); /* Adjust this to control the item width */
     display: flex;
     flex-direction: column;
@@ -640,17 +640,17 @@ span.psw {
     overflow: hidden;
 }
 
-.menu-item img {
+.menu-highlights-item img {
     width: 100%;
     height: auto;
 }
 
-.menu-item h3 {
+.menu-highlights-item h3 {
     margin: 10px 0;
     font-size: 1.2em;
 }
 
-.menu-item button {
+.menu-highlights-item button {
     background-color: #ff6f61; /* Example button color */
     color: white;
     border: none;
@@ -661,6 +661,6 @@ span.psw {
     font-size: 1em;
 }
 
-.menu-item button:hover {
+.menu-highlights-item button:hover {
     background-color: #e65a50; /* Darker button color on hover */
 }
