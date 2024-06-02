@@ -650,57 +650,59 @@ span.psw {
 .phone-icon:hover {
   color: #0056b3; /* change color on hover */
 }
-/* MenuHighlights.css */
+/* MenuHighlights */
 .menu-highlights-section {
-    padding: 20px;
-    text-align: center;
+  padding: 20px;
+  text-align: center;
 }
 
 .menu-highlights-title {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: var(--color-light);
 }
 
 .menu-highlights-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .menu-highlights-item {
-    flex: 1 1 calc(50% - 40px); /* Adjust this to control the item width */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
+  flex: 1 1 calc(50% - 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .menu-highlights-item img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .menu-highlights-item h3 {
-    margin: 10px 0;
-    font-size: 1.2em;
+  margin: 10px 0;
+  font-size: 1.2em;
+  background-color: var(--color-light);
+  color: var(--color-grey);
 }
 
 .menu-highlights-item button {
-    background-color: #ff6f61; /* Example button color */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px 0 20px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 1em;
+  background-color: #e65a50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1em;
 }
 
 .menu-highlights-item button:hover {
-    background-color: #e65a50; /* Darker button color on hover */
+  background-color: var(--color-red);
 }
