@@ -416,8 +416,14 @@ img.avatar {
   width: 100%; /* Full width to use available space */
 }
 
-h3 {
+h1 {
   text-align: center;
+  background-color: var(--color-red);
+  color: white;
+  padding: 40px;
+}
+h3{
+   text-align: center;
   background-color: var(--color-red);
   color: white;
   padding: 40px;
@@ -669,7 +675,7 @@ span.psw {
 }
 
 .menu-highlights-item {
-  flex: 1 1 calc(25% - 40px); /* Adjust the flex-basis to make items smaller */
+  flex: 1 1 calc(25% - 40px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -677,7 +683,10 @@ span.psw {
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
+  margin-bottom: 20px; 
+  
 }
+
 
 .menu-highlights-item img {
   width: 100%;

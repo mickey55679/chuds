@@ -3,7 +3,7 @@ import React from "react";
 const MenuCategory = ({ title, items, updateOrder, orderItems }) => {
   return (
     <div className="menu-container">
-      <h2>{title}</h2>
+      <h1>{title}</h1>
       <div className="menu-category">
         {items.map((item, index) => (
           <div key={index} className="menu-item menu-items">
