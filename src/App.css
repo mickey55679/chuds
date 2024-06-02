@@ -208,17 +208,20 @@ html {
   align-items: center;
   height: calc(100vh - 60px);
   padding-top: 60px;
+  margin-bottom: 50px;
 }
 
 .background-image {
-    width: 100%;
+  width: 100%;
   height: auto;
   display: block;
   padding: 20px;
 }
 @media screen and (max-width: 768px) {
-  .background-image {
-    background-size: contain;
+  .home-page {
+    height: auto; /* Change to auto for smaller screens to allow content to dictate size */
+    padding-top: 30px;
+    padding-bottom: 30px; /* Add padding to create space inside the container */
   }
 }
 
