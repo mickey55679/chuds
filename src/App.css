@@ -755,15 +755,15 @@ span.psw {
   position: absolute;
   top: 8px;
   right: 8px;
-  background-color: var(--color-red); /* Use your desired color */
-  color: var(--color-light); /* Use a contrasting color for text */
-  border-radius: 50%; /* Makes it a circle */
-  width: 24px; /* Adjust size as needed */
-  height: 24px; /* Adjust size as needed */
+  background-color: var(--color-red); 
+  color: var(--color-light); 
+  border-radius: 50%; 
+  width: 24px; 
+  height: 24px; 
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 12px; /* Adjust font size as needed */
-  font-weight: bold; /* Make the number bold */
-  z-index: 1; /* Ensure it's above other elements */
+  font-size: 12px; 
+  font-weight: bold; 
+  z-index: 1; 
 }
