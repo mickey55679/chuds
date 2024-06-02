@@ -211,9 +211,15 @@ html {
 }
 
 .background-image {
-  width: 100%;
+    width: 100%;
   height: auto;
   display: block;
+  padding: 20px;
+}
+@media screen and (max-width: 768px) {
+  .background-image {
+    background-size: contain;
+  }
 }
 
 /* Home Page Paragraph box */
@@ -422,8 +428,8 @@ h1 {
   color: white;
   padding: 40px;
 }
-h3{
-   text-align: center;
+h3 {
+  text-align: center;
   background-color: var(--color-red);
   color: white;
   padding: 40px;
@@ -683,10 +689,8 @@ span.psw {
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 20px; 
-  
+  margin-bottom: 20px;
 }
-
 
 .menu-highlights-item img {
   width: 100%;
@@ -755,15 +759,15 @@ span.psw {
   position: absolute;
   top: 8px;
   right: 8px;
-  background-color: var(--color-red); 
-  color: var(--color-light); 
-  border-radius: 50%; 
-  width: 24px; 
-  height: 24px; 
+  background-color: var(--color-red);
+  color: var(--color-light);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 12px; 
-  font-weight: bold; 
-  z-index: 1; 
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 1;
 }
