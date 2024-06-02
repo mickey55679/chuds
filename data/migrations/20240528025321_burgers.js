@@ -9,6 +9,7 @@ exports.up = function (knex) {
       table.string("name").notNullable();
       table.decimal("price").notNullable();
       table.string("imgurl").notNullable();
+      table.string("category").notNullable(); // Added category column
     })
     .then(function () {
       return knex.schema.createTable("sandwiches", function (table) {
@@ -16,6 +17,7 @@ exports.up = function (knex) {
         table.string("name").notNullable();
         table.decimal("price").notNullable();
         table.string("imgurl").notNullable();
+        table.string("category").notNullable(); // Added category column
       });
     })
     .then(function () {
@@ -24,6 +26,7 @@ exports.up = function (knex) {
         table.string("name").notNullable();
         table.decimal("price").notNullable();
         table.string("imgurl").notNullable();
+        table.string("category").notNullable(); // Added category column
       });
     })
     .then(function () {
@@ -32,6 +35,7 @@ exports.up = function (knex) {
         table.string("name").notNullable();
         table.decimal("price").notNullable();
         table.string("imgurl").notNullable();
+        table.string("category").notNullable(); // Added category column
       });
     });
 };
@@ -42,14 +46,14 @@ exports.up = function (knex) {
  */
 exports.down = function (knex) {
   return knex.schema
-    .dropTableIfExists("sides")
+    .dropTableIfExists("drinks")
+    .then(function () {
+      return knex.schema.dropTableIfExists("sides");
+    })
     .then(function () {
       return knex.schema.dropTableIfExists("sandwiches");
     })
     .then(function () {
       return knex.schema.dropTableIfExists("burgers");
-    })
-    .then(function () {
-      return knex.schema.dropTableIfExists("drinks")
-    })
+    });
 };

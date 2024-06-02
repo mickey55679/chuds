@@ -15,6 +15,7 @@ exports.seed = function (knex) {
           price: 2.99,
           imgurl:
             "https://cdn.pixabay.com/photo/2020/06/23/14/33/french-fries-5332766_1280.jpg",
+          category: "Potatoes",
         },
         {
           id: 42,
@@ -22,6 +23,7 @@ exports.seed = function (knex) {
           price: 3.49,
           imgurl:
             "https://cdn.pixabay.com/photo/2020/06/23/14/33/french-fries-5332766_1280.jpg",
+          category: "Appetizers",
         },
         {
           id: 43,
@@ -29,6 +31,7 @@ exports.seed = function (knex) {
           price: 3.99,
           imgurl:
             "https://cdn.pixabay.com/photo/2020/06/23/14/33/french-fries-5332766_1280.jpg",
+          category: "Salads",
         },
       ]);
     });

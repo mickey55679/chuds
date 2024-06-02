@@ -15,6 +15,7 @@ exports.seed = function (knex) {
           price: 13.0,
           imgurl:
             "https://cdn.pixabay.com/photo/2015/10/13/21/05/sandwich-986784_1280.jpg",
+          category: "Classic",
         },
         {
           id: 32,
@@ -22,6 +23,7 @@ exports.seed = function (knex) {
           price: 13.0,
           imgurl:
             "https://cdn.pixabay.com/photo/2015/10/13/21/05/sandwich-986784_1280.jpg",
+          category: "Beef",
         },
         {
           id: 33,
@@ -29,6 +31,7 @@ exports.seed = function (knex) {
           price: 13.0,
           imgurl:
             "https://cdn.pixabay.com/photo/2015/10/13/21/05/sandwich-986784_1280.jpg",
+          category: "Chicken",
         },
         {
           id: 34,
@@ -36,6 +39,7 @@ exports.seed = function (knex) {
           price: 13.0,
           imgurl:
             "https://cdn.pixabay.com/photo/2015/10/13/21/05/sandwich-986784_1280.jpg",
+          category: "Spicy",
         },
         {
           id: 35,
@@ -43,6 +47,7 @@ exports.seed = function (knex) {
           price: 13.0,
           imgurl:
             "https://cdn.pixabay.com/photo/2015/10/13/21/05/sandwich-986784_1280.jpg",
+          category: "Chicken",
         },
         {
           id: 36,
@@ -50,6 +55,7 @@ exports.seed = function (knex) {
           price: 13.0,
           imgurl:
             "https://cdn.pixabay.com/photo/2015/10/13/21/05/sandwich-986784_1280.jpg",
+          category: "Pork",
         },
         {
           id: 37,
@@ -57,6 +63,7 @@ exports.seed = function (knex) {
           price: 13.0,
           imgurl:
             "https://cdn.pixabay.com/photo/2015/10/13/21/05/sandwich-986784_1280.jpg",
+          category: "Chicken",
         },
         {
           id: 38,
@@ -64,6 +71,7 @@ exports.seed = function (knex) {
           price: 13.0,
           imgurl:
             "https://cdn.pixabay.com/photo/2015/10/13/21/05/sandwich-986784_1280.jpg",
+          category: "Seafood",
         },
         {
           id: 39,
@@ -71,6 +79,7 @@ exports.seed = function (knex) {
           price: 16.0,
           imgurl:
             "https://cdn.pixabay.com/photo/2015/10/13/21/05/sandwich-986784_1280.jpg",
+          category: "Special",
         },
       ]);
     });

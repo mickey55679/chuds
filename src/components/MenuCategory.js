@@ -1,4 +1,3 @@
-// MenuCategory.jsx
 import React from "react";
 
 const MenuCategory = ({ title, items, updateOrder, orderItems }) => {
@@ -16,7 +15,7 @@ const MenuCategory = ({ title, items, updateOrder, orderItems }) => {
               height="auto"
             />
             <p>{item.description}</p>
-            <p>Category: {item.category}</p>
+            <p>Category: {item.category || "No category available"}</p>
             <p>Price: ${item.price.toFixed(2)}</p>
             <div className="desc">{item.desc}</div>
             <div className="menu-item-controls">
