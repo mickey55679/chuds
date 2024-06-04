@@ -1,5 +1,5 @@
 // Importing the menuModel, which includes functions to interact with the database for menu items.
-const menuModel = require("../menuModel");
+const menuModel = require("./menuModel");
 
 // Exporting an object that contains two functions: createMenuItem and getAllMenuItems.
 module.exports = {
