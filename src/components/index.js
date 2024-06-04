@@ -1,8 +1,6 @@
 import ContactForm from "./ContactForm";
 import Footer from "./Footer";
 import Home from "./home";
-import LoginButton from "./LoginButton";
-import LogoutButton from "./LogoutButton";
 import Menu from "./menu";
 import NavigationBar from "./NavigationBar";
 import Signup from "./Signup";
@@ -15,8 +13,6 @@ export {
   ContactForm,
   Footer,
   Home,
-  LoginButton,
-  LogoutButton,
   Menu,
   NavigationBar,
   Signup,

@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
@@ -6,8 +6,6 @@ import {
   Footer,
   Menu,
   Home,
-  LoginButton,
-  LogoutButton,
   NavigationBar,
   Checkout,
 } from "./components/index";
@@ -60,7 +58,6 @@ function App() {
               element={<Menu setCartItems={setCartItems} setItems={setItems} />}
             />
             <Route path="/contact" element={<ContactForm />} />
-            <Route path="/login" element={<LoginButton />} />
             <Route
               path="/checkout"
               element={
