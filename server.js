@@ -38,7 +38,7 @@ app.use(express.json()); // for parsing application/json
 app.use(cors());
 
 // Protect routes with JWT middleware
-app.use("/menu", checkJwt, menuRouter);
+app.use("/menu", menuRouter);
 
 app.use((req, res, next) => {
   console.log("User object:", req.user);
@@ -46,7 +46,7 @@ app.use((req, res, next) => {
 });
 
 
-app.post("/menu", checkJwt, async (req, res) => {
+app.post("/menu",  async (req, res) => {
   const { name, description, price, category, special } = req.body;
   try {
     const [id] = await knex("menu").insert({
@@ -62,7 +62,7 @@ app.post("/menu", checkJwt, async (req, res) => {
   }
 });
 
-app.get("/menu", checkJwt, async (req, res) => {
+app.get("/menu", async (req, res) => {
   try {
     const menuItems = await knex("menu").select("*");
     console.log("Menu items:", menuItems); // log the menu items
