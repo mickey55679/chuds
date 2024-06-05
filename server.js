@@ -6,13 +6,39 @@ const knex = require("knex")(knexConfig);
 const cors = require("cors");
 const menuRouter = require("./backend/routes/menuRouter");
 
+const { expressjwt: jwt } = require("express-jwt"); // Corrected import
+const jwksRsa = require("jwks-rsa");
+
+// Middleware for JWT validation
+const checkJwt = jwt({
+  secret: jwksRsa.expressJwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+    jwksUri: `https://${process.env.REACT_APP_AUTH0_DOMAIN}/.well-known/jwks.json`,
+  }),
+  audience: process.env.REACT_APP_AUTH0_AUDIENCE,
+  issuer: `https://${process.env.REACT_APP_AUTH0_DOMAIN}/`,
+  algorithms: ["RS256"],
+});
+
+// Middleware to check user roles
+const checkRole = (role) => (req, res, next) => {
+  const roles = req.user["https://chuds.com/roles"];
+  if (roles && roles.includes(role)) {
+    next();
+  } else {
+    res.status(403).send("Forbidden");
+  }
+};
 
 app.use(express.json()); // for parsing application/json
 app.use(cors());
 
-app.use("/menu", menuRouter);
+// Protect routes with JWT middleware
+app.use("/menu", checkJwt, menuRouter);
 
-app.post("/menu", async (req, res) => {
+app.post("/menu", checkJwt, async (req, res) => {
   const { name, description, price, category, special } = req.body;
   try {
     const [id] = await knex("menu").insert({
@@ -27,25 +53,25 @@ app.post("/menu", async (req, res) => {
     res.status(500).send(error.message);
   }
 });
-app.get("/menu", async (req, res) => {
+
+app.get("/menu", checkJwt, async (req, res) => {
   try {
     const menuItems = await knex("menu").select("*");
     console.log("Menu items:", menuItems); // log the menu items
     res.status(200).json(menuItems);
   } catch (error) {
-      console.error("Error fetching menu items:", error); 
+    console.error("Error fetching menu items:", error);
     res.status(500).send(error.message);
   }
 });
 
-
 // Home route
-app.get('/', (req, res) => {
-  res.send('Welcome to the Food Ordering System!');
+app.get("/", (req, res) => {
+  res.send("Welcome to the Food Ordering System!");
 });
 
-// Add other routes as needed
-app.get("/api/admins", async (req, res) => {
+// Protect admin routes with JWT and role check middleware
+app.get("/api/admins", checkJwt, checkRole("admin"), async (req, res) => {
   const admins = await knex("admins").select("*");
   res.json(admins);
 });
