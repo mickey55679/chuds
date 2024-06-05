@@ -42,7 +42,7 @@ function Checkout({ cartItems, setCartItems, items }) {
     <>
     <div className="checkout">
       {order.map((item, index) => (
-        <div key={index} className="menu-item menu-items">
+        <div key={index} className="menu-item-checkout">
           <h2>{item.name}</h2>
           <img
             src={item.imgurl}
@@ -54,7 +54,7 @@ function Checkout({ cartItems, setCartItems, items }) {
           <p>Category: {item.category}</p>
           <p>Price: ${item.price.toFixed(2)}</p>
           <div className="desc">{item.desc}</div>
-          <div className="menu-item-controls">
+          <div className="menu-item-checkout-controls">
             <button
               className="update_order_subtract"
               onClick={() => handleQuantityChange(item.id, -1)}
