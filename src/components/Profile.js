@@ -5,9 +5,11 @@ const Profile = () => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
   const [userMetadata, setUserMetadata] = useState(null);
 
+ 
+
   useEffect(() => {
     const getUserMetadata = async () => {
-      const domain = "{yourDomain}";
+       const domain = "dev-sjcyluynguyreb2c.us.auth0.com";
 
       try {
         const accessToken = await getAccessTokenSilently({

@@ -11,7 +11,8 @@ const Admin = () => {
   return (
     <div>
       <h1>Admin Dashboard</h1>
-      <p>Welcome, {user.name}</p>
+      <p>Welcome, {user.name} {console.log(user.name)}</p>
+      
       <button onClick={() => logout({ returnTo: window.location.origin })}>
         Log out
       </button>

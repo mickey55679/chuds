@@ -22,9 +22,11 @@ const checkJwt = jwt({
   algorithms: ["RS256"],
 });
 
+
 // Middleware to check user roles
 const checkRole = (role) => (req, res, next) => {
   const roles = req.user["https://chuds.com/roles"];
+  console.log('Roles:', roles);  // Add this line
   if (roles && roles.includes(role)) {
     next();
   } else {
@@ -37,6 +39,12 @@ app.use(cors());
 
 // Protect routes with JWT middleware
 app.use("/menu", checkJwt, menuRouter);
+
+app.use((req, res, next) => {
+  console.log("User object:", req.user);
+  next();
+});
+
 
 app.post("/menu", checkJwt, async (req, res) => {
   const { name, description, price, category, special } = req.body;

@@ -43,8 +43,7 @@ const NavigationBar = ({
           <img src={logo} alt="Logo" className="logo" />
         </NavLink>
         <NavLink to="/checktoken" exact className={<CheckToken />}>
-          {" "}
-          CheckToken{" "}
+          CheckToken
         </NavLink>
       </div>
       <button className="navbar-toggler" type="button" onClick={handleToggle}>

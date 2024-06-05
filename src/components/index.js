@@ -15,7 +15,6 @@ export {
   Home,
   Menu,
   NavigationBar,
- 
   ReviewSlideshow,
   Checkout,
   Loading,
