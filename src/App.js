@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 import {
   ContactForm,
   Footer,
@@ -9,6 +15,8 @@ import {
   NavigationBar,
   Checkout,
 } from "./components/index";
+import Admin from "./components/Admin";
+import CheckToken from "./components/checkToken";
 
 function App() {
   const [activeLink, setActiveLink] = useState("");
@@ -16,8 +24,36 @@ function App() {
   const [cartItems, setCartItems] = useState({});
   const [items, setItems] = useState([]);
   const [totalItemsInCart, setTotalItemsInCart] = useState(0);
+  const [isLoading, setIsLoading] = useState(true); // Add isLoading state
+  const { user, isAuthenticated, getIdTokenClaims } = useAuth0();
 
-  // Calculate total items in cart whenever cartItems change
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        setIsLoading(true);
+        if (isAuthenticated && user) {
+          console.log("Email Verified:", user.email_verified);
+          console.log("User:", user);
+          const idTokenClaims = await getIdTokenClaims();
+          console.log("ID Token Claims:", idTokenClaims);
+          console.log(
+            "Roles Claim:",
+            idTokenClaims["https://chuds.com/roles"]
+          ); // Directly check the roles claim
+        } else {
+          console.log("User is not authenticated or user object is undefined");
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchUserData();
+  }, [getIdTokenClaims, isAuthenticated, user]);
+
+
   useEffect(() => {
     const totalItems = Object.values(cartItems).reduce(
       (acc, curr) => acc + curr,
@@ -27,16 +63,17 @@ function App() {
   }, [cartItems]);
 
   const handleClick = (path) => {
-    console.log("Navigating to:", path);
     setActiveLink(path);
     setIsOpen(false);
   };
+
   const handleToggle = () => {
-    setIsOpen(!isOpen); // This toggles the visibility of the menu
+    setIsOpen(!isOpen);
   };
+
   const removeFromCart = (title, id) => {
     const updatedCartItems = { ...cartItems };
-    delete updatedCartItems[id]; // Delete the item from the object by key
+    delete updatedCartItems[id];
     setCartItems(updatedCartItems);
   };
 
@@ -50,7 +87,11 @@ function App() {
             handleToggle={handleToggle}
             isOpen={isOpen}
             totalItemsInCart={totalItemsInCart}
+            isAuthenticated={isAuthenticated}
+            user={user}
+            isLoading={isLoading}
           />
+
           <Routes>
             <Route path="/" element={<Home handleClick={handleClick} />} />
             <Route
@@ -67,6 +108,20 @@ function App() {
                   items={items}
                   setCartItems={setCartItems}
                 />
+              }
+            />
+            <Route path="/checktoken" element={<CheckToken />} />
+
+            <Route
+              path="/admin"
+              element={
+                isAuthenticated &&
+                user &&
+                user["https://chuds.com/roles"]?.includes("admin") ? (
+                  <Admin />
+                ) : (
+                  <Navigate to="/" replace />
+                ) // Redirects to home if not authorized for the admin page
               }
             />
           </Routes>

@@ -45,7 +45,10 @@ app.get('/', (req, res) => {
 });
 
 // Add other routes as needed
-
+app.get("/api/admins", async (req, res) => {
+  const admins = await knex("admins").select("*");
+  res.json(admins);
+});
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

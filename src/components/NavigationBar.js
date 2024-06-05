@@ -1,9 +1,11 @@
+
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { logo } from "./images/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useAuth0 } from "@auth0/auth0-react";
+import CheckToken from "./checkToken";
 
 const AuthenticationButton = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
@@ -31,12 +33,18 @@ const NavigationBar = ({
   handleToggle,
   isOpen,
   totalItemsInCart,
+  isAuthenticated, // Add isAuthenticated prop
+  user,
 }) => {
   return (
     <nav className="navbar">
       <div className="logo">
         <NavLink to="/" exact>
           <img src={logo} alt="Logo" className="logo" />
+        </NavLink>
+        <NavLink to="/checktoken" exact className={<CheckToken />}>
+          {" "}
+          CheckToken{" "}
         </NavLink>
       </div>
       <button className="navbar-toggler" type="button" onClick={handleToggle}>
@@ -73,6 +81,26 @@ const NavigationBar = ({
             Contact
           </NavLink>
         </li>
+        {isAuthenticated && (
+          <li className="nav-item">
+            <NavLink
+              to="/admin"
+              exact
+              className={activeLink === "/admin" ? "active-link" : ""}
+              onClick={() => handleClick("/admin")}
+            >
+              Admin
+            </NavLink>
+          </li>
+        )}
+        <div>
+          <p>Authenticated: {`${isAuthenticated}`}</p>
+          <p>
+            Admin Role Present:
+            {`${user && user["https://chuds.com/roles"]?.includes("admin")}`}
+          </p>
+        </div>
+
         <li className="nav-item">
           <AuthenticationButton />
         </li>
@@ -91,5 +119,6 @@ const NavigationBar = ({
     </nav>
   );
 };
+
 
 export default NavigationBar;
