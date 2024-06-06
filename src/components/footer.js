@@ -11,13 +11,13 @@ const Footer = () => {
         style={{ display: "flex", justifyContent: "space-around" }}
       >
         <div>
-          <a href="mailto:chudspubandgrub@gmail.com">
+          {/* <a href="mailto:chudspubandgrub@gmail.com">
             chudspubandgrub@gmail.com
-          </a>
+          </a> */}
         </div>
 
-        <div>Hours:</div>
-        <div>Location: </div>
+        {/* <div>Hours:</div>
+        <div>Location: </div> */}
       </div>
       <div className="social-media">
         <a
@@ -27,7 +27,6 @@ const Footer = () => {
         >
           <FontAwesomeIcon icon={faFacebook} size="2x" />
         </a>
-        {/* Add phone icon inside an anchor tag with a tel: scheme */}
         <a
           href="tel:+17124772469" // Format the phone number for use in a link
           className="phone-icon" // Optional, for styling

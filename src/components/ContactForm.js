@@ -105,7 +105,7 @@ const ContactForm = () => {
         {/* Display form message */}
         {formMessage && <p>{formMessage}</p>}
       </form>
-      <ReviewSlideshow />
+      {/* <ReviewSlideshow /> */}
     </div>
   );
 };

@@ -92,13 +92,13 @@ const NavigationBar = ({
             </NavLink>
           </li>
         )}
-        <div>
+        {/* <div>
           <p>Authenticated: {`${isAuthenticated}`}</p>
           <p>
             Admin Role Present:
             {`${user && user["https://chuds.com/roles"]?.includes("admin")}`}
           </p>
-        </div>
+        </div> */}
 
         <li className="nav-item">
           <AuthenticationButton />
