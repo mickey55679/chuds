@@ -6,6 +6,19 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons"; // Import the phone
 const Footer = () => {
   return (
     <footer className="footer">
+      <div
+        className="info-footer"
+        style={{ display: "flex", justifyContent: "space-around" }}
+      >
+        <div>
+          <a href="mailto:chudspubandgrub@gmail.com">
+            chudspubandgrub@gmail.com
+          </a>
+        </div>
+
+        <div>Hours:</div>
+        <div>Location: </div>
+      </div>
       <div className="social-media">
         <a
           href="https://www.facebook.com/people/CHUDS-Pub-and-Grub/100084154931963/"
