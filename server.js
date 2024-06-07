@@ -3,8 +3,8 @@ const app = express();
 const port = 3000;
 const cors = require("cors");
 const menuRouter = require("./backend/routes/menuRouter");
-const knex = require("knex")(knexConfig);
 const knexConfig = require("./knexfile").development;
+const knex = require("knex")(knexConfig);
 
 const { expressjwt: jwt } = require("express-jwt"); // Corrected import
 const jwksRsa = require("jwks-rsa");
