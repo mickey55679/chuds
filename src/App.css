@@ -410,10 +410,13 @@ img.avatar {
     margin: auto; /* Centering the form horizontally */
   }
 }
-
-/* Ensure menu items are full width on smaller screens */
+ 
 .menu-items {
   width: 100%; /* Full width to use available space */
+  transition: transform 0.3s ease; 
+}
+.menu-items:hover{
+    transform: scale(1.05);
 }
 
 h1 {
