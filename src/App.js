@@ -16,7 +16,7 @@ import {
   Checkout,
 } from "./components/index";
 import Admin from "./components/Admin";
-import CheckToken from "./components/checkToken";
+
 
 function App() {
   const [activeLink, setActiveLink] = useState("");
@@ -25,33 +25,48 @@ function App() {
   const [items, setItems] = useState([]);
   const [totalItemsInCart, setTotalItemsInCart] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [roles, setRoles] = useState([]);
-  const { user, isAuthenticated, getIdTokenClaims } = useAuth0();
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        setIsLoading(true);
-        if (isAuthenticated && user) {
-          console.log("Email Verified:", user.email_verified);
-          console.log("User:", user);
+  const { user, isAuthenticated, getIdTokenClaims } = useAuth0();
+useEffect(() => {
+  const fetchUserData = async () => {
+    try {
+      setIsLoading(true);
+      if (isAuthenticated && user) {
+        console.log("Email Verified:", user.email_verified);
+        console.log("User:", user);
+        // Check if the user email is the one designated as admin
+        if (user.email === "bosmickey67@gmail.com") {
+          setIsAdmin(true);
+        } else {
           const idTokenClaims = await getIdTokenClaims();
           console.log("ID Token Claims:", idTokenClaims);
-          const rolesClaim = idTokenClaims["https://chuds.com/roles"];
+          const rolesClaim = idTokenClaims["https://chuds.com/roles"] || [];
           console.log("Roles Claim:", rolesClaim);
-          setRoles(rolesClaim || []);
-        } else {
-          console.log("User is not authenticated or user object is undefined");
+          setRoles(rolesClaim);
+          // Set isAdmin based on roles claim
+          if (rolesClaim.includes("admin")) {
+            setIsAdmin(true);
+          } else {
+            setIsAdmin(false);
+          }
         }
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-      } finally {
-        setIsLoading(false);
+      } else {
+        console.log("User is not authenticated or user object is undefined");
+        setIsAdmin(false);
       }
-    };
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+      setIsAdmin(false);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-    fetchUserData();
-  }, [getIdTokenClaims, isAuthenticated, user]);
+  fetchUserData();
+}, [getIdTokenClaims, isAuthenticated, user]);
+
 
   useEffect(() => {
     const totalItems = Object.values(cartItems).reduce(
@@ -89,6 +104,7 @@ function App() {
             isAuthenticated={isAuthenticated}
             user={user}
             isLoading={isLoading}
+            isAdmin={isAdmin}
           />
 
           <Routes>
@@ -109,12 +125,12 @@ function App() {
                 />
               }
             />
-            <Route path="/checktoken" element={<CheckToken />} />
+       
 
             <Route
               path="/admin"
               element={
-                isAuthenticated && roles.includes("admin") ? (
+                isAuthenticated && isAdmin ? (
                   <Admin />
                 ) : (
                   <Navigate to="/" replace />
