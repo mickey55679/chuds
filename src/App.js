@@ -24,7 +24,8 @@ function App() {
   const [cartItems, setCartItems] = useState({});
   const [items, setItems] = useState([]);
   const [totalItemsInCart, setTotalItemsInCart] = useState(0);
-  const [isLoading, setIsLoading] = useState(true); // Add isLoading state
+  const [isLoading, setIsLoading] = useState(true);
+  const [roles, setRoles] = useState([]);
   const { user, isAuthenticated, getIdTokenClaims } = useAuth0();
 
   useEffect(() => {
@@ -36,10 +37,9 @@ function App() {
           console.log("User:", user);
           const idTokenClaims = await getIdTokenClaims();
           console.log("ID Token Claims:", idTokenClaims);
-          console.log(
-            "Roles Claim:",
-            idTokenClaims["https://chuds.com/roles"]
-          ); // Directly check the roles claim
+          const rolesClaim = idTokenClaims["https://chuds.com/roles"];
+          console.log("Roles Claim:", rolesClaim);
+          setRoles(rolesClaim || []);
         } else {
           console.log("User is not authenticated or user object is undefined");
         }
@@ -52,7 +52,6 @@ function App() {
 
     fetchUserData();
   }, [getIdTokenClaims, isAuthenticated, user]);
-
 
   useEffect(() => {
     const totalItems = Object.values(cartItems).reduce(
@@ -115,13 +114,11 @@ function App() {
             <Route
               path="/admin"
               element={
-                isAuthenticated &&
-                user &&
-                user["https://chuds.com/roles"]?.includes("admin") ? (
+                isAuthenticated && roles.includes("admin") ? (
                   <Admin />
                 ) : (
                   <Navigate to="/" replace />
-                ) // Redirects to home if not authorized for the admin page
+                )
               }
             />
           </Routes>

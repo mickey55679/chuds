@@ -1,4 +1,3 @@
-
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { logo } from "./images/index";
@@ -33,7 +32,7 @@ const NavigationBar = ({
   handleToggle,
   isOpen,
   totalItemsInCart,
-  isAuthenticated, // Add isAuthenticated prop
+  isAuthenticated,
   user,
 }) => {
   return (
@@ -92,14 +91,6 @@ const NavigationBar = ({
             </NavLink>
           </li>
         )}
-        {/* <div>
-          <p>Authenticated: {`${isAuthenticated}`}</p>
-          <p>
-            Admin Role Present:
-            {`${user && user["https://chuds.com/roles"]?.includes("admin")}`}
-          </p>
-        </div> */}
-
         <li className="nav-item">
           <AuthenticationButton />
         </li>
@@ -118,6 +109,5 @@ const NavigationBar = ({
     </nav>
   );
 };
-
 
 export default NavigationBar;
