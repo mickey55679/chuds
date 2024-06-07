@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const knexConfig = require("./knexfile").development;
-const knex = require("knex")(knexConfig);
 const cors = require("cors");
 const menuRouter = require("./backend/routes/menuRouter");
+const knex = require("knex")(knexConfig);
+const knexConfig = require("./knexfile").development;
 
 const { expressjwt: jwt } = require("express-jwt"); // Corrected import
 const jwksRsa = require("jwks-rsa");
@@ -30,7 +30,7 @@ const checkRole = (role) => (req, res, next) => {
   if (roles && roles.includes(role)) {
     next();
   } else {
-    res.status(403).send("Forbidden");
+    res.status(403).send("Access denied");
   }
 };
 
@@ -39,6 +39,7 @@ app.use(cors());
 
 // Protect routes with JWT middleware
 app.use("/menu", menuRouter);
+app.use("/menu/admin", checkJwt, checkRole('admin'), menuRouter);  // Admin specific routes
 
 app.use((req, res, next) => {
   console.log("User object:", req.user);
