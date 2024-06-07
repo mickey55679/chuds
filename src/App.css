@@ -58,7 +58,6 @@ html {
 
 .nav-item a.active-link {
   color: var(--color-purple);
-  /* font-weight: bold; */
 }
 /* Chuds logo img */
 .logo img {
@@ -323,18 +322,19 @@ html {
   margin-bottom: 20px;
 }
 
-.label {
+.label-name {
   display: block;
-  margin-bottom: 5px; /* Space below label */
+  margin-bottom: 5px; 
 }
 
 .input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-grey);
   border-radius: 5px;
   font-size: 16px;
 }
+
 
 .textarea {
   height: 150px; /* Fixed height for textareas */
@@ -347,7 +347,7 @@ input[type="password"] {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-grey);
   box-sizing: border-box;
 }
 

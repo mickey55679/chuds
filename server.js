@@ -6,10 +6,9 @@ const menuRouter = require("./backend/routes/menuRouter");
 const knexConfig = require("./knexfile").development;
 const knex = require("knex")(knexConfig);
 
-const { expressjwt: jwt } = require("express-jwt"); // Corrected import
+const { expressjwt: jwt } = require("express-jwt"); 
 const jwksRsa = require("jwks-rsa");
 
-// Middleware for JWT validation
 const checkJwt = jwt({
   secret: jwksRsa.expressJwtSecret({
     cache: true,
@@ -26,7 +25,7 @@ const checkJwt = jwt({
 // Middleware to check user roles
 const checkRole = (role) => (req, res, next) => {
   const roles = req.user["https://chuds.com/roles"];
-  console.log('Roles:', roles);  // Add this line
+  console.log('Roles:', roles); 
   if (roles && roles.includes(role)) {
     next();
   } else {

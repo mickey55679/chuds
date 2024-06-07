@@ -48,14 +48,11 @@ const ContactForm = () => {
         return response.json();
       })
       .then((data) => {
-        // Set form message from server response
         setFormMessage(data.message);
         console.log(data);
-        // Reset form fields
         setFormData({ name: "", email: "", message: "" });
       })
       .catch((error) => {
-        // Handle errors
         console.error("Error:", error);
         setFormMessage("Something went wrong. Please try again later.");
       })
@@ -64,10 +61,9 @@ const ContactForm = () => {
 
   return (
     <div>
-      {/* Contact form */}
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">
-          <label className="label">Name:</label>
+          <label className="label-name">Name:</label>
           <input
             type="text"
             name="name"
