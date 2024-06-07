@@ -1,31 +1,26 @@
 import React, { useState } from "react";
-import ReviewSlideshow from "./ ReviewSlideshow"; // Import the ReviewSlideshow component
 
 const ContactForm = () => {
-  // State for form data
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  // State for loading status
   const [isLoading, setIsLoading] = useState(false);
-
-  // State for form submission message
   const [formMessage, setFormMessage] = useState("");
 
-  // Handle input changes
+
   const handleChange = (e) => {
-    // Update formData state with new input values
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
+ 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    setIsLoading(true); // Set loading state to true
-    setFormMessage(""); // Clear previous form message
+    e.preventDefault(); 
+    setIsLoading(true); 
+    setFormMessage(""); 
 
     // Send POST request to the backend
     fetch(process.env.REACT_APP_BACKEND_URL, {
