@@ -3,7 +3,6 @@ const knex = require("knex")(knexConfig.development);
 
 module.exports = {
   createMenuItem: async (item) => {
-    // Determine the table name based on the category
     const tableName = getTableName(item.category);
     const [id] = await knex(tableName).insert(item);
     return id;
