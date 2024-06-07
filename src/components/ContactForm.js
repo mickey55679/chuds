@@ -35,11 +35,9 @@ const ContactForm = () => {
       }),
     })
       .then((response) => {
-        // Check if response is ok (status code 2xx)
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        // Parse JSON response
         return response.json();
       })
       .then((data) => {
@@ -51,7 +49,7 @@ const ContactForm = () => {
         console.error("Error:", error);
         setFormMessage("Something went wrong. Please try again later.");
       })
-      .finally(() => setIsLoading(false)); // Reset loading state whether fetch succeeded or failed
+      .finally(() => setIsLoading(false)); 
   };
 
   return (
@@ -89,14 +87,14 @@ const ContactForm = () => {
             required
           />
         </div>
-        {/* Submit button, disabled when loading */}
+ 
         <button type="submit" className="button-27" disabled={isLoading}>
           {isLoading ? "Sending..." : "Submit"}
         </button>
-        {/* Display form message */}
+    
         {formMessage && <p>{formMessage}</p>}
       </form>
-      {/* <ReviewSlideshow /> */}
+
     </div>
   );
 };
