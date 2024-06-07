@@ -680,10 +680,10 @@ span.psw {
 .menu-highlights-item {
   flex: 1 1 calc(25% - 40px);
   display: flex;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border: 1px solid var(--color-grey);
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 20px;
