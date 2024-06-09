@@ -5,6 +5,8 @@ const cors = require("cors");
 const menuRouter = require("./backend/routes/menuRouter");
 const knexConfig = require("./knexfile").development;
 const knex = require("knex")(knexConfig);
+require("dotenv").config();
+const menuModel = require('./backend/routes/menuModel')
 
 const app = express();
 const port = 3000;
@@ -12,7 +14,7 @@ const port = 3000;
 app.use(express.json());
 app.use(cors());
 
-const secretKey = "your-secret-key"; // Use an environment variable in production
+const secretKey = process.env.JWT_SECRET_KEY; 
 
 // User registration
 app.post("/register", async (req, res) => {
@@ -125,7 +127,7 @@ app.get("/menu", async (req, res) => {
 app.post("/menu", authenticateAdmin, async (req, res) => {
   const { name, price, imgurl, category } = req.body;
   try {
-    const tableName = getTableName(category);
+    const tableName = menuModel(category);
     const [id] = await knex(tableName).insert({
       name,
       price,
@@ -150,18 +152,3 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
-// Helper function to get table name based on category
-function getTableName(category) {
-  switch (category) {
-    case "Build your own burger":
-      return "burgers";
-    case "Sandwiches":
-      return "sandwiches";
-    case "Sides":
-      return "sides";
-    case "Drink Items":
-      return "drinks";
-    default:
-      throw new Error(`Unknown category: ${category}`);
-  }
-}
