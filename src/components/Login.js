@@ -1,42 +1,38 @@
+// src/components/Login.js
 import React, { useState } from "react";
-import axios from "axios";
+import { useAuth } from "../auth/AuthContext";
 
-function Login() {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { login } = useAuth();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/login", {
-        email,
-        password,
-      });
-      localStorage.setItem("token", response.data.token);
-      alert("Login successful");
+      await login(email, password);
     } catch (error) {
-      alert("Login failed");
+      alert("Failed to log in");
     }
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <h2>Login</h2>
+    <form onSubmit={handleSubmit}>
       <input
         type="email"
-        placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        required
       />
       <input
         type="password"
-        placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        required
       />
-      <button type="submit">Login</button>
+      <button type="submit">Log In</button>
     </form>
   );
-}
+};
 
 export default Login;

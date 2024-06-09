@@ -11,19 +11,24 @@ const Menu = ({ setCartItems, setItems }) => {
 
   const [orderItems, setOrderItems] = useState({});
 
-  useEffect(() => {
-    // Fetch the data from the server
-    fetch("http://localhost:3000/menu")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Fetched menu items:", data);
-        setMenuItems(data);
-        setItems(data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }, []);
+ useEffect(() => {
+   fetch("http://localhost:3000/menu")
+     .then((response) => response.json())
+     .then((data) => {
+       console.log("Fetched menu items:", data);
+       setMenuItems({
+         burgers: data.burgerItems,
+         sandwiches: data.sandwichItems,
+         drinks: data.drinkItems,
+         sides: data.sideItems,
+       });
+       setItems(data);
+     })
+     .catch((error) => {
+       console.error("Error:", error);
+     });
+ }, []);
+
 
   const updateOrder = (id, operation) => {
     let updatedOrder = { ...orderItems };
