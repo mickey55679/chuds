@@ -1,32 +1,50 @@
 
 const menuModel = require("./menuModel");
+const knexConfig = require("../../knexfile");
+const knex = require("knex")(knexConfig.development);
 
 module.exports = {
-  // createMenuItem is an asynchronous function that adds a new menu item to the database.
-  createMenuItem: async (req, res) => {
-    const { name, description, price, category, special } = req.body;
-
-    try {
-      const id = await menuModel.createMenuItem({
-        name,
-        description,
-        price,
-        category,
-        special,
-      });
-      res.status(201).send(`Menu item created with ID: ${id}`);
-    } catch (error) {
-      res.status(500).send(error.message);
-    }
+  createMenuItem: async (item) => {
+    const tableName = getTableName(item.category);
+    const [id] = await knex(tableName).insert(item);
+    return id;
+  },
+  getAllMenuItems: async () => {
+    const burgerItems = await knex("burgers").select("*");
+    const sandwichItems = await knex("sandwiches").select("*");
+    const sideItems = await knex("sides").select("*");
+    const drinkItems = await knex("drinks").select("*");
+    return {
+      burgerItems,
+      sandwichItems,
+      sideItems,
+      drinkItems,
+    };
   },
 
-  getAllMenuItems: async (req, res) => {
-    try {
-      const menuItems = await menuModel.getAllMenuItems();
-      res.status(200).json(menuItems);
-    } catch (error) {
-      console.error("Error fetching menu items:", error);
-      res.status(500).send(error.message);
-    }
+  updateMenuItem: async (itemId, updatedFields) => {
+    const { category } = updatedFields;
+    const tableName = getTableName(category);
+    await knex(tableName).where({ id: itemId }).update(updatedFields);
+  },
+   deleteMenuItem: async (itemId, category) => {
+    const tableName = getTableName(category);
+    await knex(tableName).where({ id: itemId }).del();
   },
 };
+
+  function getTableName(category) {
+  switch (category) {
+    case "Build your own burger":
+      return "burgers";
+    case "Sandwiches":
+      return "sandwiches";
+    case "Sides":
+      return "sides";
+    case "Drink Items":
+      return "drinks";
+    default:
+      throw new Error(`Unknown category: ${category}`);
+  }
+}
+

@@ -13,8 +13,10 @@ import {
   Home,
   NavigationBar,
   Checkout,
+  Login,
+  Register,
+  Admin
 } from "./components/index";
-import Admin from './components/Admin'
 import { useAuth } from "./auth/AuthContext";
 
 function App() {
@@ -82,13 +84,18 @@ return (
             user={auth.user}
             isAdmin={isAdmin}
           />
-          <Routes>
-            <Route path="/" element={<Home handleClick={handleClick} />} />
-            <Route path="/menu" element={<Menu setCartItems={setCartItems} setItems={setItems} />} />
-            <Route path="/contact" element={<ContactForm />} />
-            <Route path="/checkout" element={<Checkout cartItems={cartItems} removeFromCart={removeFromCart} items={items} setCartItems={setCartItems} />} />
-            <Route path="/admin" element={auth.user && isAdmin ? <Admin /> : <Navigate to="/" replace />} />
-          </Routes>
+     
+ <Routes>
+  <Route path="/" element={<Home handleClick={handleClick} />} />
+  <Route path="/menu" element={<Menu setCartItems={setCartItems} setItems={setItems} />} />
+  <Route path="/contact" element={<ContactForm />} />
+  <Route path="/checkout" element={<Checkout cartItems={cartItems} removeFromCart={removeFromCart} items={items} setCartItems={setCartItems} />} />
+  <Route path="/admin" element={auth.user && isAdmin ? <Admin /> : <Navigate to="/" replace />} />
+  <Route path="/login" element={<Login />} />
+  <Route path="/register" element={<Register />} />
+</Routes>
+
+
         </Router>
       )}
       <Footer />

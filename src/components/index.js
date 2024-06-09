@@ -8,6 +8,9 @@ import ReviewSlideshow from "./ ReviewSlideshow";
 import Checkout from "./Checkout";
 import Loading from "./Loading";
 import MenuHighlights from "./MenuHighlights";
+import Login from './Login'
+import Register from './Register'
+import Admin from "./Admin";
 
 export {
   ContactForm,
@@ -18,5 +21,9 @@ export {
   ReviewSlideshow,
   Checkout,
   Loading,
-  MenuHighlights
+  MenuHighlights,
+  Login,
+  Register,
+  Admin
+
 };

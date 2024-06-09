@@ -41,7 +41,6 @@ const NavigationBar = ({
         <NavLink to="/" exact>
           <img src={logo} alt="Logo" className="logo" />
         </NavLink>
-    
       </div>
       <button className="navbar-toggler" type="button" onClick={handleToggle}>
         <FontAwesomeIcon icon={faBars} />
@@ -89,9 +88,35 @@ const NavigationBar = ({
             </NavLink>
           </li>
         )}
-        <li className="nav-item">
-          <AuthenticationButton />
-        </li>
+        {!isAuthenticated && (
+          <li className="nav-item">
+            <NavLink
+              to="/login"
+              exact
+              className={activeLink === "/login" ? "active-link" : ""}
+              onClick={() => handleClick("/login")}
+            >
+              Login
+            </NavLink>
+          </li>
+        )}
+        {!isAuthenticated && (
+          <li className="nav-item">
+            <NavLink
+              to="/register"
+              exact
+              className={activeLink === "/register" ? "active-link" : ""}
+              onClick={() => handleClick("/register")}
+            >
+              Register
+            </NavLink>
+          </li>
+        )}
+        {isAuthenticated && (
+          <li className="nav-item">
+            <AuthenticationButton />
+          </li>
+        )}
         <li className="nav-item">
           <NavLink to="/checkout" className="cart-icon-link">
             <FontAwesomeIcon
@@ -107,5 +132,6 @@ const NavigationBar = ({
     </nav>
   );
 };
+
 
 export default NavigationBar;
