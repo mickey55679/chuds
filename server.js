@@ -1,74 +1,139 @@
 const express = require("express");
-const app = express();
-const port = 3000;
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const cors = require("cors");
 const menuRouter = require("./backend/routes/menuRouter");
 const knexConfig = require("./knexfile").development;
 const knex = require("knex")(knexConfig);
 
-const { expressjwt: jwt } = require("express-jwt"); 
-const jwksRsa = require("jwks-rsa");
+const app = express();
+const port = 3000;
 
-const checkJwt = jwt({
-  secret: jwksRsa.expressJwtSecret({
-    cache: true,
-    rateLimit: true,
-    jwksRequestsPerMinute: 5,
-    jwksUri: `https://${process.env.REACT_APP_AUTH0_DOMAIN}/.well-known/jwks.json`,
-  }),
-  audience: process.env.REACT_APP_AUTH0_AUDIENCE,
-  issuer: `https://${process.env.REACT_APP_AUTH0_DOMAIN}/`,
-  algorithms: ["RS256"],
-});
-
-
-// Middleware to check user roles
-const checkRole = (role) => (req, res, next) => {
-  const roles = req.user["https://chuds.com/roles"];
-  console.log('Roles:', roles); 
-  if (roles && roles.includes(role)) {
-    next();
-  } else {
-    res.status(403).send("Access denied");
-  }
-};
-
-app.use(express.json()); // for parsing application/json
+app.use(express.json());
 app.use(cors());
 
-// Protect routes with JWT middleware
-app.use("/menu", menuRouter);
-app.use("/menu/admin", checkJwt, checkRole('admin'), menuRouter);  // Admin specific routes
+const secretKey = "your-secret-key"; // Use an environment variable in production
 
-app.use((req, res, next) => {
-  console.log("User object:", req.user);
-  next();
-});
-
-
-app.post("/menu",  async (req, res) => {
-  const { name, description, price, category, special } = req.body;
+// User registration
+app.post("/register", async (req, res) => {
+  const { email, password } = req.body;
+  const hashedPassword = await bcrypt.hash(password, 10);
   try {
-    const [id] = await knex("menu").insert({
-      name,
-      description,
-      price,
-      category,
-      special,
-    });
-    res.status(201).send(`Menu item created with ID: ${id}`);
+    await knex("users").insert({ email, password: hashedPassword });
+    res.status(201).send("User registered");
   } catch (error) {
     res.status(500).send(error.message);
   }
 });
 
+// User login
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await knex("users").where({ email }).first();
+    if (!user || !(await bcrypt.compare(password, user.password))) {
+      return res.status(401).send("Invalid credentials");
+    }
+    const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: "1h" });
+    res.json({ token });
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+// Admin registration
+app.post("/register-admin", async (req, res) => {
+  const { email, password } = req.body;
+  const hashedPassword = await bcrypt.hash(password, 10);
+  try {
+    await knex("admins").insert({ email, password: hashedPassword });
+    res.status(201).send("Admin registered");
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+// Admin login
+app.post("/login-admin", async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const admin = await knex("admins").where({ email }).first();
+    if (!admin || !(await bcrypt.compare(password, admin.password))) {
+      return res.status(401).send("Invalid credentials");
+    }
+    const token = jwt.sign({ adminId: admin.id, role: "admin" }, secretKey, {
+      expiresIn: "1h",
+    });
+    res.json({ token });
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+// Middleware to authenticate token
+const authenticateToken = (req, res, next) => {
+  const token = req.headers["authorization"];
+  if (!token) return res.status(401).send("Access denied");
+
+  jwt.verify(token.split(" ")[1], secretKey, (err, user) => {
+    if (err) return res.status(403).send("Invalid token");
+    req.user = user;
+    next();
+  });
+};
+
+// Middleware to authenticate admin
+const authenticateAdmin = (req, res, next) => {
+  const token = req.headers["authorization"];
+  if (!token) return res.status(401).send("Access denied");
+
+  jwt.verify(token.split(" ")[1], secretKey, (err, admin) => {
+    if (err || admin.role !== "admin")
+      return res.status(403).send("Invalid token or access denied");
+    req.user = admin;
+    next();
+  });
+};
+
+
+// Public route to view menu
 app.get("/menu", async (req, res) => {
   try {
-    const menuItems = await knex("menu").select("*");
-    console.log("Menu items:", menuItems); // log the menu items
+    const burgerItems = await knex("burgers").select("*");
+    const sandwichItems = await knex("sandwiches").select("*");
+    const sideItems = await knex("sides").select("*");
+    const drinkItems = await knex("drinks").select("*");
+
+    const menuItems = {
+      burgerItems,
+      sandwichItems,
+      sideItems,
+      drinkItems,
+    };
+
     res.status(200).json(menuItems);
   } catch (error) {
-    console.error("Error fetching menu items:", error);
+    console.error("Error fetching menu items:", error.message);
+    res
+      .status(500)
+      .json({ error: `Error fetching menu items: ${error.message}` });
+  }
+});
+
+
+// Protected routes for admins to modify the menu
+app.post("/menu", authenticateAdmin, async (req, res) => {
+  const { name, price, imgurl, category } = req.body;
+  try {
+    const tableName = getTableName(category);
+    const [id] = await knex(tableName).insert({
+      name,
+      price,
+      imgurl,
+      category,
+    });
+    res.status(201).send(`Menu item created with ID: ${id}`);
+  } catch (error) {
     res.status(500).send(error.message);
   }
 });
@@ -78,12 +143,25 @@ app.get("/", (req, res) => {
   res.send("Welcome to the Food Ordering System!");
 });
 
-// Protect admin routes with JWT and role check middleware
-app.get("/api/admins", checkJwt, checkRole("admin"), async (req, res) => {
-  const admins = await knex("admins").select("*");
-  res.json(admins);
-});
+// Admin specific routes
+app.use("/menu/admin", authenticateAdmin, menuRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+// Helper function to get table name based on category
+function getTableName(category) {
+  switch (category) {
+    case "Build your own burger":
+      return "burgers";
+    case "Sandwiches":
+      return "sandwiches";
+    case "Sides":
+      return "sides";
+    case "Drink Items":
+      return "drinks";
+    default:
+      throw new Error(`Unknown category: ${category}`);
+  }
+}

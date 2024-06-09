@@ -2,7 +2,13 @@ import React, { useEffect, useState } from "react";
 import MenuCategory from "./MenuCategory";
 
 const Menu = ({ setCartItems, setItems }) => {
-  const [menuItems, setMenuItems] = useState({});
+ const [menuItems, setMenuItems] = useState({
+   burgers: [],
+   sandwiches: [],
+   drinks: [],
+   sides: [],
+ });
+
   const [orderItems, setOrderItems] = useState({});
 
   useEffect(() => {
@@ -10,14 +16,14 @@ const Menu = ({ setCartItems, setItems }) => {
     fetch("http://localhost:3000/menu")
       .then((response) => response.json())
       .then((data) => {
-        console.log("Fetched menu items:", data); // Add this line to log fetched data
+        console.log("Fetched menu items:", data);
         setMenuItems(data);
         setItems(data);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
-  }, []); // Empty dependency array ensures this runs only once on component mount
+  }, []);
 
   const updateOrder = (id, operation) => {
     let updatedOrder = { ...orderItems };
@@ -27,23 +33,29 @@ const Menu = ({ setCartItems, setItems }) => {
       updatedOrder[id] = Math.max((updatedOrder[id] || 0) - 1, 0);
     }
     setOrderItems(updatedOrder);
-    setCartItems(updatedOrder);
+    setCartItems(
+      Object.entries(updatedOrder).reduce((acc, [key, value]) => {
+        if (value > 0) acc[key] = value;
+        return acc;
+      }, {})
+    );
   };
 
-  const categories = [
-    { title: "Build your own burger", items: menuItems.burgerItems },
-    { title: "Sandwiches", items: menuItems.sandwichItems },
-    { title: "Drink Items", items: menuItems.drinkItems },
-    { title: "Sides", items: menuItems.sideItems },
-  ];
+const categories = [
+  { title: "Build your own burger", items: menuItems.burgers },
+  { title: "Sandwiches", items: menuItems.sandwiches },
+  { title: "Drink Items", items: menuItems.drinks },
+  { title: "Sides", items: menuItems.sides },
+];
+
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      {categories.map((category, index) => (
+      {categories.map((category) => (
         <MenuCategory
-          key={index}
+          key={category.title}
           title={category.title}
-          items={category.items || []}
+          items={category.items}
           updateOrder={updateOrder}
           orderItems={orderItems}
         />
