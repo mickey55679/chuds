@@ -10,14 +10,7 @@ const Footer = () => {
         className="info-footer"
         style={{ display: "flex", justifyContent: "space-around" }}
       >
-        <div>
-          {/* <a href="mailto:chudspubandgrub@gmail.com">
-            chudspubandgrub@gmail.com
-          </a> */}
-        </div>
 
-        {/* <div>Hours:</div>
-        <div>Location: </div> */}
       </div>
       <div className="social-media">
         <a

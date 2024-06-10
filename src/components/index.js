@@ -25,5 +25,4 @@ export {
   Login,
   Register,
   Admin
-
 };
