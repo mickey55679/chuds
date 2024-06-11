@@ -1,5 +1,5 @@
 import ContactForm from "./ContactForm";
-import Footer from "./Footer";
+import Footer from "./footer";
 import Home from "./home";
 import Menu from "./menu";
 import NavigationBar from "./NavigationBar";
