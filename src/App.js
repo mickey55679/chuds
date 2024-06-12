@@ -15,9 +15,8 @@ import {
   Checkout,
   Login,
   Register,
-  Admin
+  Admin,
 } from "./components/index";
-import { useAuth } from "./auth/AuthContext";
 
 function App() {
   const [activeLink, setActiveLink] = useState("");
@@ -25,16 +24,18 @@ function App() {
   const [cartItems, setCartItems] = useState({});
   const [items, setItems] = useState([]);
   const [totalItemsInCart, setTotalItemsInCart] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
-  const { auth } = useAuth();
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Initially false
+  const [isAdmin, setIsAdmin] = useState(false); // Initially false
 
+  // Simulated authentication state
+  const isAuthenticated = true; // Set to true to simulate logged-in state
 
   useEffect(() => {
     const checkAdminRights = () => {
       setIsLoading(true);
-      if (auth.user) {
-        setIsAdmin(auth.user.role === "admin");
+      // Simulated check based on logged-in state
+      if (isAuthenticated) {
+        setIsAdmin(true); // Simulated admin rights
       } else {
         setIsAdmin(false);
       }
@@ -42,7 +43,7 @@ function App() {
     };
 
     checkAdminRights();
-  }, [auth]);
+  }, [isAuthenticated]);
 
   useEffect(() => {
     const totalItems = Object.values(cartItems).reduce(
@@ -67,42 +68,62 @@ function App() {
     setCartItems(updatedCartItems);
   };
 
-return (
-  <div className="App">
-    <header className="App-header">
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : (
-        <Router>
-          <NavigationBar
-            activeLink={activeLink}
-            handleClick={handleClick}
-            handleToggle={handleToggle}
-            isOpen={isOpen}
-            totalItemsInCart={totalItemsInCart}
-            isAuthenticated={!!auth.user}
-            user={auth.user}
-            isAdmin={isAdmin}
-          />
-     
- <Routes>
-  <Route path="/" element={<Home handleClick={handleClick} />} />
-  <Route path="/menu" element={<Menu setCartItems={setCartItems} setItems={setItems} />} />
-  <Route path="/contact" element={<ContactForm />} />
-  <Route path="/checkout" element={<Checkout cartItems={cartItems} removeFromCart={removeFromCart} items={items} setCartItems={setCartItems} />} />
-  <Route path="/admin" element={auth.user && isAdmin ? <Admin /> : <Navigate to="/" replace />} />
-  <Route path="/login" element={<Login />} />
-  <Route path="/register" element={<Register />} />
-</Routes>
+  return (
+    <div className="App">
+      <header className="App-header">
+        {isLoading ? (
+          <div>Loading...</div>
+        ) : (
+          <Router>
+            <NavigationBar
+              activeLink={activeLink}
+              handleClick={handleClick}
+              handleToggle={handleToggle}
+              isOpen={isOpen}
+              totalItemsInCart={totalItemsInCart}
+              isAuthenticated={isAuthenticated}
+              isAdmin={isAdmin}
+            />
 
-
-        </Router>
-      )}
-      <Footer />
-    </header>
-  </div>
-);
-
+            <Routes>
+              <Route path="/" element={<Home handleClick={handleClick} />} />
+              <Route
+                path="/menu"
+                element={
+                  <Menu setCartItems={setCartItems} setItems={setItems} />
+                }
+              />
+              <Route path="/contact" element={<ContactForm />} />
+              <Route
+                path="/checkout"
+                element={
+                  <Checkout
+                    cartItems={cartItems}
+                    removeFromCart={removeFromCart}
+                    items={items}
+                    setCartItems={setCartItems}
+                  />
+                }
+              />
+              <Route
+                path="/admin"
+                element={
+                  isAuthenticated && isAdmin ? (
+                    <Admin />
+                  ) : (
+                    <Navigate to="/" replace />
+                  )
+                }
+              />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Routes>
+          </Router>
+        )}
+        <Footer />
+      </header>
+    </div>
+  );
 }
 
 export default App;
