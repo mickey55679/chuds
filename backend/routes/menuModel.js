@@ -1,6 +1,21 @@
 const knexConfig = require("../../knexfile");
 const knex = require("knex")(knexConfig.development);
 
+function getTableName(category) {
+  switch (category) {
+    case "Build your own burger":
+      return "burgers";
+    case "Sandwiches":
+      return "sandwiches";
+    case "Sides":
+      return "sides";
+    case "Drink Items":
+      return "drinks";
+    default:
+      throw new Error(`Unknown category: ${category}`);
+  }
+}
+
 module.exports = {
   createMenuItem: async (item) => {
     const tableName = getTableName(item.category);
@@ -20,19 +35,15 @@ module.exports = {
       drinkItems,
     };
   },
-};
 
-function getTableName(category) {
-  switch (category) {
-    case "Build your own burger":
-      return "burgers";
-    case "Sandwiches":
-      return "sandwiches";
-    case "Sides":
-      return "sides";
-    case "Drink Items":
-      return "drinks";
-    default:
-      throw new Error(`Unknown category: ${category}`);
-  }
-}
+  updateMenuItem: async (itemId, updatedFields) => {
+    const { category } = updatedFields;
+    const tableName = getTableName(category);
+    await knex(tableName).where({ id: itemId }).update(updatedFields);
+  },
+
+  deleteMenuItem: async (itemId, category) => {
+    const tableName = getTableName(category);
+    await knex(tableName).where({ id: itemId }).del();
+  },
+};
