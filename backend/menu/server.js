@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
 const menuRouter = require("./backend/routes/menuRouter");
-const knexConfig = require("./knexfile").development;
+const knexConfig = require("../../knexfile").development;
 const knex = require("knex")(knexConfig);
 require("dotenv").config();
 const menuModel = require('./backend/routes/menuModel')
