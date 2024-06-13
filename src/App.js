@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
+  // Navigate,
 } from "react-router-dom";
 import {
   ContactForm,
@@ -15,7 +15,7 @@ import {
   Checkout,
   Login,
   Register,
-  Admin,
+
 } from "./components/index";
 
 function App() {
@@ -81,8 +81,8 @@ function App() {
               handleToggle={handleToggle}
               isOpen={isOpen}
               totalItemsInCart={totalItemsInCart}
-              isAuthenticated={isAuthenticated}
-              isAdmin={isAdmin}
+              // isAuthenticated={isAuthenticated}
+              // isAdmin={isAdmin}
             />
 
             <Routes>
@@ -105,16 +105,7 @@ function App() {
                   />
                 }
               />
-              <Route
-                path="/admin"
-                element={
-                  isAuthenticated && isAdmin ? (
-                    <Admin />
-                  ) : (
-                    <Navigate to="/" replace />
-                  )
-                }
-              />
+         
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
             </Routes>

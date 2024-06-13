@@ -3,28 +3,28 @@ import { NavLink } from "react-router-dom";
 import { logo } from "./images/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { useAuth0 } from "@auth0/auth0-react";
+// import { useAuth0 } from "@auth0/auth0-react";
 
 
-const AuthenticationButton = () => {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+// const AuthenticationButton = () => {
+//   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
-  return isAuthenticated ? (
-    <button
-      className="login-logout-buttons"
-      onClick={() => logout({ returnTo: window.location.origin })}
-    >
-      Logout
-    </button>
-  ) : (
-    <button
-      className="login-logout-buttons"
-      onClick={() => loginWithRedirect()}
-    >
-      Login
-    </button>
-  );
-};
+//   return isAuthenticated ? (
+//     <button
+//       className="login-logout-buttons"
+//       onClick={() => logout({ returnTo: window.location.origin })}
+//     >
+//       Logout
+//     </button>
+//   ) : (
+//     <button
+//       className="login-logout-buttons"
+//       onClick={() => loginWithRedirect()}
+//     >
+//       Login
+//     </button>
+//   );
+// };
 
 const NavigationBar = ({
   activeLink,
@@ -32,8 +32,8 @@ const NavigationBar = ({
   handleToggle,
   isOpen,
   totalItemsInCart,
-  isAuthenticated,
-  user,
+  // isAuthenticated,
+  // user,
 }) => {
   return (
     <nav className="navbar">
@@ -76,7 +76,7 @@ const NavigationBar = ({
             Contact
           </NavLink>
         </li>
-        {isAuthenticated && (
+        {/* {isAuthenticated && (
           <li className="nav-item">
             <NavLink
               to="/admin"
@@ -116,7 +116,7 @@ const NavigationBar = ({
           <li className="nav-item">
             <AuthenticationButton />
           </li>
-        )}
+        )} */}
         <li className="nav-item">
           <NavLink to="/checkout" className="cart-icon-link">
             <FontAwesomeIcon
