@@ -14,7 +14,7 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:3000/login", {
+      const response = await axios.post("http://localhost:3000/users/login", {
         username: email,
         password: password,
       });
@@ -35,29 +35,30 @@ const Login = () => {
   };
 
   // Function to handle registration
-  const handleRegister = async () => {
-    setIsLoading(true);
+const handleRegister = async () => {
+  setIsLoading(true);
 
-    try {
-      const response = await axios.post("http://localhost:3000/register", {
-        email: email,
-        password: password,
-      });
+  try {
+    const response = await axios.post("http://localhost:3000/users/register", {
+      username: email, // Assuming your backend expects 'username' for registration
+      password: password,
+    });
 
-      if (response.status === 201) {
-        alert("Registration successful! Please log in.");
-        setEmail("");
-        setPassword("");
-      } else {
-        throw new Error("Failed to register");
-      }
-    } catch (error) {
-      console.error("Registration failed", error);
-      alert("Registration failed");
-    } finally {
-      setIsLoading(false);
+    if (response.status === 201) {
+      alert("Registration successful! Please log in.");
+      setEmail("");
+      setPassword("");
+    } else {
+      throw new Error("Failed to register");
     }
-  };
+  } catch (error) {
+    console.error("Registration failed", error);
+    alert("Registration failed");
+  } finally {
+    setIsLoading(false);
+  }
+};
+
 
   // Function to handle logout
   const handleLogout = () => {
