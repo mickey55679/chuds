@@ -4,24 +4,27 @@ require("dotenv").config();
 
 const menuRouter = require("./menu/menuRouter");
 const usersRouter = require("./users/users-router"); 
+const authRouter = require('./auth/auth-router')
 const db = require("../database/db-config");
 
-const app = express();
+
+const server = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.json());
-app.use(cors());
+server.use(express.json());
+server.use(cors());
 
 
 // Home route
-app.get("/", (req, res) => {
-  res.send("Welcome to the Food Ordering System!");
-});
+// server.get("/", (req, res) => {
+//   res.send("Welcome to the Food Ordering System!");
+// });
 
 // Use menuRouter for routes starting with /menu
-app.use("/menu", menuRouter); 
-app.use("/users", usersRouter);
+server.use("/api/menu", menuRouter); 
+server.use("/api/users", usersRouter);
+server.use('/api/auth', authRouter)
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
