@@ -4,9 +4,10 @@ require("dotenv").config();
 
 const menuRouter = require("./menu/menuRouter");
 const usersRouter = require("./users/users-router"); 
+const db = require("../database/db-config");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors());
@@ -18,7 +19,7 @@ app.get("/", (req, res) => {
 });
 
 // Use menuRouter for routes starting with /menu
-app.use("/menu", menuRouter);
+app.use("/menu", menuRouter); 
 app.use("/users", usersRouter);
 
 app.listen(port, () => {
