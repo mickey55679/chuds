@@ -1,5 +1,5 @@
 const express = require("express");
-const knexConfig = require("../knexfile").development;
+const knexConfig = require("../../knexfile").development;
 const knex = require("knex")(knexConfig);
 const menuModel = require("./menuModel");
 
