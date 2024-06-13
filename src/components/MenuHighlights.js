@@ -3,7 +3,7 @@ import React from "react";
 const MenuHighlights = () => {
   return (
     <div className="menu-highlights-section">
-      <h3 className="menu-highlights-title">Menu Highlights</h3>
+      <h2 className="menu-highlights-title">Menu Highlights</h2>
       <div className="menu-highlights-container">
         <div className="menu-highlights-item">
           <img

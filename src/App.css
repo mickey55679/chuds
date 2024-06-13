@@ -662,12 +662,14 @@ span.psw {
 .menu-highlights-section {
   padding: 20px;
   text-align: center;
+ 
 }
 
-.menu-highlights-title {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: var(--color-light);
+.menu-highlights-title h2 {
+  font-size: 3em;
+  margin-bottom: 40px;
+  background-color: var(--color-red);
+
 }
 
 .menu-highlights-container {
@@ -701,6 +703,7 @@ span.psw {
   height: 50%;
 }
 
+
 .menu-highlights-item h3 {
   margin: 10px 0;
   font-size: 1.2em;
@@ -729,26 +732,10 @@ span.psw {
   background-color: var(--color-purple);
 }
 
-.review-slideshow {
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-}
 
-.review {
-  font-size: 16px;
-  line-height: 1.6;
-}
 
-.review h4 {
-  margin-top: 10px;
-  color: var(--color-grey);
-  font-style: italic;
-}
+
+
 
 .navigation button {
   padding: 10px 20px;
