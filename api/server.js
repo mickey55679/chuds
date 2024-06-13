@@ -2,11 +2,11 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
-const menuRouter = require("./backend/routes/menuRouter");
-const knexConfig = require("../../knexfile").development;
+const knexConfig = require("../knexfile").development;
 const knex = require("knex")(knexConfig);
 require("dotenv").config();
-const menuModel = require('./backend/routes/menuModel')
+const menuModel = require('./menu/menuModel')
+const menuRouter = require("./menu/menuRouter");
 
 const app = express();
 const port = 3000;
