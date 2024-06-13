@@ -15,7 +15,7 @@ const Menu = ({ setCartItems, setItems }) => {
    fetch("http://localhost:3000/menu")
      .then((response) => response.json())
      .then((data) => {
-       console.log("Fetched menu items:", data);
+      //  console.log("Fetched menu items:", data);
        setMenuItems({
          burgers: data.burgerItems,
          sandwiches: data.sandwichItems,
