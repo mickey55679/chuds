@@ -665,12 +665,15 @@ span.psw {
  
 }
 
-.menu-highlights-title h2 {
+.menu-highlights-section .menu-highlights-title {
+  color: var(--color-light);
   font-size: 3em;
   margin-bottom: 40px;
   background-color: var(--color-red);
-
+  padding: 20px;
 }
+
+
 
 .menu-highlights-container {
   display: flex;
@@ -731,10 +734,6 @@ span.psw {
 .menu-highlights-item button:hover {
   background-color: var(--color-purple);
 }
-
-
-
-
 
 
 .navigation button {
