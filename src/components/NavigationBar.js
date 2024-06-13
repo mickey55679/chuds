@@ -3,28 +3,6 @@ import { NavLink } from "react-router-dom";
 import { logo } from "./images/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-// import { useAuth0 } from "@auth0/auth0-react";
-
-
-// const AuthenticationButton = () => {
-//   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
-
-//   return isAuthenticated ? (
-//     <button
-//       className="login-logout-buttons"
-//       onClick={() => logout({ returnTo: window.location.origin })}
-//     >
-//       Logout
-//     </button>
-//   ) : (
-//     <button
-//       className="login-logout-buttons"
-//       onClick={() => loginWithRedirect()}
-//     >
-//       Login
-//     </button>
-//   );
-// };
 
 const NavigationBar = ({
   activeLink,
@@ -76,47 +54,6 @@ const NavigationBar = ({
             Contact
           </NavLink>
         </li>
-        {/* {isAuthenticated && (
-          <li className="nav-item">
-            <NavLink
-              to="/admin"
-              exact
-              className={activeLink === "/admin" ? "active-link" : ""}
-              onClick={() => handleClick("/admin")}
-            >
-              Admin
-            </NavLink>
-          </li>
-        )}
-        {!isAuthenticated && (
-          <li className="nav-item">
-            <NavLink
-              to="/login"
-              exact
-              className={activeLink === "/login" ? "active-link" : ""}
-              onClick={() => handleClick("/login")}
-            >
-              Login
-            </NavLink>
-          </li>
-        )}
-        {!isAuthenticated && (
-          <li className="nav-item">
-            <NavLink
-              to="/register"
-              exact
-              className={activeLink === "/register" ? "active-link" : ""}
-              onClick={() => handleClick("/register")}
-            >
-              Register
-            </NavLink>
-          </li>
-        )}
-        {isAuthenticated && (
-          <li className="nav-item">
-            <AuthenticationButton />
-          </li>
-        )} */}
         <li className="nav-item">
           <NavLink to="/checkout" className="cart-icon-link">
             <FontAwesomeIcon
