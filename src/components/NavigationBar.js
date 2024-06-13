@@ -55,6 +55,16 @@ const NavigationBar = ({
           </NavLink>
         </li>
         <li className="nav-item">
+          <NavLink
+            to="/login"
+            exact
+            className={activeLink === "/login" ? "active-link" : ""}
+            onClick={() => handleClick("/login")}
+          >
+           Login
+          </NavLink>
+        </li>
+        <li className="nav-item">
           <NavLink to="/checkout" className="cart-icon-link">
             <FontAwesomeIcon
               icon={faShoppingCart}
