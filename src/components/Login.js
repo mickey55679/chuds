@@ -41,7 +41,7 @@ const handleRegister = async () => {
 
   try {
     const response = await axios.post(`${baseUrl}/api/auth/register`, {
-      username: email, // Assuming your backend expects 'username' for registration
+      username: email, 
       password: password,
     });
 

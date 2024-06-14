@@ -23,6 +23,7 @@ server.use(session({
     secure: false, // if true the cookie would only work over https, not http which is what is used for now
     httpOnly: false, // weather javascript can read or not, can at false
   },
+  rolling: true, //fresh cookie with every login
   resave: false,
   saveUninitialized: false, // we cant be setting cookies on any client that makes req, only successful login
 }))
