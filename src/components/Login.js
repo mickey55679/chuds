@@ -8,13 +8,14 @@ const Login = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [users, setUsers] = useState([]);
   const [message, setMessage] = useState("");
+  const baseUrl = "http://localhost:3000";
 
   // Function to handle login
   const handleLogin = async () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:3000/api/auth/login", {
+      const response = await axios.post(`${baseUrl}/api/auth/login`, {
         username: email,
         password: password,
       });
@@ -39,7 +40,7 @@ const handleRegister = async () => {
   setIsLoading(true);
 
   try {
-    const response = await axios.post("http://localhost:3000/api/auth/register", {
+    const response = await axios.post(`${baseUrl}/api/auth/register`, {
       username: email, // Assuming your backend expects 'username' for registration
       password: password,
     });
@@ -71,7 +72,7 @@ const handleRegister = async () => {
   // Function to fetch users
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/auth", {
+      const response = await axios.get(`${baseUrl}/api/auth`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
