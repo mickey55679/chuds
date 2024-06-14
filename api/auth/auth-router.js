@@ -21,7 +21,15 @@ next(err)
 })
 // post because of payload
 router.post("/login", async (req, res, next) => {
-res.json({message: 'login working'})
+try{
+    const {username, password} = req.body;
+    const [user] = await User.findBy({username})// search by username square brackets pull first instance of user
+    console.log(user)
+
+
+} catch (err){
+    next(err)
+}
 });
 
 router.get("/logout", async (req, res, next) => {
