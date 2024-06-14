@@ -1,9 +1,13 @@
 const express = require('express')
-
+const bcrypt = require('bcryptjs')
 const router = express.Router()
+
 // post because of payload
 router.post('/register', async (req, res, next) => {
- res.json({message: 'register is working'})
+const {username, password} = req.body;
+const hash = bcrypt.hashSync(password, 8)
+console.log(hash)
+
 })
 // post because of payload
 router.post("/login", async (req, res, next) => {
