@@ -14,7 +14,7 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:3000/users/login", {
+      const response = await axios.post("http://localhost:3000/api/auth/login", {
         username: email,
         password: password,
       });
@@ -39,7 +39,7 @@ const handleRegister = async () => {
   setIsLoading(true);
 
   try {
-    const response = await axios.post("http://localhost:3000/users/register", {
+    const response = await axios.post("http://localhost:3000/api/auth/register", {
       username: email, // Assuming your backend expects 'username' for registration
       password: password,
     });
@@ -71,7 +71,7 @@ const handleRegister = async () => {
   // Function to fetch users
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/users", {
+      const response = await axios.get("http://localhost:3000/api/auth", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

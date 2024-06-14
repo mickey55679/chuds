@@ -11,7 +11,7 @@ const hash = bcrypt.hashSync(password, 8)
 const newUser = {username, password: hash}
 const result = await User.add(newUser)
 res.status(201).json({
-    message:   `nice to have you ${result.username}`
+    message:  `nice to have you ${result.username}`
 })
 } catch (err) {
 next(err)
