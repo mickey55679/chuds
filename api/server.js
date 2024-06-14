@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
+const session = require('express-session')
 require("dotenv").config();
+
 
 const menuRouter = require("./menu/menuRouter");
 const usersRouter = require("./users/users-router"); 
@@ -13,7 +15,9 @@ const port = process.env.PORT || 3000;
 
 server.use(express.json());
 server.use(cors());
-
+server.use(session({
+  
+}))
 
 // Home route
 // server.get("/", (req, res) => {
