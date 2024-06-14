@@ -11,6 +11,7 @@ const hash = bcrypt.hashSync(password, 8)
 const newUser = {username, password: hash}
 const result = await User.add(newUser)
 } catch (err) {
+    
 
 }
 
