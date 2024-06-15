@@ -1,7 +1,9 @@
 const express = require("express");
 const cors = require("cors");
-const session = require('express-session')
-const Store = require('connect-session-knex')(session)
+const session = require("express-session");
+
+const KnexSessionStore = require("connect-session-knex")(session);
+
 require("dotenv").config();
 
 
@@ -9,6 +11,7 @@ const menuRouter = require("./menu/menuRouter");
 const usersRouter = require("./users/users-router"); 
 const authRouter = require('./auth/auth-router')
 // const db = require("../database/db-config");
+
 
 
 const server = express();
@@ -27,7 +30,7 @@ server.use(session({
   rolling: true, //fresh cookie with every login
   resave: false,
   saveUninitialized: false, // we cant be setting cookies on any client that makes req, only successful login
-  store: new Store({
+  store: new KnexSessionStore({
     knex: require('../database/db-config'),
     tablename: 'sessions',
     sidfieldname: 'sid',
