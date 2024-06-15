@@ -5,19 +5,17 @@ const User = require('../users/users-model')
 
 // post because of payload
 router.post('/register', async (req, res, next) => {
-try{
-const {username, password} = req.body;
-const hash = bcrypt.hashSync(password, 8)
-const newUser = {username, password: hash}
-const result = await User.add(newUser)
-res.status(201).json({
-    message:  `nice to have you ${result.username}`
-})
-} catch (err) {
-next(err)
-}
-
-
+  try {
+    const { username, password, admin } = req.body;  // Add `admin` field to request body
+    const hash = bcrypt.hashSync(password, 8);
+    const newUser = { username, password: hash, admin: admin || false };
+    const result = await User.add(newUser);
+    res.status(201).json({
+      message: `Nice to have you ${result.username}`
+    });
+  } catch (err) {
+    next(err);
+  }
 })
 // post because of payload
 router.post("/login", async (req, res, next) => {
