@@ -12,10 +12,10 @@ const Menu = ({ setCartItems, setItems }) => {
   const [orderItems, setOrderItems] = useState({});
 
  useEffect(() => {
-   fetch("http://localhost:3000/menu")
+   fetch("http://localhost:3000/api/menu")
      .then((response) => response.json())
      .then((data) => {
-      //  console.log("Fetched menu items:", data);
+       console.log("Fetched menu items:", data);
        setMenuItems({
          burgers: data.burgerItems,
          sandwiches: data.sandwichItems,
