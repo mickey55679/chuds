@@ -3,8 +3,7 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema
-    .createTable("burgers", function (table) {
+  return knex.schema.createTable("burgers", function (table) {
       table.increments("id").primary();
       table.string("name").notNullable();
       table.decimal("price").notNullable();

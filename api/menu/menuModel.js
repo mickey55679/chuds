@@ -26,15 +26,22 @@ const createMenuItem = async (item) => {
 };
 
 
-
 const getAllMenuItems = async () => {
-  const burgerItems = await knex("burgers").select("*");
-  const sandwichItems = await knex("sandwiches").select("*");
-  const sideItems = await knex("sides").select("*");
-  const drinkItems = await knex("drinks").select("*");
+  try {
+    const burgerItems = await knex("burgers").select("*");
+    console.log("Burger items:", burgerItems); // Add this log
+    const sandwichItems = await knex("sandwiches").select("*");
+    const sideItems = await knex("sides").select("*");
+    const drinkItems = await knex("drinks").select("*");
 
-  return { burgerItems, sandwichItems, sideItems, drinkItems };
+    return { burgerItems, sandwichItems, sideItems, drinkItems };
+  } catch (error) {
+    console.error("Error fetching menu items:", error.message);
+    throw error;
+  }
 };
+
+
 
 const updateMenuItem = async (id, updatedFields) => {
   const tableName = getTableName(updatedFields.category);
@@ -51,4 +58,5 @@ module.exports = {
   getAllMenuItems,
   updateMenuItem,
   deleteMenuItem,
+  getTableName,
 };

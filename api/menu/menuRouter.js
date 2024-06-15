@@ -9,10 +9,8 @@ const router = express.Router();
 // Public route to view menu
 router.get("/", async (req, res) => {
   try {
-    const burgerItems = await knex("burgers").select("*");
-    const sandwichItems = await knex("sandwiches").select("*");
-    const sideItems = await knex("sides").select("*");
-    const drinkItems = await knex("drinks").select("*");
+    const { burgerItems, sandwichItems, sideItems, drinkItems } =
+      await menuModel.getAllMenuItems();
 
     const menuItems = {
       burgerItems,
@@ -34,7 +32,7 @@ router.get("/", async (req, res) => {
 router.post("/", restricted, onlyAdmin, async (req, res) => {
   const { name, price, imgurl, category } = req.body;
   try {
-    const tableName = menuModel(category);
+    const tableName = menuModel.getTableName(category); // Correct usage of getTableName
     const [id] = await knex(tableName).insert({
       name,
       price,
