@@ -11,23 +11,28 @@ const Menu = ({ setCartItems, setItems }) => {
 
   const [orderItems, setOrderItems] = useState({});
 
- useEffect(() => {
-   fetch("http://localhost:3000/api/menu")
-     .then((response) => response.json())
-     .then((data) => {
-       console.log("Fetched menu items:", data);
-       setMenuItems({
-         burgers: data.burgerItems,
-         sandwiches: data.sandwichItems,
-         drinks: data.drinkItems,
-         sides: data.sideItems,
-       });
-       setItems(data);
-     })
-     .catch((error) => {
-       console.error("Error:", error);
-     });
- }, []);
+useEffect(() => {
+  fetch("http://localhost:3000/api/menu")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Fetched menu items:", data); // Log the entire data object to inspect structure
+      if (data && data.burgerItems) {
+        setMenuItems({
+          burgers: data.burgerItems,
+          sandwiches: data.sandwichItems,
+          drinks: data.drinkItems,
+          sides: data.sideItems,
+        });
+        setItems(data); // Verify if setItems is necessary for your application
+      } else {
+        console.error("No burger items found in data:", data);
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching menu items:", error);
+    });
+}, []);
+
 
 
   const updateOrder = (id, operation) => {
