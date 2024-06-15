@@ -17,6 +17,8 @@ import {
   Register,
 
 } from "./components/index";
+import AdminDash from "./components/AdminDash"; // Adjust the import path as needed
+
 
 function App() {
   const [activeLink, setActiveLink] = useState("");
@@ -81,8 +83,7 @@ function App() {
               handleToggle={handleToggle}
               isOpen={isOpen}
               totalItemsInCart={totalItemsInCart}
-              // isAuthenticated={isAuthenticated}
-              // isAdmin={isAdmin}
+              isAdmin={isAdmin} // Pass isAdmin prop
             />
 
             <Routes>
@@ -105,9 +106,10 @@ function App() {
                   />
                 }
               />
-         
+
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              {isAdmin && <Route path="/admin" element={<AdminDash />} />}
             </Routes>
           </Router>
         )}

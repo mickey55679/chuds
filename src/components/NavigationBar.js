@@ -10,7 +10,7 @@ const NavigationBar = ({
   handleToggle,
   isOpen,
   totalItemsInCart,
-  // isAuthenticated,
+  isAdmin
   // user,
 }) => {
   return (
@@ -54,6 +54,18 @@ const NavigationBar = ({
             Contact
           </NavLink>
         </li>
+        {isAdmin && ( // Conditionally render the Admin link
+          <li className="nav-item">
+            <NavLink
+              to="/admin"
+              exact
+              className={activeLink === "/admin" ? "active-link" : ""}
+              onClick={() => handleClick("/admin")}
+            >
+              Admin
+            </NavLink>
+          </li>
+        )}
         <li className="nav-item">
           <NavLink
             to="/login"
@@ -61,7 +73,7 @@ const NavigationBar = ({
             className={activeLink === "/login" ? "active-link" : ""}
             onClick={() => handleClick("/login")}
           >
-           Login
+            Login
           </NavLink>
         </li>
         <li className="nav-item">
