@@ -15,21 +15,21 @@ useEffect(() => {
   fetch("http://localhost:3000/api/menu")
     .then((response) => response.json())
     .then((data) => {
-      console.log("Fetched menu items:", data); // Log the entire data object to inspect structure
-      if (data && data.burgerItems) {
-        setMenuItems({
-          burgers: data.burgerItems,
-          sandwiches: data.sandwichItems,
-          drinks: data.drinkItems,
-          sides: data.sideItems,
-        });
-        setItems(data); // Verify if setItems is necessary for your application
-      } else {
-        console.error("No burger items found in data:", data);
-      }
+      console.log("Fetched menu items:", data);
+
+      // Update state with fetched menu items
+      setMenuItems({
+        burgers: data.burgerItems || [], // Ensure to handle empty or undefined data
+        sandwiches: data.sandwichItems || [],
+        drinks: data.drinkItems || [],
+        sides: data.sideItems || [],
+      });
+
+      // Optionally update items state if necessary
+      setItems(data); 
     })
     .catch((error) => {
-      console.error("Error fetching menu items:", error);
+      console.error("Error:", error);
     });
 }, []);
 

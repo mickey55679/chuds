@@ -12,10 +12,20 @@ const getTableName = (category) => {
 };
 
 const createMenuItem = async (item) => {
-  const tableName = getTableName(item.category);
-  const [id] = await knex(tableName).insert(item);
-  return id;
+  let tableName; 
+
+  try {
+    tableName = getTableName(item.category);
+    const [id] = await knex(tableName).insert(item);
+    console.log(`Inserted item into ${tableName} with ID: ${id}`);
+    return id;
+  } catch (error) {
+    console.error(`Error inserting item into ${tableName}:`, error.message);
+    throw error;
+  }
 };
+
+
 
 const getAllMenuItems = async () => {
   const burgerItems = await knex("burgers").select("*");
