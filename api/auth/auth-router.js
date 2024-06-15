@@ -24,7 +24,7 @@ try{
     const [user] = await User.findBy({username})// search by username square brackets pull first instance of user
     if(user && bcrypt.compareSync(password, user.password) ){
      req.session.user = user // trigger setting cookie and server will remmember 
-     res.json({message: `welcome back! ${user.username}`})
+     res.json({message: `welcome back! ${user.username}`, isAdmin: user.admin})
     } else {
         next({status: 401, message: 'bad credentials'})
     }

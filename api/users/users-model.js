@@ -1,4 +1,4 @@
-const db = require("../database/db-config");
+const db = require("../../database/db-config");
 
 function find() {
   return db("users").select("id", "username", "admin");
