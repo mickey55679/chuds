@@ -72,7 +72,7 @@ const handleRegister = async () => {
   // Function to fetch users
   const fetchUsers = async () => {
     try {
-      const response = await axios.get(`${baseUrl}/api/auth`, {
+      const response = await axios.get(`${baseUrl}/api/auth/logout`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

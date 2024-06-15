@@ -11,10 +11,13 @@ const getTableName = (category) => {
   return tableMap[category];
 };
 
+
 const createMenuItem = async (item) => {
+    console.log("createMenuItem is being called");
   let tableName; 
 
   try {
+    console.log(item.category);
     tableName = getTableName(item.category);
     const [id] = await knex(tableName).insert(item);
     console.log(`Inserted item into ${tableName} with ID: ${id}`);
