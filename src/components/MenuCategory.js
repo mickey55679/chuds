@@ -1,6 +1,12 @@
 import React from "react";
 
-const MenuCategory = ({ title, items, updateOrder, orderItems }) => {
+const MenuCategory = ({
+  title,
+  items,
+  handleQuantityChange,
+  handleAddToCart,
+  orderItems,
+}) => {
   return (
     <div className="menu-container">
       <h1>{title}</h1>
@@ -20,20 +26,19 @@ const MenuCategory = ({ title, items, updateOrder, orderItems }) => {
               <p>Price: ${item.price.toFixed(2)}</p>
               <div className="desc">{item.desc}</div>
               <div className="menu-item-controls">
+                <input
+                  type="number"
+                  value={orderItems[item.id] || 0}
+                  onChange={(e) =>
+                    handleQuantityChange(item.id, parseInt(e.target.value) || 0)
+                  }
+                  min="0"
+                />
                 <button
-                  className="update_order_subtract"
-                  onClick={() => updateOrder(item.id, "-")}
+                  className="add-to-cart"
+                  onClick={() => handleAddToCart(item.id)}
                 >
-                  -
-                </button>
-                <span className="item-quantity">
-                  {orderItems[item.id] || "0"}
-                </span>
-                <button
-                  className="update_order_add"
-                  onClick={() => updateOrder(item.id, "+")}
-                >
-                  +
+                  Add
                 </button>
               </div>
             </div>

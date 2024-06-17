@@ -8,7 +8,6 @@ function Checkout({ cartItems, setCartItems, items }) {
     let newTotal = 0;
     const formattedOrder = [];
 
-    // Convert items object to an array
     const itemsArray = Object.values(items).flatMap((category) => category);
 
     for (const menuItem of itemsArray) {
@@ -26,59 +25,61 @@ function Checkout({ cartItems, setCartItems, items }) {
     setOrder(formattedOrder);
   }, [cartItems, items]);
 
-  const handleQuantityChange = (id, delta) => {
-    const newCartItems = { ...cartItems };
-    if (newCartItems[id] + delta > 0) {
-      newCartItems[id] += delta;
-    } else {
-      // Optionally remove the item if the quantity goes to zero
-      delete newCartItems[id];
+  const handleQuantityChange = (id, quantity) => {
+    const updatedCartItems = { ...cartItems, [id]: quantity };
+    if (quantity === 0) {
+      delete updatedCartItems[id];
     }
-    console.log("setCartItems before calling:", setCartItems);
-    setCartItems(newCartItems);
+    setCartItems(updatedCartItems);
+  };
+
+  const handleAddToCart = (id) => {
+    const currentQuantity = cartItems[id] || 0;
+    const updatedQuantity = currentQuantity + 1;
+    handleQuantityChange(id, updatedQuantity);
   };
 
   return (
     <>
-    <div className="checkout">
-      {order.map((item, index) => (
-        <div key={index} className="menu-item-checkout">
-          <h2>{item.name}</h2>
-          <img
-            src={item.imgurl}
-            alt={`${item.name} served on a plate`}
-            width="180"
-            height="auto"
-          />
-          <p>{item.description}</p>
-          <p>Category: {item.category}</p>
-          <p>Price: ${item.price.toFixed(2)}</p>
-          <div className="desc">{item.desc}</div>
-          <div className="menu-item-checkout-controls">
-            <button
-              className="update_order_subtract"
-              onClick={() => handleQuantityChange(item.id, -1)}
-            >
-              -
-            </button>
-            <span className="item-quantity">{item.quantity || "0"}</span>
-            <button
-              className="update_order_add"
-              onClick={() => handleQuantityChange(item.id, 1)}
-            >
-              +
-            </button>
+      <div className="checkout">
+        {order.map((item, index) => (
+          <div key={index} className="menu-item-checkout">
+            <h2>{item.name}</h2>
+            <img
+              src={item.imgurl}
+              alt={`${item.name} served on a plate`}
+              width="180"
+              height="auto"
+            />
+            <p>{item.description}</p>
+            <p>Category: {item.category}</p>
+            <p>Price: ${item.price.toFixed(2)}</p>
+            <div className="desc">{item.desc}</div>
+            <div className="menu-item-checkout-controls">
+              <input
+                type="number"
+                value={item.quantity || 0}
+                onChange={(e) =>
+                  handleQuantityChange(item.id, parseInt(e.target.value) || 0)
+                }
+                min="0"
+              />
+              <button
+                className="add-to-cart"
+                onClick={() => handleAddToCart(item.id)}
+              >
+                Add
+              </button>
+            </div>
           </div>
-        </div>
-      ))}
-
-    </div>
-          <div className="checkout-details">
-      <p>Total: ${total.toFixed(2)}</p>
-      <button onClick={() => alert("Checkout successful!")}>
-        confirm and pay
-      </button>
-    </div>
+        ))}
+      </div>
+      <div className="checkout-details">
+        <p>Total: ${total.toFixed(2)}</p>
+        <button onClick={() => alert("Checkout successful!")}>
+          Confirm and Pay
+        </button>
+      </div>
     </>
   );
 }

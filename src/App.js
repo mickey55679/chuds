@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  // Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ContactForm,
   Footer,
@@ -15,10 +10,8 @@ import {
   Checkout,
   Login,
   Register,
-
 } from "./components/index";
-import AdminDash from "./components/AdminDash"; // Adjust the import path as needed
-
+import AdminDash from "./components/AdminDash";
 
 function App() {
   const [activeLink, setActiveLink] = useState("");
@@ -26,18 +19,16 @@ function App() {
   const [cartItems, setCartItems] = useState({});
   const [items, setItems] = useState([]);
   const [totalItemsInCart, setTotalItemsInCart] = useState(0);
-  const [isLoading, setIsLoading] = useState(false); // Initially false
-  const [isAdmin, setIsAdmin] = useState(false); // Initially false
+  const [isLoading, setIsLoading] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
-  // Simulated authentication state
-  const isAuthenticated = true; // Set to true to simulate logged-in state
+  const isAuthenticated = true;
 
   useEffect(() => {
     const checkAdminRights = () => {
       setIsLoading(true);
-      // Simulated check based on logged-in state
       if (isAuthenticated) {
-        setIsAdmin(true); // Simulated admin rights
+        setIsAdmin(true);
       } else {
         setIsAdmin(false);
       }
@@ -83,7 +74,7 @@ function App() {
               handleToggle={handleToggle}
               isOpen={isOpen}
               totalItemsInCart={totalItemsInCart}
-              isAdmin={isAdmin} // Pass isAdmin prop
+              isAdmin={isAdmin}
             />
 
             <Routes>
@@ -106,7 +97,6 @@ function App() {
                   />
                 }
               />
-
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               {isAdmin && <Route path="/admin" element={<AdminDash />} />}

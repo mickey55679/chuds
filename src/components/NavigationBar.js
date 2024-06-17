@@ -11,7 +11,6 @@ const NavigationBar = ({
   isOpen,
   totalItemsInCart,
   isAdmin
-  // user,
 }) => {
   return (
     <nav className="navbar">
