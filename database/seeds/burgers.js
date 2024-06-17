@@ -10,7 +10,6 @@ exports.seed = async function (knex) {
       // Inserts seed entries
       return knex("burgers").insert([
         {
-        
           name: "Classic Burger",
           price: 8.99,
           imgurl:
@@ -18,7 +17,6 @@ exports.seed = async function (knex) {
           category: "Build your own burger",
         },
         {
-      
           name: "Cheese Burger",
           price: 9.99,
           imgurl:
@@ -26,7 +24,6 @@ exports.seed = async function (knex) {
           category: "Build your own burger",
         },
         {
-     
           name: "Vegan Burger",
           price: 10.99,
           imgurl:
