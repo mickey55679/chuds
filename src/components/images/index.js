@@ -1,4 +1,4 @@
 import chudsphoto from "./chudsgroup.jpg";
-import logo from "./chudslogo.jpeg";
+import logo from "./chudslogo-removebg-preview.png";
 
 export { chudsphoto, logo };
