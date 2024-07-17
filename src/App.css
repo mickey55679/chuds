@@ -4,6 +4,7 @@
   --color-red: #ef1511;
   --color-grey: #5f5655;
   --color-purple: #5721ee;
+  --color-dark-red: #8B0000;
 }
 
 
@@ -290,7 +291,7 @@ input[type="password"] {
 }
 
 /* CSS for login-logout buttons to match navigation links */
-.login-logout-buttons {
+/* .login-logout-buttons {
   appearance: none;
   background: none; 
   border: none; 
@@ -306,13 +307,13 @@ input[type="password"] {
   -webkit-user-select: none;
   touch-action: manipulation;
   margin: 0 10px; 
-}
+} */
 
 /* Hover effect to match navigation link hover */
-.login-logout-buttons:hover {
+/* .login-logout-buttons:hover {
   color: var(--color-purple); 
   text-decoration: underline; 
-}
+} */
 
 /* Updated form container for better edge-to-edge design */
 .container {
@@ -566,27 +567,7 @@ span.psw {
 .item-quantity {
   margin: 0 10px;
 }
-.login-logout-buttons {
-  appearance: none;
-  background-color: #000000; 
-  border: 2px solid #1a1a1a;
-  box-sizing: border-box;
-  color: #ffffff; 
-  cursor: pointer;
-  display: inline-block;
-  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 12px;
-  font-weight: 600;
-  line-height: normal;
-  padding: 8px 12px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1); 
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
+
 .phone-icon {
   margin-left: 25px;
   color: #333; 
@@ -607,7 +588,6 @@ span.psw {
   color: var(--color-grey);
   font-size: 3em;
   margin-bottom: 40px;
-  /* background-color: var(--color-red); */
   padding: 20px;
 }
 
@@ -627,12 +607,13 @@ span.psw {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 4px;
   overflow: hidden;
   margin-bottom: 20px;
   max-width: calc(25% - 40px);
   box-sizing: border-box;
   transition: transform 0.3s ease; 
+  padding-bottom: 30px;
 }
 .menu-highlights-item:hover {
   transform: scale(1.05); 
@@ -659,19 +640,48 @@ span.psw {
 }
 
 .menu-highlights-item button {
-  background-color: var(--color-red);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 10px 0 20px;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid var(--color-red);
+  box-sizing: border-box;
+  color: var(--color-red);
   cursor: pointer;
-  border-radius: 4px;
-  font-size: 1em;
+  display: inline-block;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1); 
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 80%;
+  will-change: transform;
+}
+
+.menu-highlights-item button:disabled {
+  pointer-events: none;
 }
 
 .menu-highlights-item button:hover {
-  background-color: var(--color-purple);
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px); 
 }
+
+.menu-highlights-item button:active {
+  box-shadow: none;
+  transform: translateY(0); 
+}
+
+
 
 
 .navigation button {
