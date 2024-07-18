@@ -6,13 +6,30 @@
   --color-purple: #5721ee;
   --color-dark-red: #8B0000;
 }
+:root {
+  --font-size-small: 0.75rem;
+  --font-size-medium: 1rem;
+  --font-size-large: 2rem;
+}
+
+/* .text-small {
+  font-size: var(--font-size-small);
+}
+.text-medium {
+  font-size: var(--font-size-medium);
+}
+.text-large {
+  font-size: var(--font-size-large);
+} */
+
+
 html {
 background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
 }
 /* Navigation hamburger icon */
 .navbar-toggler {
   color: var(--color-blue);
-  font-size: 2rem;
+  font-size: var(--font-size-large);
   cursor: pointer;
   border: none;
   background: transparent;
@@ -20,7 +37,6 @@ background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(22
 
 /* Navigation Bar */
 .navbar {
-/* background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%); */
   display: flex;
   justify-content: space-between;
   padding: 0.8rem 1.2rem;
@@ -258,7 +274,7 @@ background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(22
 .input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 4px;
   font-size: 20px;
   border-radius: 4px;
@@ -273,7 +289,7 @@ input[type="password"] {
   margin: 8px 0;
   display: inline-block;
   box-sizing: border-box;
-    border-radius: 4px;
+  border-radius: 4px;
 }
 
 
