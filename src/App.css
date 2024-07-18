@@ -360,8 +360,8 @@ img.avatar {
 
 h1 {
   text-align: center;
-  background-color: var(--color-red);
-  color: white;
+  /* background-color: var(--color-red); */
+  color: var(--color-grey);
   padding: 40px;
 }
 h3 {
