@@ -133,16 +133,12 @@ background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(22
   position: absolute;
   color: white;
   text-align: center;
-  /* width: 90%; */
   max-width: 500px;
-  font-size: 25px;
+  font-size: var(--font-size-large);
   background-color: #00000073;
   border-radius: 4px;
-
   padding: 20px;
   box-sizing: border-box;
- 
-  /* margin: 50px 0px 50px 0px; */
 }
 .my-logo-home{
   width: 100%;
@@ -158,7 +154,7 @@ background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(22
   display: inline-block;
   font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 16px;
+  font-size: var(--font-size-medium);
   font-weight: 600;
   line-height: normal;
   margin: 0;
