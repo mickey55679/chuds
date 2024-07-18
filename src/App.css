@@ -6,12 +6,9 @@
   --color-purple: #5721ee;
   --color-dark-red: #8B0000;
 }
-
-
 html {
 background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
 }
-
 /* Navigation hamburger icon */
 .navbar-toggler {
   color: var(--color-blue);
@@ -23,7 +20,7 @@ background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(22
 
 /* Navigation Bar */
 .navbar {
-background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+/* background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%); */
   display: flex;
   justify-content: space-between;
   padding: 0.8rem 1.2rem;
@@ -31,14 +28,12 @@ background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(22
   z-index: 1000;
   position: relative;
 }
-
 .nav-items {
   list-style: none;
   display: flex;
   gap: 15px;
   margin-left: auto;
 }
-
 .nav-item a {
   text-decoration: none;
   padding: 0.5rem 0.8rem;
@@ -53,7 +48,7 @@ background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(22
 }
 
 .nav-item a.active-link {
-  color: var(--color-purple);
+  color: var(--color-red);
 }
 /* Chuds logo img */
 .logo img {
@@ -105,7 +100,7 @@ background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(22
   height: auto;
   display: block;
   padding: 20px;
-  /* opacity: 0.5;  */
+  opacity: 0.5; 
 
 }
 
@@ -182,8 +177,8 @@ background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(22
 
 /* Footer */
 .footer {
-  background-color: var(--color-blue);
-  color: var(--color-light);
+  /* background-color: var(--color-blue); */
+  color: var(--color-red);
   padding: 20px 0;
   text-align: center;
   font-family: Arial, sans-serif;
@@ -233,13 +228,13 @@ background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(22
 }
 
 .social-media a {
-  color: #fff;
+  color: var(--color-red);
   margin: 0 10px;
   transition: color 0.3s;
 }
 
 .social-media a:hover {
-  color: #ddd;
+  color: var(--color-dark-red);
 }
 
 .footer-bottom p {
