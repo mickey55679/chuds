@@ -30,27 +30,7 @@ const Footer = () => {
           >
             <FontAwesomeIcon icon={faTwitter} size="2x" />
           </a>
-          <a
-            href="https://www.rss.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faRss} size="2x" />
-          </a>
-          <a
-            href="https://www.google.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faGoogle} size="2x" />
-          </a>
-          <a
-            href="https://www.flickr.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faFlickr} size="2x" />
-          </a>
+      
           <a href="tel:+17124772469">
             <FontAwesomeIcon icon={faPhone} size="2x" />
           </a>
