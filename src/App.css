@@ -461,7 +461,7 @@ span.psw {
   overflow: hidden;
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 .menu-item img {
@@ -529,7 +529,7 @@ span.psw {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
   padding: 10px 0;
 }
 
@@ -577,28 +577,25 @@ span.psw {
 .phone-icon:hover {
   color: #0056b3; 
 }
+
+
 /* MenuHighlights */
 .menu-highlights-section {
   padding: 20px;
   text-align: center;
 }
-
 .menu-highlights-section .menu-highlights-title {
   color: var(--color-grey);
   font-size: 3em;
   margin-bottom: 40px;
   padding: 20px;
 }
-
-
-
 .menu-highlights-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
-
 .menu-highlights-item {
   flex: 1 1 calc(25% - 40px);
   display: flex;
@@ -617,16 +614,12 @@ span.psw {
 .menu-highlights-item:hover {
   transform: scale(1.05); 
 }
-
-
 .menu-highlights-item img {
   width: 100%;
     height: auto;
   transition: transform 0.3s ease;
 
 }
-
-
 .menu-highlights-item h3 {
   margin: 10px 0;
   font-size: 1.2em;
@@ -641,7 +634,6 @@ span.psw {
 }
 
 .menu-highlights-item button {
-  appearance: none;
   background-color: transparent;
   border: 2px solid var(--color-red);
   box-sizing: border-box;
