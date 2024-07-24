@@ -24,7 +24,9 @@
 
 
 html {
-background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+/* background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%); */
+background-image: url('https://cdn.pixabay.com/photo/2016/12/18/21/23/brick-wall-1916752_1280.jpg');
+
 }
 /* Navigation hamburger icon */
 .navbar-toggler {
@@ -43,6 +45,7 @@ background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(22
   align-items: center;
   z-index: 1000;
   position: relative;
+
 }
 .nav-items {
   list-style: none;
@@ -70,6 +73,7 @@ background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(22
 .logo img {
   width: 200px;
   height: auto;
+ 
 }
 
 /* Navbar styling for smaller screens */
@@ -116,7 +120,7 @@ background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(22
   height: auto;
   display: block;
   padding: 20px;
-  opacity: 0.5; 
+  /* opacity: 0.5;  */
 
 }
 
@@ -544,9 +548,11 @@ span.psw {
 .menu-highlights-section {
   padding: 20px;
   text-align: center;
+  background-color: #000000a3;
 }
 .menu-highlights-section .menu-highlights-title {
   color: var(--color-grey);
+ -webkit-text-stroke: 1px var(--color-red); 
   font-size: 3em;
   margin-bottom: 40px;
   padding: 20px;
@@ -571,6 +577,7 @@ span.psw {
   box-sizing: border-box;
   transition: transform 0.3s ease; 
   padding-bottom: 30px;
+   background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
 }
 .menu-highlights-item:hover {
   transform: scale(1.05); 
