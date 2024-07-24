@@ -57,13 +57,13 @@ background-image: url('https://cdn.pixabay.com/photo/2016/12/18/21/23/brick-wall
   text-decoration: none;
   padding: 0.5rem 0.8rem;
   margin: 0 0.2rem;
-  color: var(--color-grey);
+  color: var(--color-light);
   font-weight: bold;
 
 }
 
 .nav-item a:hover {
-  color: var(--color-purple);
+  color: var(--color-red);
 }
 
 .nav-item a.active-link {
@@ -96,6 +96,7 @@ background-image: url('https://cdn.pixabay.com/photo/2016/12/18/21/23/brick-wall
   .nav-items.show-nav {
     display: flex;
     transform: translateX(0);
+    background-image: url('https://cdn.pixabay.com/photo/2016/12/18/21/23/brick-wall-1916752_1280.jpg');
   }
 
   .navbar-toggler {
