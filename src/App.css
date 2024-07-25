@@ -12,16 +12,6 @@
   --font-size-large: 2rem;
 }
 
-/* .text-small {
-  font-size: var(--font-size-small);
-}
-.text-medium {
-  font-size: var(--font-size-medium);
-}
-.text-large {
-  font-size: var(--font-size-large);
-} */
-
 
 html {
 /* background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%); */
@@ -394,7 +384,8 @@ span.psw {
   overflow: hidden;
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* background-color: #fff; */
+  background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+
 }
 
 .menu-item img {
