@@ -1,5 +1,7 @@
 import React from "react";
 import {wrap, notchos, salad, sandwich } from './images/index'
+
+
 const MenuHighlights = () => {
   return (
     <div className="menu-highlights-section">
