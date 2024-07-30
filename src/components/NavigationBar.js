@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logo from "./images/chudscircle.png";
+import {logo} from './images/index';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
