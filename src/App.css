@@ -184,7 +184,7 @@ background-image: url('https://cdn.pixabay.com/photo/2016/12/18/21/23/brick-wall
 
 /* Footer */
 .footer {
-  color: var(--color-red);
+  color: var(--color-light);
   padding: 20px 0;
   text-align: center;
   font-family: Arial, sans-serif;
@@ -194,7 +194,6 @@ background-image: url('https://cdn.pixabay.com/photo/2016/12/18/21/23/brick-wall
   display: flex;
   justify-content: space-around;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--color-grey);
 }
 
 .logo-section {
@@ -234,13 +233,13 @@ background-image: url('https://cdn.pixabay.com/photo/2016/12/18/21/23/brick-wall
 }
 
 .social-media a {
-  color: var(--color-red);
+  color: var(--color-light);
   margin: 0 10px;
   transition: color 0.3s;
 }
 
 .social-media a:hover {
-  color: var(--color-dark-red);
+  color: var(--color-blue);
 }
 
 .footer-bottom p {
