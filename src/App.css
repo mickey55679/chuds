@@ -287,7 +287,8 @@ h1 {
   text-align: center;
   color: var(--color-grey);
   padding: 40px;
-    color: var(--color-light)
+    color: var(--color-light);
+     -webkit-text-stroke: 1px var(--color-red); 
 }
 h3 {
   text-align: center;
