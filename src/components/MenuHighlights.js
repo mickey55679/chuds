@@ -1,5 +1,5 @@
 import React from "react";
-import wrap from './images/chudswrap.jpg'
+import {wrap, notchos, salad, sandwich } from './images/index'
 const MenuHighlights = () => {
   return (
     <div className="menu-highlights-section">
@@ -15,7 +15,7 @@ const MenuHighlights = () => {
         </div>
         <div className="menu-highlights-item">
           <img
-            src="https://cdn.pixabay.com/photo/2017/07/08/17/13/steak-2484999_1280.jpg"
+            src={notchos}
             alt="Appetizers"
           />
           <h3>Appetizers</h3>
@@ -23,7 +23,7 @@ const MenuHighlights = () => {
         </div>
         <div className="menu-highlights-item">
           <img
-            src="https://cdn.pixabay.com/photo/2018/09/21/18/25/fillet-3693670_1280.jpg"
+            src={salad}
             alt="Classic Entrees"
           />
           <h3>Classic Entrées</h3>
@@ -31,7 +31,7 @@ const MenuHighlights = () => {
         </div>
         <div className="menu-highlights-item">
           <img
-            src="https://cdn.pixabay.com/photo/2016/12/11/22/41/lasagna-1900529_1280.jpg"
+            src={sandwich}
             alt="Create Your Own Pasta"
           />
           <h3>Create Your Own Pasta</h3>
