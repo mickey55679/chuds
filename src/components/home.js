@@ -15,7 +15,7 @@ const Home = (props) => {
           />
           <div className="overlay-text">
             <p>
-              CHUDs Pub and Grub is a family friendly restaurant that offers
+              Chuds Pub and Grub is a family friendly restaurant that offers
               delicious homemade food and a full bar!
             </p>
             <Link to="/menu">

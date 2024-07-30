@@ -3,10 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
   faTwitter,
-  faGoogle,
-  faFlickr,
 } from "@fortawesome/free-brands-svg-icons";
-import { faPhone, faCar, faRss } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faCar} from "@fortawesome/free-solid-svg-icons";
 
 
 const Footer = () => {
