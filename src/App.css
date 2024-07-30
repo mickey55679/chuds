@@ -534,7 +534,7 @@ span.psw {
   background-color: #000000a3;
 }
 .menu-highlights-section .menu-highlights-title {
-  color: var(--color-grey);
+  color: var(--color-light);
  -webkit-text-stroke: 1px var(--color-red); 
   font-size: 3em;
   margin-bottom: 40px;
