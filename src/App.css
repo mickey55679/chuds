@@ -107,7 +107,7 @@ background-image: url('https://cdn.pixabay.com/photo/2016/12/18/21/23/brick-wall
   margin-bottom: 50px;
 }
 .background-image {
-  width: 100%;
+  width: 80%;
   height: auto;
   display: block;
   padding: 20px;
@@ -529,7 +529,7 @@ span.psw {
 .menu-highlights-section {
   padding: 20px;
   text-align: center;
-  background-color: #000000a3;
+
 }
 .menu-highlights-section .menu-highlights-title {
   color: var(--color-light);
@@ -547,7 +547,7 @@ span.psw {
 .menu-highlights-item {
   flex: 1 1 calc(25% - 40px);
   display: flex;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ box-shadow: rgba(192, 21, 21, 0.25) 0 8px 15px;
   flex-direction: column;
   align-items: center;
   text-align: center;
