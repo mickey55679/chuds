@@ -1,5 +1,5 @@
 import React from "react";
-
+import wrap from './images/chudswrap.jpg'
 const MenuHighlights = () => {
   return (
     <div className="menu-highlights-section">
@@ -7,10 +7,10 @@ const MenuHighlights = () => {
       <div className="menu-highlights-container">
         <div className="menu-highlights-item">
           <img
-            src="https://cdn.pixabay.com/photo/2021/01/19/08/47/sandwich-5930496_1280.jpg"
+            src={wrap}
             alt="Caramelized Mushroom Onion Philly "
           />
-          <h3>Carmelized Mushroom Onion Philly</h3>
+          <h3>Chicken wrap</h3>
           <button>Order Now</button>
         </div>
         <div className="menu-highlights-item">

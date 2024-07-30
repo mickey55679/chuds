@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { chudsphoto } from "./images/index";
 import MenuHighlights from "./MenuHighlights";
-import barImage from './images/barimage.jpg'
+import {barTap} from './images/index'
 
 const Home = (props) => {
   return (
@@ -10,12 +9,11 @@ const Home = (props) => {
       <div className="home-page">
         <div className="image-container">
           <img
-            src={barImage}
+            src={barTap}
             alt="Home"
             className="background-image"
           />
           <div className="overlay-text">
-            {/* <img src={myLogo} alt="logo" className="my-logo-home" /> */}
             <p>
               CHUDs Pub and Grub is a family friendly restaurant that offers
               delicious homemade food and a full bar!

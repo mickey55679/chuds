@@ -1,4 +1,10 @@
-import chudsphoto from "./chudsgroup.jpg";
-import logo from "./chudslogo-removebg-preview.png";
+import AndouilleBeerBrat from './brat.jpg';
+import barTap from './bartap.jpg';
+import roast from './PotRoast.jpg';
+import salad from './chudssalad.jpg';
+import egg from './EggBake.jpg';
+import wrap from './chudswrap.jpg';
 
-export { chudsphoto, logo };
+
+
+export { AndouilleBeerBrat, barTap, roast, salad, egg, wrap };
