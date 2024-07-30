@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import { chudsphoto } from "./images/index";
 import MenuHighlights from "./MenuHighlights";
-// import myLogo from './images/chudsgroup-removebg-preview.png'
+import barImage from './images/barimage.jpg'
 
 const Home = (props) => {
   return (
@@ -10,7 +10,7 @@ const Home = (props) => {
       <div className="home-page">
         <div className="image-container">
           <img
-            src="https://cdn.pixabay.com/photo/2017/04/19/20/16/pub-2243488_1280.jpg"
+            src={barImage}
             alt="Home"
             className="background-image"
           />
