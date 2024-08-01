@@ -8,16 +8,12 @@
 }
 :root {
   --font-size-small: 0.75rem;
-  --font-size-medium: 1rem;
+  --font-size-medium: 1.3rem;
   --font-size-large: 2rem;
 }
-
-
 html {
 background-image: url('https://cdn.pixabay.com/photo/2016/12/18/21/23/brick-wall-1916752_1280.jpg');
 background-size: contain;
-
-
 }
 /* Navigation hamburger icon */
 .navbar-toggler {
@@ -27,9 +23,7 @@ background-size: contain;
   border: 2px solid var(--color-red);
   border-radius: 4px;
   background: transparent;
-  
 }
-
 /* Navigation Bar */
 .navbar {
   display: flex;
@@ -51,7 +45,8 @@ background-size: contain;
   padding: 0.5rem 0.8rem;
   margin: 0 0.2rem;
   color: var(--color-light);
-  font-weight: bold;
+  font-weight: 900;
+  font-size: var(--font-size-medium)
 
 }
 
