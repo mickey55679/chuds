@@ -79,10 +79,12 @@ const NavigationBar = ({
           <NavLink to="/checkout" className="cart-icon-link">
             <FontAwesomeIcon
               icon={faShoppingCart}
-              style={{ color: "#ef1511" }}
+              style={{ color: "var(--color-light)" }}
             />
             {totalItemsInCart > 0 && (
-              <span className="cart-badge">{totalItemsInCart}</span>
+              <span className="cart-badge">
+                {totalItemsInCart}
+              </span>
             )}
           </NavLink>
         </li>
