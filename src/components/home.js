@@ -20,7 +20,7 @@ const Home = (props) => {
             </p>
             <Link to="/menu">
               <button
-                className="button-27"
+                className="button-home"
                 onClick={() => props.handleClick("/menu")}
               >
                 Order Now
