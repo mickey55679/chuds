@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import MenuHighlights from "./MenuHighlights";
-import {barTap} from './images/index'
+
 
 const Home = (props) => {
   return (
@@ -9,7 +9,7 @@ const Home = (props) => {
       <div className="home-page">
         <div className="image-container">
           <img
-            src={barTap}
+            src="https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_1280.jpg"
             alt="Home"
             className="background-image"
           />

@@ -88,7 +88,7 @@ const ContactForm = () => {
           />
         </div>
  
-        <button type="submit" className="button-27" disabled={isLoading}>
+        <button type="submit" className="button-contact" disabled={isLoading}>
           {isLoading ? "Sending..." : "Submit"}
         </button>
     
