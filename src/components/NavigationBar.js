@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import {logo} from './images/index';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faX, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const NavigationBar = ({
   activeLink,
@@ -20,7 +20,7 @@ const NavigationBar = ({
         </NavLink>
       </div>
       <button className="navbar-toggler" type="button" onClick={handleToggle}>
-        <FontAwesomeIcon icon={faBars} />
+        <FontAwesomeIcon icon={isOpen ? faX : faBars} />
       </button>
       <ul className={`nav-items ${isOpen ? "show-nav ml-auto" : ""}`}>
         <li className="nav-item">
@@ -82,9 +82,7 @@ const NavigationBar = ({
               style={{ color: "var(--color-light)" }}
             />
             {totalItemsInCart > 0 && (
-              <span className="cart-badge">
-                {totalItemsInCart}
-              </span>
+              <span className="cart-badge">{totalItemsInCart}</span>
             )}
           </NavLink>
         </li>
