@@ -68,6 +68,12 @@ background-size: contain;
   height: auto;
  
 }
+.card-icon {
+  color: var(--color-light)
+}
+.card-icon:hover {
+  color: var(--color-red)
+}
 
 /* Navbar styling for smaller screens */
 @media screen and (max-width: 900px) {
