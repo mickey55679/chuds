@@ -26,6 +26,7 @@ background-size: contain;
   background: transparent;
   position: relative;
      z-index: 1100;
+
 }
 /* Navigation Bar */
 .navbar {
@@ -35,6 +36,8 @@ background-size: contain;
   align-items: center;
   z-index: 1000;
   position: relative;
+  background-color: var(--color-grey);
+  border: 2px solid var(--color-red);
 }
 .nav-items {
   list-style: none;
@@ -93,7 +96,7 @@ background-size: contain;
   width: 100%;
   height: 100%;
   transform: translateX(0);
-  background-image: url('https://cdn.pixabay.com/photo/2016/12/18/21/23/brick-wall-1916752_1280.jpg');
+  background: var(--color-grey);
   background-size: cover;
   background-repeat: no-repeat;
   color: white; /* Adjust text color for visibility */
