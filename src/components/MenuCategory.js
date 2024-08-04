@@ -9,7 +9,7 @@ const MenuCategory = ({
 }) => {
   return (
     <div className="menu-container">
-      <h1>{title}</h1>
+      <h1 className="title-menu">{title}</h1>
       <div className="menu-category">
         {items ? (
           items.map((item, index) => (

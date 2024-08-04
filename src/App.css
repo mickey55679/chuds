@@ -433,6 +433,12 @@ span.psw {
   flex-direction: column;
   padding: 20px;
 }
+.title-menu{
+  font-size: 3em;
+  background: var(--color-red);
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+}
 
 /* Menu category styling */
 .menu-category {
@@ -459,7 +465,7 @@ span.psw {
   border-radius: 8px;
   overflow: hidden;
   margin: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
   background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
 
 }
@@ -534,9 +540,6 @@ span.psw {
   box-shadow: none;
   transform: translateY(0); 
 }
-
-
-
 
 .menu-item-controls span {
   font-size: 1.2em;
