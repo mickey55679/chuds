@@ -19,7 +19,7 @@ background-size: contain;
 }
 /* Navigation hamburger icon */
 .navbar-toggler {
-  color: var(--color-blue);
+  color: var(--color-red);
   font-size: var(--font-size-large);
   cursor: pointer;
   border: 2px solid var(--color-red);
@@ -37,7 +37,7 @@ background-size: contain;
   align-items: center;
   z-index: 1000;
   position: relative;
-  background: black;
+  background: var(--color-blue);
   border: 2px solid var(--color-red);
 }
 .nav-items {
@@ -286,11 +286,13 @@ background-size: contain;
   margin-bottom: 5px; 
   color: var(--color-light);
   font-weight: 600;
+  font-size: var(--font-size-medium);
 }
 .label {
   color: var(--color-light);
   font-weight: var(--color-light);
   font-weight: 600;
+  font-size: var(--font-size-medium);
 }
 .input {
   width: 100%;
