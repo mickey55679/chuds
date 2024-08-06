@@ -319,7 +319,7 @@ h3 {
   text-align: center;
   background-color: var(--color-red);
   color: white;
-  padding: 40px;
+  padding: 20px;
 }
 
 .center-style {
@@ -678,7 +678,7 @@ span.psw {
   color: var(--color-grey);
   flex-grow: 1;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   width: 100%;
   box-sizing: border-box;
