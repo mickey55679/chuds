@@ -32,7 +32,7 @@ const createMenuItem = async (item) => {
 const getAllMenuItems = async () => {
   try {
     const burgerItems = await knex("burgers").select("*");
-    console.log("Burger items:", burgerItems); // Add this log
+    // console.log("Burger items:", burgerItems); 
     const sandwichItems = await knex("sandwiches").select("*");
     const sideItems = await knex("sides").select("*");
     const drinkItems = await knex("drinks").select("*");
