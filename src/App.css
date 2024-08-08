@@ -158,10 +158,11 @@ html {
 /* CSS for button on home page */
 .button-home {
   /* background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%); */
-  background: transparent;
-  border: 2px solid var(--color-dark-red);
+  /* background: transparent; */
+  background-color: var(--color-dark-red);
+  border: 2px solid var(--color-red);
   box-sizing: border-box;
-  color: var(--color-red);
+  color: var(--color-light);
   cursor: pointer;
   display: inline-block;
   font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
@@ -377,10 +378,10 @@ span.psw {
 }
 .button-contact {
   /* background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%); */
-  background: transparent;
-  border: 2px solid var(--color-dark-red);
+  background-color: var(--color-dark-red);
+  border: 2px solid var(--color-red);
   box-sizing: border-box;
-  color: var(--color-red);
+  color: var(--color-light);
   cursor: pointer;
   display: inline-block;
   font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
@@ -512,10 +513,10 @@ span.psw {
   margin: 10px 0 20px;
 }
 .menu-item-controls button {
-  background-color: transparent;
+ background-color: var(--color-dark-red);
   border: 2px solid var(--color-red);
   box-sizing: border-box;
-  color: var(--color-red);
+  color: var(--color-light);
   cursor: pointer;
   display: inline-block;
   font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
@@ -685,10 +686,10 @@ span.psw {
 }
 
 .menu-highlights-item button {
-  background-color: transparent;
+ background-color: var(--color-dark-red);
   border: 2px solid var(--color-red);
   box-sizing: border-box;
-  color: var(--color-red);
+  color: var(--color-light);
   cursor: pointer;
   display: inline-block;
   font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
