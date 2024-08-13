@@ -471,11 +471,13 @@ span.psw {
 .menu-item:hover {
   transform: scale(1.05);
 }
-input[type="number" i] {
-  width: 50%;
-}
+
 .quantity{
   font-family: cursive;
+}
+.quantity-selector{
+  color: var(--color-blue);
+  border-radius: 4px;
 }
 
 .menu-item img {

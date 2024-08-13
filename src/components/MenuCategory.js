@@ -30,6 +30,7 @@ const MenuCategory = ({
                   <span>Quantity:</span>{" "}
                 </label>
                 <select
+                className="quantity-selector"
                   value={orderItems[item.id] || 0}
                   onChange={(e) =>
                     handleQuantityChange(item.id, parseInt(e.target.value) || 0)
