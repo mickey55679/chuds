@@ -26,7 +26,9 @@ const MenuCategory = ({
               <p>Price: ${item.price.toFixed(2)}</p>
               <div className="desc">{item.desc}</div>
               <div className="menu-item-controls">
-                <label>Quantity:</label>
+                <label className="quantity">
+                  <span>Quantity:</span>{" "}
+                </label>
                 <input
                   type="number"
                   value={orderItems[item.id] || 0}

@@ -471,6 +471,12 @@ span.psw {
 .menu-item:hover {
   transform: scale(1.05);
 }
+input[type="number" i] {
+  width: 50%;
+}
+.quantity{
+  font-family: cursive;
+}
 
 .menu-item img {
   width: 100%;
@@ -500,6 +506,7 @@ span.psw {
 .menu-item p {
   font-size: 1em;
   margin: 10px 0;
+  font-style: italic;
 }
 
 .desc {
