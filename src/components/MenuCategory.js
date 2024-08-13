@@ -29,14 +29,18 @@ const MenuCategory = ({
                 <label className="quantity">
                   <span>Quantity:</span>{" "}
                 </label>
-                <input
-                  type="number"
+                <select
                   value={orderItems[item.id] || 0}
                   onChange={(e) =>
                     handleQuantityChange(item.id, parseInt(e.target.value) || 0)
                   }
-                  min="0"
-                />
+                >
+                  {[...Array(11).keys()].map((number) => (
+                    <option key={number} value={number}>
+                      {number}
+                    </option>
+                  ))}
+                </select>
                 <button
                   className="add-to-cart"
                   onClick={() => handleAddToCart(item.id)}
