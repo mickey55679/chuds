@@ -11,7 +11,6 @@
   --font-size-medium: 1.3rem;
   --font-size-large: 2rem;
 }
-
 /* This applies to all pages */
 html {
   background-image: url("https://cdn.pixabay.com/photo/2016/12/18/21/23/brick-wall-1916752_1280.jpg");
@@ -26,7 +25,7 @@ html {
   border-radius: 4px;
   background: transparent;
   position: relative;
-  z-index: 1100;
+  z-index: 1100;  /* makes it front  */
 }
 /* Navigation Bar */
 .navbar {
