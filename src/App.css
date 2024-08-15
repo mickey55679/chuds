@@ -7,7 +7,7 @@
   --color-dark-red: #8b0000;
 }
 :root {
-  --font-size-small: 0.75rem;
+  --font-size-small: 1rem;
   --font-size-medium: 1.3rem;
   --font-size-large: 2rem;
 }
@@ -52,7 +52,6 @@ html {
   font-weight: 900;
   font-size: var(--font-size-medium);
 }
-
 .nav-item a:hover {
   color: var(--color-red);
 }
@@ -65,12 +64,12 @@ html {
   width: 200px;
   height: auto;
 }
-.card-icon {
+/* .card-icon {
   color: var(--color-light);
 }
 .card-icon:hover {
   color: var(--color-red);
-}
+} */
 
 /* Navbar styling for smaller screens */
 @media screen and (max-width: 900px) {
@@ -122,6 +121,7 @@ html {
   margin-bottom: 50px;
   border-radius: 4px;
 }
+
 .background-image {
   width: 60%;
   height: auto;
@@ -488,7 +488,6 @@ span.psw {
 .menu-item h2 {
   margin: 10px 0;
   font-size: 1.2em;
-  font-size: 1.2em;
   background: radial-gradient(
     circle at 18.7% 37.8%,
     rgb(250, 250, 250) 0%,
@@ -640,12 +639,15 @@ span.psw {
   background-color: var(--color-red);
   border-radius: 4px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+  
 }
 .menu-highlights-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  
+
 }
 .menu-highlights-item {
   flex: 1 1 calc(25% - 40px);
@@ -666,16 +668,18 @@ span.psw {
     rgb(225, 234, 238) 90%
   );
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+  
 }
 .menu-highlights-item:hover {
   transform: scale(1.05);
 }
 .menu-highlights-item img {
   width: 100%;
-  height: auto;
+  object-fit: cover;
   transition: transform 0.3s ease;
+    padding: 20px;
 }
-.menu-highlights-item h3 {
+.menu-highlights-item .menu-highlights-label {
   margin: 10px 0;
   font-size: 1.2em;
   background: radial-gradient(
@@ -686,7 +690,7 @@ span.psw {
   color: var(--color-grey);
   flex-grow: 1;
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
   width: 100%;
   box-sizing: border-box;
@@ -718,6 +722,7 @@ span.psw {
   width: 80%;
   will-change: transform;
   border-radius: 4px;
+
 }
 
 .menu-highlights-item button:disabled {
@@ -746,8 +751,6 @@ span.psw {
 .navigation button:hover {
   background-color: var(--color-purple);
 }
-/* Add this CSS to your existing stylesheet */
-
 /* Cart badge styling */
 .cart-badge {
   position: absolute;
