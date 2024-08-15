@@ -1,32 +1,59 @@
 import React from "react";
-import {wrap, notchos, salad, sandwich } from './images/index'
 
-
-const MenuHighlights = () => {
+const MenuHighlights = ({
+  title,
+  items,
+  handleQuantityChange,
+  handleAddToCart,
+  orderItems,
+}) => {
   return (
     <div className="menu-highlights-section">
-      <h2 className="menu-highlights-title">Menu Highlights</h2>
+      <h2 className="menu-highlights-title">{title}</h2>
       <div className="menu-highlights-container">
-        <div className="menu-highlights-item">
-          <h3 className="menu-highlights-label">Chicken wrap</h3>
-          <img src={wrap} alt="Caramelized Mushroom Onion Philly " />
-          <button>Order Now</button>
-        </div>
-        <div className="menu-highlights-item">
-          <h3 className="menu-highlights-label">Appetizers</h3>
-          <img src={notchos} alt="Appetizers" />
-          <button>Order Now</button>
-        </div>
-        <div className="menu-highlights-item">
-          <h3 className="menu-highlights-label">Classic Entrées</h3>
-          <img src={salad} alt="Classic Entrees" />
-          <button>Order Now</button>
-        </div>
-        <div className="menu-highlights-item">
-          <h3 className="menu-highlights-label">Create Your Own Pasta</h3>
-          <img src={sandwich} alt="Create Your Own Pasta" />
-          <button>Order Now</button>
-        </div>
+        {items ? (
+          items.map((item, index) => (
+            <div key={index} className="menu-highlights-item">
+              <h3 className="menu-highlights-label">{item.name}</h3>
+              <img
+                src={item.imgurl}
+                alt={`${item.name} image`}
+                width="180"
+                height="auto"
+              />
+              <p>{item.description}</p>
+              <p>Category: {item.category || "No category available"}</p>
+              <p>Price: ${item.price.toFixed(2)}</p>
+              <div className="desc">{item.desc}</div>
+              <div className="menu-item-controls">
+                <label className="quantity">
+                  <span>Quantity:</span>{" "}
+                </label>
+                <select
+                  className="quantity-selector"
+                  value={orderItems[item.id] || 0}
+                  onChange={(e) =>
+                    handleQuantityChange(item.id, parseInt(e.target.value) || 0)
+                  }
+                >
+                  {[...Array(11).keys()].map((number) => (
+                    <option key={number} value={number}>
+                      {number}
+                    </option>
+                  ))}
+                </select>
+                <button
+                  className="add-to-cart"
+                  onClick={() => handleAddToCart(item.id)}
+                >
+                  Order Now
+                </button>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>No items available</p>
+        )}
       </div>
     </div>
   );
