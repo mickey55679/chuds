@@ -38,6 +38,18 @@ function Checkout({ cartItems, setCartItems, items }) {
     const updatedQuantity = currentQuantity + 1;
     handleQuantityChange(id, updatedQuantity);
   };
+  const handleDeleteFromCart = (id) => {
+ const currentQuantity = cartItems[id];
+ if(currentQuantity > 1){
+  const updatedQuantity = currentQuantity - 1;
+  handleQuantityChange(id, updatedQuantity);
+ } else {
+  const updatedCartItems = { ...cartItems };
+  delete updatedCartItems[id];
+  setCartItems(updatedCartItems);
+ }
+
+  }
 
   return (
     <>
@@ -69,6 +81,12 @@ function Checkout({ cartItems, setCartItems, items }) {
                 onClick={() => handleAddToCart(item.id)}
               >
                 Add
+              </button>
+              <button 
+              className="delete-from-cart"
+              onClick={() => handleDeleteFromCart(item.id)}
+              >
+                Delete
               </button>
             </div>
           </div>
