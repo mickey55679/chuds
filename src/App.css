@@ -753,7 +753,6 @@ span.psw {
 }
 /* Cart badge styling */
 .cart-badge {
-  position: absolute;
   top: 8px;
   right: 8px;
   background-color: var(--color-red);
