@@ -73,7 +73,7 @@ const AdminDash = () => {
             required
           />
           <input
-            className="form-input"
+            className="form-input-img"
             type="file"
             name="imgurl"
             value={form.imgurl}

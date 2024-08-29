@@ -820,6 +820,20 @@ span.psw {
   outline: none;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
+.form-input-url {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.form-input-url:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
 .button-add-menu-item{
    background-color: var(--color-dark-red);
   border: 2px solid var(--color-red);
