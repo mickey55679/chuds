@@ -20,6 +20,16 @@ const AdminDash = () => {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setForm({...form, imgurl: reader.result})
+    };
+    if(file){
+      reader.readAsDataURL(file);
+    }
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -64,9 +74,11 @@ const AdminDash = () => {
           />
           <input
             className="form-input"
+            type="file"
             name="imgurl"
             value={form.imgurl}
-            onChange={handleChange}
+            onChange={handleFileChange}
+            accept="image/*"
             placeholder="Image URL"
             required
           />
