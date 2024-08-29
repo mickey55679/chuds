@@ -43,7 +43,7 @@ const AdminDash = () => {
 
   return (
     <div>
-      <h1>Admin Dashboard</h1>
+      <h1 className="admin-dash-header">Admin Dashboard</h1>
       <form onSubmit={handleSubmit}>
         <input
           name="name"
