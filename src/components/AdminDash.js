@@ -79,8 +79,7 @@ const AdminDash = () => {
             required
           />
         </form>
-
-        <button type="submit">Add Menu Item</button>
+        <button type="submit" className="button-add-menu-item">Add Menu Item</button>
       </form>
       <ul>
         {menuItems.map((item) => (
