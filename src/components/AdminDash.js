@@ -45,34 +45,41 @@ const AdminDash = () => {
     <div>
       <h1 className="admin-dash-header">Admin Dashboard</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          name="name"
-          value={form.name}
-          onChange={handleChange}
-          placeholder="Name"
-          required
-        />
-        <input
-          name="price"
-          value={form.price}
-          onChange={handleChange}
-          placeholder="Price"
-          required
-        />
-        <input
-          name="imgurl"
-          value={form.imgurl}
-          onChange={handleChange}
-          placeholder="Image URL"
-          required
-        />
-        <input
-          name="category"
-          value={form.category}
-          onChange={handleChange}
-          placeholder="Category"
-          required
-        />
+        <form onSubmit={handleSubmit}>
+          <input
+            className="form-input"
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+            placeholder="Name"
+            required
+          />
+          <input
+            className="form-input"
+            name="price"
+            value={form.price}
+            onChange={handleChange}
+            placeholder="Price"
+            required
+          />
+          <input
+            className="form-input"
+            name="imgurl"
+            value={form.imgurl}
+            onChange={handleChange}
+            placeholder="Image URL"
+            required
+          />
+          <input
+            className="form-input"
+            name="category"
+            value={form.category}
+            onChange={handleChange}
+            placeholder="Category"
+            required
+          />
+        </form>
+
         <button type="submit">Add Menu Item</button>
       </form>
       <ul>
