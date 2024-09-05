@@ -9,8 +9,14 @@ const router = express.Router();
 // Public route to view menu
 router.get("/", async (req, res) => {
   try {
-    const { burgerItems, sandwichItems, sideItems, drinkItems, buildYourOwnBurger } =
-      await menuModel.getAllMenuItems();
+    const {
+      burgerItems,
+      sandwichItems,
+      sideItems,
+      drinkItems,
+      buildYourOwnBurger,
+      littleChuds,
+    } = await menuModel.getAllMenuItems();
 
     const menuItems = {
       burgerItems,
@@ -18,6 +24,7 @@ router.get("/", async (req, res) => {
       sideItems,
       drinkItems,
       buildYourOwnBurger,
+      littleChuds,
     };
 
     res.status(200).json(menuItems);

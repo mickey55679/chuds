@@ -8,6 +8,7 @@ const getTableName = (category) => {
     side: "sides",
     drink: "drinks",
     buildYourOwnBurger: "buildYourOwnBurger",
+    littleChuds: "littleChuds",
   };
   return tableMap[category]
   
@@ -34,6 +35,7 @@ const createMenuItem = async (item) => {
 
 const getAllMenuItems = async () => {
   try {
+    const littleChuds = await knex("little chuds");
     const buildYourOwnBurger = await knex("build your own burger");
     const burgerItems = await knex("burgers").select("*");
     const sandwichItems = await knex("sandwiches").select("*");
@@ -46,6 +48,7 @@ const getAllMenuItems = async () => {
       sideItems,
       drinkItems,
       buildYourOwnBurger,
+      littleChuds
     };
   } catch (error) {
     console.error("Error fetching menu items:", error.message);

@@ -8,6 +8,7 @@ const Menu = ({ setCartItems, setItems }) => {
     sandwiches: [],
     drinks: [],
     sides: [],
+    littleChuds: [],
   });
 
   const [orderItems, setOrderItems] = useState({});
@@ -19,6 +20,7 @@ const Menu = ({ setCartItems, setItems }) => {
         console.log("Fetched menu items:", data);
 
         setMenuItems({
+          littleChuds: data.littleChuds || [],
           buildYourOwnBurger: data.buildYourOwnBurger || [],
           burgers: data.burgerItems || [],
           sandwiches: data.sandwichItems || [],
@@ -62,6 +64,7 @@ const Menu = ({ setCartItems, setItems }) => {
     { title: "Drink Items", items: menuItems.drinks },
     { title: "Sides", items: menuItems.sides },
     { title: "Build your own burger", items: menuItems.buildYourOwnBurger},
+    { title: "little Chuds", items: menuItems.littleChuds},
   ];
 
   return (
