@@ -9,27 +9,33 @@ const AdminDash = () => {
     imgurl: "",
     category: "",
   });
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     axios
       .get("/api/menu")
-      .then((res) => setMenuItems(res.data))
+      .then((res) => {
+        setMenuItems(res.data);
+        // Assuming the response includes categories
+        setCategories([...new Set(res.data.map((item) => item.category))]); // Extract unique categories
+      })
       .catch((err) => console.error(err));
   }, []);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     const reader = new FileReader();
     reader.onloadend = () => {
-      setForm({...form, imgurl: reader.result})
+      setForm({ ...form, imgurl: reader.result });
     };
-    if(file){
+    if (file) {
       reader.readAsDataURL(file);
     }
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -55,43 +61,50 @@ const AdminDash = () => {
     <div>
       <h1 className="admin-dash-header">Admin Dashboard</h1>
       <form onSubmit={handleSubmit}>
-        <form onSubmit={handleSubmit}>
-          <input
-            className="form-input"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            placeholder="Name"
-            required
-          />
-          <input
-            className="form-input"
-            name="price"
-            value={form.price}
-            onChange={handleChange}
-            placeholder="Price"
-            required
-          />
-          <input
-            className="form-input-img"
-            type="file"
-            name="imgurl"
-            value={form.imgurl}
-            onChange={handleFileChange}
-            accept="image/*"
-            placeholder="Image URL"
-            required
-          />
-          <input
-            className="form-input"
-            name="category"
-            value={form.category}
-            onChange={handleChange}
-            placeholder="Category"
-            required
-          />
-        </form>
-        <button type="submit" className="button-add-menu-item">Add Menu Item</button>
+        <input
+          className="form-input"
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          placeholder="Name"
+          required
+        />
+        <input
+          className="form-input"
+          name="price"
+          value={form.price}
+          onChange={handleChange}
+          placeholder="Price"
+          required
+        />
+        <input
+          className="form-input-img"
+          type="file"
+          name="imgurl"
+          onChange={handleFileChange}
+          accept="image/*"
+          placeholder="Image URL"
+          required
+        />
+        <select
+          className="form-select"
+          name="category"
+          value={form.category}
+          onChange={handleChange}
+          required
+        >
+          <option value="" disabled>
+            Select a category
+          </option>
+          {categories.map((category, index) => (
+            <option key={index} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+        <button type="submit" className="button-add-menu-item">
+          Add Menu Item
+        </button>
       </form>
       <ul>
         {menuItems.map((item) => (
