@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const AdminDash = () => {
   const [menuItems, setMenuItems] = useState([]);
@@ -10,17 +11,34 @@ const AdminDash = () => {
     category: "",
   });
   const [categories, setCategories] = useState([]);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
+    // Check if user is authenticated and has admin rights
     axios
-      .get("/api/menu")
+      .get("/api/check-admin")
       .then((res) => {
-        setMenuItems(res.data);
-        // Assuming the response includes categories
-        setCategories([...new Set(res.data.map((item) => item.category))]); // Extract unique categories
+        if (res.data.isAdmin) {
+          setIsAdmin(true);
+        } else {
+          navigate("/unauthorized"); // Redirect to an unauthorized page or login page
+        }
       })
-      .catch((err) => console.error(err));
-  }, []);
+      .catch(() => navigate("/login")); // Redirect to login if not authenticated
+  }, [navigate]);
+
+  useEffect(() => {
+    if (isAdmin) {
+      axios
+        .get("/api/menu")
+        .then((res) => {
+          setMenuItems(res.data);
+          setCategories([...new Set(res.data.map((item) => item.category))]);
+        })
+        .catch((err) => console.error(err));
+    }
+  }, [isAdmin]);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -56,6 +74,10 @@ const AdminDash = () => {
       })
       .catch((err) => console.error(err));
   };
+
+  if (!isAdmin) {
+    return <p>Loading...</p>; // Or some other loading state
+  }
 
   return (
     <div>

@@ -10,8 +10,10 @@ import {
   Checkout,
   Login,
   Register,
+  Unauthorized,
 } from "./components/index";
 import AdminDash from "./components/AdminDash";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   const [activeLink, setActiveLink] = useState("");
@@ -21,14 +23,15 @@ function App() {
   const [totalItemsInCart, setTotalItemsInCart] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-
-  const isAuthenticated = true;
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   useEffect(() => {
-    const checkAdminRights = () => {
+    const checkAdminRights = async () => {
       setIsLoading(true);
+      // Simulate API call or session check
       if (isAuthenticated) {
-        setIsAdmin(true);
+        // Replace this with an actual API call
+        setIsAdmin(true); // This should be based on actual authentication
       } else {
         setIsAdmin(false);
       }
@@ -99,7 +102,18 @@ function App() {
               />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              {isAdmin && <Route path="/admin" element={<AdminDash />} />}
+              <Route path="/unauthorized" element={<div>Unauthorized</div>} />
+              <Route
+                path="/admin"
+                element={
+                  <ProtectedRoute
+                    isAuthenticated={isAuthenticated}
+                    isAdmin={isAdmin}
+                  >
+                    <AdminDash />
+                  </ProtectedRoute>
+                }
+              />
             </Routes>
           </Router>
         )}
