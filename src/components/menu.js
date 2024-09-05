@@ -57,11 +57,11 @@ const Menu = ({ setCartItems, setItems }) => {
   };
 
   const categories = [
-    { title: "Build your own burger", items: menuItems.burgers },
+    { title: "Burgers", items: menuItems.burgers },
     { title: "Sandwiches", items: menuItems.sandwiches },
     { title: "Drink Items", items: menuItems.drinks },
     { title: "Sides", items: menuItems.sides },
-    { title: "buildYourOwnBurger", items: menuItems.buildYourOwnBurger},
+    { title: "Build your own burger", items: menuItems.buildYourOwnBurger},
   ];
 
   return (
