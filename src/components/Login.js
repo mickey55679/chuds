@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Login = () => {
+const Login = ({ updateAuthStatus }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [users, setUsers] = useState([]);
   const [message, setMessage] = useState("");
   const baseUrl = "http://localhost:3000";
 
@@ -21,8 +19,10 @@ const Login = () => {
       });
 
       if (response.data && response.data.token) {
-        setIsLoggedIn(true);
         localStorage.setItem("token", response.data.token);
+        // Simulate API call to fetch user details
+        const user = await simulateAuthCheck(); // Replace with actual user fetching logic
+        updateAuthStatus(true, user.isAdmin);
         setMessage(`Welcome, ${email}!`);
       } else {
         throw new Error("Invalid login response");
@@ -36,70 +36,45 @@ const Login = () => {
   };
 
   // Function to handle registration
-const handleRegister = async () => {
-  setIsLoading(true);
+  const handleRegister = async () => {
+    setIsLoading(true);
 
-  try {
-    const response = await axios.post(`${baseUrl}/api/auth/register`, {
-      username: email, 
-      password: password,
-    });
+    try {
+      const response = await axios.post(`${baseUrl}/api/auth/register`, {
+        username: email,
+        password: password,
+      });
 
-    if (response.status === 201) {
-      alert("Registration successful! Please log in.");
-      setEmail("");
-      setPassword("");
-    } else {
-      throw new Error("Failed to register");
+      if (response.status === 201) {
+        alert("Registration successful! Please log in.");
+        setEmail("");
+        setPassword("");
+      } else {
+        throw new Error("Failed to register");
+      }
+    } catch (error) {
+      console.error("Registration failed", error);
+      alert("Registration failed");
+    } finally {
+      setIsLoading(false);
     }
-  } catch (error) {
-    console.error("Registration failed", error);
-    alert("Registration failed");
-  } finally {
-    setIsLoading(false);
-  }
-};
-
+  };
 
   // Function to handle logout
   const handleLogout = () => {
-    setIsLoggedIn(false);
     localStorage.removeItem("token");
+    updateAuthStatus(false, false);
     setMessage("");
-    setUsers([]);
   };
 
-  // Function to fetch users
-  const fetchUsers = async () => {
-    try {
-      const response = await axios.get(`${baseUrl}/api/auth/logout`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
-      setUsers(response.data);
-    } catch (error) {
-      console.error("Failed to fetch users", error);
-      alert("Failed to fetch users");
-    }
-  };
-
-  // Event handler for the action buttons (Login, Register, Logout)
-  const handleAction = (action) => {
-    switch (action) {
-      case "login":
-        handleLogin();
-        break;
-      case "register":
-        handleRegister();
-        break;
-      case "logout":
-        handleLogout();
-        break;
-      default:
-        break;
-    }
-  };
+  // Simulate a function to check authentication and admin status
+  async function simulateAuthCheck() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ isAdmin: true }); // Simulate a user with admin rights
+      }, 1000);
+    });
+  }
 
   return (
     <form id="authForm">
@@ -125,42 +100,29 @@ const handleRegister = async () => {
         <button
           type="button"
           id="loginBtn"
-          onClick={() => handleAction("login")}
-          disabled={isLoading || isLoggedIn}
+          onClick={handleLogin}
+          disabled={isLoading}
         >
           Login
         </button>
         <button
           type="button"
           id="registerBtn"
-          onClick={() => handleAction("register")}
-          disabled={isLoading || isLoggedIn}
+          onClick={handleRegister}
+          disabled={isLoading}
         >
           Register
         </button>
         <button
           type="button"
           id="logoutBtn"
-          onClick={() => handleAction("logout")}
-          disabled={!isLoggedIn}
+          onClick={handleLogout}
+          disabled={!localStorage.getItem("token")}
         >
           Logout
         </button>
-        <button
-          type="button"
-          id="fetchUsers"
-          onClick={fetchUsers}
-          disabled={!isLoggedIn}
-        >
-          Fetch Users
-        </button>
       </div>
       <div id="message">{message}</div>
-      <ol id="users">
-        {users.map((user) => (
-          <li key={user.id}>{user.username}</li>
-        ))}
-      </ol>
     </form>
   );
 };

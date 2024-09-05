@@ -1,3 +1,4 @@
+// App.js
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -28,12 +29,13 @@ function App() {
   useEffect(() => {
     const checkAuthStatus = async () => {
       setIsLoading(true);
-      // Simulate API call or session check
-      // This should be replaced with your actual authentication logic
-      const user = await simulateAuthCheck();
-      if (user) {
+      // Check authentication and admin status from storage or API
+      const token = localStorage.getItem("token");
+      if (token) {
+        // Simulate API call
+        const user = await simulateAuthCheck();
         setIsAuthenticated(true);
-        setIsAdmin(user.isAdmin); // Assuming `user` has an `isAdmin` property
+        setIsAdmin(user.isAdmin);
       } else {
         setIsAuthenticated(false);
         setIsAdmin(false);
@@ -67,6 +69,12 @@ function App() {
     setCartItems(updatedCartItems);
   };
 
+  // Function to update authentication status
+  const updateAuthStatus = (status, adminStatus) => {
+    setIsAuthenticated(status);
+    setIsAdmin(adminStatus);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -80,7 +88,7 @@ function App() {
               handleToggle={handleToggle}
               isOpen={isOpen}
               totalItemsInCart={totalItemsInCart}
-              isAuthenticated={isAuthenticated} // Pass isAuthenticated to NavigationBar
+              isAuthenticated={isAuthenticated}
             />
 
             <Routes>
@@ -103,7 +111,10 @@ function App() {
                   />
                 }
               />
-              <Route path="/login" element={<Login />} />
+              <Route
+                path="/login"
+                element={<Login updateAuthStatus={updateAuthStatus} />}
+              />
               <Route path="/register" element={<Register />} />
               <Route path="/unauthorized" element={<div>Unauthorized</div>} />
               <Route
@@ -128,7 +139,6 @@ function App() {
 
 // Simulate a function to check authentication and admin status
 async function simulateAuthCheck() {
-  // Replace this with your actual auth check
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({ isAdmin: true }); // Simulate a user with admin rights
