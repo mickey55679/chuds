@@ -3,6 +3,7 @@ import MenuCategory from "./MenuCategory";
 
 const Menu = ({ setCartItems, setItems }) => {
   const [menuItems, setMenuItems] = useState({
+    buildYourOwnBurger: [],
     burgers: [],
     sandwiches: [],
     drinks: [],
@@ -18,6 +19,7 @@ const Menu = ({ setCartItems, setItems }) => {
         console.log("Fetched menu items:", data);
 
         setMenuItems({
+          buildYourOwnBurger: data.buildYourOwnBurger || [],
           burgers: data.burgerItems || [],
           sandwiches: data.sandwichItems || [],
           drinks: data.drinkItems || [],
@@ -59,6 +61,7 @@ const Menu = ({ setCartItems, setItems }) => {
     { title: "Sandwiches", items: menuItems.sandwiches },
     { title: "Drink Items", items: menuItems.drinks },
     { title: "Sides", items: menuItems.sides },
+    { title: "buildYourOwnBurger", items: menuItems.buildYourOwnBurger},
   ];
 
   return (

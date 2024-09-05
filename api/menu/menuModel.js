@@ -7,17 +7,20 @@ const getTableName = (category) => {
     sandwich: "sandwiches",
     side: "sides",
     drink: "drinks",
+    buildYourOwnBurger: "buildYourOwnBurger",
   };
-  return tableMap[category];
+  return tableMap[category]
+  
+
 };
 
 
 const createMenuItem = async (item) => {
-    console.log("createMenuItem is being called");
+    // console.log("createMenuItem is being called");
   let tableName; 
 
   try {
-    console.log(item.category);
+    // console.log(item.category);
     tableName = getTableName(item.category);
     const [id] = await knex(tableName).insert(item);
     console.log(`Inserted item into ${tableName} with ID: ${id}`);
@@ -31,13 +34,19 @@ const createMenuItem = async (item) => {
 
 const getAllMenuItems = async () => {
   try {
+    const buildYourOwnBurger = await knex("build your own burger");
     const burgerItems = await knex("burgers").select("*");
-    // console.log("Burger items:", burgerItems); 
     const sandwichItems = await knex("sandwiches").select("*");
     const sideItems = await knex("sides").select("*");
     const drinkItems = await knex("drinks").select("*");
 
-    return { burgerItems, sandwichItems, sideItems, drinkItems };
+    return {
+      burgerItems,
+      sandwichItems,
+      sideItems,
+      drinkItems,
+      buildYourOwnBurger,
+    };
   } catch (error) {
     console.error("Error fetching menu items:", error.message);
     throw error;
