@@ -17,7 +17,7 @@ const MenuHighlights = ({
               <h3 className="menu-highlights-label">{item.name}</h3>
               <img
                 src={item.imgurl}
-                alt={`${item.name} image`}
+                alt={`${item.name}`}
                 width="180"
                 height="auto"
               />
