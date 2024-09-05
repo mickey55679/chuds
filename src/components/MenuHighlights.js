@@ -7,14 +7,21 @@ const MenuHighlights = ({
   handleAddToCart,
   orderItems,
 }) => {
+  console.log("MenuHighlights items:", items);
   return (
-    <div className="menu-highlights-section">
-      <h2 className="menu-highlights-title">{title}</h2>
-      <div className="menu-highlights-container">
+    <div className="menu-container">
+      {" "}
+      {/* Updated to use the same class */}
+      <h1 className="title-menu">{title}</h1> {/* Same as MenuCategory */}
+      <div className="menu-category">
+        {" "}
+        {/* Match the class of the items container */}
         {items ? (
           items.map((item, index) => (
-            <div key={index} className="menu-highlights-item">
-              <h3 className="menu-highlights-label">{item.name}</h3>
+            <div key={index} className="menu-item menu-items">
+              {" "}
+              {/* Same class as MenuCategory */}
+              <h2>{item.name}</h2>
               <img
                 src={item.imgurl}
                 alt={`${item.name}`}

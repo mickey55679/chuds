@@ -33,7 +33,7 @@ const Menu = ({ setCartItems, setItems }) => {
       .catch((error) => {
         console.error("Error:", error);
       });
-  }, []);
+  }, );
 
   const handleQuantityChange = (id, quantity) => {
     const updatedOrder = { ...orderItems, [id]: quantity };
