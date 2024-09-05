@@ -62,9 +62,9 @@ const Menu = ({ setCartItems, setItems }) => {
     { title: "Burgers", items: menuItems.burgers },
     { title: "Sandwiches", items: menuItems.sandwiches },
     { title: "Drink Items", items: menuItems.drinks },
-    { title: "Sides", items: menuItems.sides },
-    { title: "Build your own burger", items: menuItems.buildYourOwnBurger},
-    { title: "little Chuds", items: menuItems.littleChuds},
+    { title: "Sides  🍪", items: menuItems.sides },
+    { title: "Build your own burger 🍔", items: menuItems.buildYourOwnBurger },
+    { title: "Little Chuds 🐻", items: menuItems.littleChuds },
   ];
 
   return (
