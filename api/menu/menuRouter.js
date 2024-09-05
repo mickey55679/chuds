@@ -40,7 +40,7 @@ router.get("/", async (req, res) => {
 router.post("/", restricted, onlyAdmin, async (req, res) => {
   const { name, price, imgurl, category } = req.body;
   try {
-    const tableName = menuModel.getTableName(category); // Correct usage of getTableName
+    const tableName = menuModel.getTableName(category); 
     const [id] = await knex(tableName).insert({
       name,
       price,
