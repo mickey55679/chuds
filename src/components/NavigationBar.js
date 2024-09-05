@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import {logo} from './images/index';
+import { logo } from "./images/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,7 +10,7 @@ const NavigationBar = ({
   handleToggle,
   isOpen,
   totalItemsInCart,
-  isAdmin
+  isAuthenticated,
 }) => {
   return (
     <nav className="navbar">
@@ -53,7 +53,7 @@ const NavigationBar = ({
             Contact
           </NavLink>
         </li>
-        {isAdmin && ( // Conditionally render the Admin link
+        {isAuthenticated && (
           <li className="nav-item">
             <NavLink
               to="/admin"
@@ -77,10 +77,7 @@ const NavigationBar = ({
         </li>
         <li className="nav-item">
           <NavLink to="/checkout" className="cart-icon-link">
-            <FontAwesomeIcon
-              icon={faShoppingCart}
-              className="cart-icon"
-            />
+            <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" />
             {totalItemsInCart > 0 && (
               <span className="cart-badge">{totalItemsInCart}</span>
             )}
@@ -90,6 +87,5 @@ const NavigationBar = ({
     </nav>
   );
 };
-
 
 export default NavigationBar;

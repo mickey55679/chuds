@@ -23,23 +23,26 @@ function App() {
   const [totalItemsInCart, setTotalItemsInCart] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    const checkAdminRights = async () => {
+    const checkAuthStatus = async () => {
       setIsLoading(true);
       // Simulate API call or session check
-      if (isAuthenticated) {
-        // Replace this with an actual API call
-        setIsAdmin(true); // This should be based on actual authentication
+      // This should be replaced with your actual authentication logic
+      const user = await simulateAuthCheck();
+      if (user) {
+        setIsAuthenticated(true);
+        setIsAdmin(user.isAdmin); // Assuming `user` has an `isAdmin` property
       } else {
+        setIsAuthenticated(false);
         setIsAdmin(false);
       }
       setIsLoading(false);
     };
 
-    checkAdminRights();
-  }, [isAuthenticated]);
+    checkAuthStatus();
+  }, []);
 
   useEffect(() => {
     const totalItems = Object.values(cartItems).reduce(
@@ -77,7 +80,7 @@ function App() {
               handleToggle={handleToggle}
               isOpen={isOpen}
               totalItemsInCart={totalItemsInCart}
-              isAdmin={isAdmin}
+              isAuthenticated={isAuthenticated} // Pass isAuthenticated to NavigationBar
             />
 
             <Routes>
@@ -121,6 +124,16 @@ function App() {
       </header>
     </div>
   );
+}
+
+// Simulate a function to check authentication and admin status
+async function simulateAuthCheck() {
+  // Replace this with your actual auth check
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ isAdmin: true }); // Simulate a user with admin rights
+    }, 1000);
+  });
 }
 
 export default App;
