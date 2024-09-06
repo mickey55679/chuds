@@ -53,13 +53,14 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-form-container"> 
+    <div className="contact-form-container">
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">
           <label className="label-name">Name:</label>
           <input
             type="text"
             name="name"
+            placeholder="Your name"
             value={formData.name}
             onChange={handleChange}
             className="input"
@@ -71,6 +72,7 @@ const ContactForm = () => {
           <input
             type="email"
             name="email"
+            placeholder="Your email"
             value={formData.email}
             onChange={handleChange}
             className="input"
@@ -83,18 +85,18 @@ const ContactForm = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
+            placeholder="Your message"
             className="input textarea"
             required
           />
         </div>
- 
+
         <button type="submit" className="button-contact" disabled={isLoading}>
           {isLoading ? "Sending..." : "Submit"}
         </button>
-    
+
         {formMessage && <p>{formMessage}</p>}
       </form>
-
     </div>
   );
 };

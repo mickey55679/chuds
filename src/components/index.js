@@ -5,8 +5,12 @@ import Menu from "./menu";
 import NavigationBar from "./NavigationBar"
 import Checkout from "./Checkout";
 import MenuHighlights from "./MenuHighlights";
-import Login from './Login'
-import Register from './Register'
+import Login from './Login';
+import Register from './Register';
+import Events from "./Events";
+import MenuCategory from "./MenuCategory";
+import MenuItem from "./menuItem";
+import ProtectedRoute from "./ProtectedRoute"
 
 
 export {
@@ -19,4 +23,8 @@ export {
   MenuHighlights,
   Login,
   Register,
+  Events,
+  MenuCategory,
+  MenuItem,
+  ProtectedRoute,
 };

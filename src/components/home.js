@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MenuHighlights from "./MenuHighlights";
+import {Events} from "./index"
 
 const Home = (props) => {
   const [highlightedItems, setHighlightedItems] = useState([]);
@@ -71,7 +72,6 @@ const Home = (props) => {
         </div>
       </div>
 
-      {/* Display MenuHighlights with fetched highlighted items */}
       {highlightedItems.length > 0 && (
         <MenuHighlights
           title="Today's Highlights"
@@ -81,6 +81,7 @@ const Home = (props) => {
           orderItems={orderItems}
         />
       )}
+      <Events />
     </>
   );
 };
