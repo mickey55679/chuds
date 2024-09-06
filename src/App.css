@@ -64,12 +64,7 @@ html {
   width: 200px;
   height: auto;
 }
-/* .card-icon {
-  color: var(--color-light);
-}
-.card-icon:hover {
-  color: var(--color-red);
-} */
+
 
 /* Navbar styling for smaller screens */
 @media screen and (max-width: 900px) {
@@ -116,14 +111,8 @@ html {
 }
 
 /* Home Page */
-.home-page {
-  justify-content: center;
-  margin-bottom: 50px;
-  border-radius: 4px;
-}
-
 .background-image {
-  width: 60%;
+  width: 50%;
   height: auto;
   display: block;
   padding: 40px;
@@ -268,6 +257,11 @@ html {
 }
 
 /* Contact Form */
+.contact-form-container{
+  background-color: var(--color-grey);
+  padding: 10px;
+
+}
 .contact-form {
   max-width: 400px;
   margin: 200px auto;

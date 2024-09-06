@@ -53,7 +53,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div>
+    <div className="contact-form-container"> 
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">
           <label className="label-name">Name:</label>
