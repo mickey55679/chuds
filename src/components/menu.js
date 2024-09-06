@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MenuCategory from "./MenuCategory";
-import MenuHighlights from "./MenuHighlights";
+import {MenuCategory, MenuHighlights} from "./index";
 
 const Menu = ({ setCartItems, setItems }) => {
   const [menuItems, setMenuItems] = useState({
