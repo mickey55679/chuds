@@ -1,49 +1,59 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MenuHighlights from "./MenuHighlights";
-import {Events} from "./index"
+import { Events } from "./index";
 
-const Home = (props) => {
+const Home = ({ handleClick }) => {
   const [highlightedItems, setHighlightedItems] = useState([]);
-  const [orderItems, setOrderItems] = useState({}); // Dummy state for order items
-  const [items, setItems] = useState({}); // Dummy state for all items
+  const [orderItems, setOrderItems] = useState({}); // Holds the user's selected order items
+  const [items, setItems] = useState({}); // Holds all fetched items
 
+  // Fetches menu data from the API
   useEffect(() => {
-    fetch("http://localhost:3000/api/menu")
-      .then((response) => response.json())
-      .then((data) => {
+    const fetchMenuItems = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/api/menu");
+        const data = await response.json();
         console.log("Fetched menu items for home page:", data);
-
-        setItems(data); // Set all items (if needed elsewhere)
-
-        const dayOfWeek = new Date().getDay();
-        let itemsToHighlight = [];
-
-        if (dayOfWeek === 0 && data.burgerItems) {
-          itemsToHighlight = data.burgerItems.slice(0, 3); // Highlight 3 burgers on Sunday
-        } else if (dayOfWeek === 1 && data.sandwichItems) {
-          itemsToHighlight = data.sandwichItems.slice(0, 3); // Highlight 3 sandwiches on Monday
-        } else if (dayOfWeek === 3 && data.drinkItems) {
-          itemsToHighlight = data.drinkItems.slice(0, 3); // Highlight 3 drinks on Wednesday
-        }
-
-        setHighlightedItems(itemsToHighlight);
-      })
-      .catch((error) => {
+        setItems(data);
+        highlightItemsForDay(data);
+      } catch (error) {
         console.error("Error fetching menu items for home page:", error);
-      });
+      }
+    };
+
+    // Highlights specific items based on the day of the week
+    const highlightItemsForDay = (data) => {
+      const dayOfWeek = new Date().getDay();
+      let itemsToHighlight = [];
+
+      const highlightByDay = {
+        0: data.burgerItems?.slice(0, 3), // Sunday: Highlight 3 burgers
+        1: data.sandwichItems?.slice(0, 3), // Monday: Highlight 3 sandwiches
+        3: data.drinkItems?.slice(0, 3), // Wednesday: Highlight 3 drinks
+      };
+
+      itemsToHighlight = highlightByDay[dayOfWeek] || [];
+      setHighlightedItems(itemsToHighlight);
+    };
+
+    fetchMenuItems();
   }, []);
 
+  // Updates the quantity of a specific item in the order
   const handleQuantityChange = (id, quantity) => {
-    const updatedOrder = { ...orderItems, [id]: quantity };
-    setOrderItems(updatedOrder);
+    setOrderItems((prevOrder) => ({
+      ...prevOrder,
+      [id]: quantity,
+    }));
   };
 
+  // Adds an item to the cart and increases its quantity by 1
   const handleAddToCart = (id) => {
-    const currentQuantity = orderItems[id] || 0;
-    const updatedQuantity = currentQuantity + 1;
-    const updatedOrder = { ...orderItems, [id]: updatedQuantity };
-    setOrderItems(updatedOrder);
+    setOrderItems((prevOrder) => ({
+      ...prevOrder,
+      [id]: (prevOrder[id] || 0) + 1,
+    }));
   };
 
   return (
@@ -57,13 +67,13 @@ const Home = (props) => {
           />
           <div className="overlay-text">
             <p>
-              Chuds Pub and Grub is a family-friendly restaurant that offers
+              Chuds Pub and Grub is a family-friendly restaurant offering
               delicious homemade food and a full bar!
             </p>
             <Link to="/menu">
               <button
                 className="button-home"
-                onClick={() => props.handleClick("/menu")}
+                onClick={() => handleClick("/menu")}
               >
                 Order Now
               </button>
