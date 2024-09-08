@@ -33,9 +33,9 @@ function App() {
       const token = localStorage.getItem("token");
       if (token) {
         // Simulate API call
-        const user = await simulateAuthCheck();
+        // const user = await simulateAuthCheck();
         setIsAuthenticated(true);
-        setIsAdmin(user.isAdmin);
+        // setIsAdmin(user.isAdmin);
       } else {
         setIsAuthenticated(false);
         setIsAdmin(false);
@@ -138,12 +138,12 @@ function App() {
 }
 
 // Simulate a function to check authentication and admin status
-async function simulateAuthCheck() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({ isAdmin: true }); // Simulate a user with admin rights
-    }, 1000);
-  });
-}
+// async function simulateAuthCheck() {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve({ isAdmin: true }); 
+//     }, 1000);
+//   });
+// }
 
 export default App;
