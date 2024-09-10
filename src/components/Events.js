@@ -2,7 +2,7 @@ import React from "react";
 
 // Add a date property to each event
 const events = [
-  { title: "Cabbage", date: "2024-09-09", id: 1 },
+  { title: "Rock show", date: "2024-09-09", id: 1 },
   { title: "Garlic", date: "2024-09-08", id: 2 },
   { title: "Apple", date: "2024-09-09", id: 3 },
 ];

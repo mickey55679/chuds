@@ -12,8 +12,7 @@
   --font-size-large: 2rem;
 }
 html {
-  background-image: url("https://cdn.pixabay.com/photo/2016/12/18/21/23/brick-wall-1916752_1280.jpg");
-  background-size: cover;
+background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 /* Navigation hamburger icon */
 .navbar-toggler {
