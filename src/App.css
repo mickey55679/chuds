@@ -480,11 +480,11 @@ span.psw {
 .menu-item h2 {
   margin: 10px 0;
   font-size: 1.2em;
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle at 18.7% 37.8%,
     rgb(250, 250, 250) 0%,
     rgb(225, 234, 238) 90%
-  );
+  ); */
   color: var(--color-grey);
   flex-grow: 1;
   display: flex;
