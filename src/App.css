@@ -116,6 +116,7 @@ background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   padding: 40px;
 }
 
+
 /* Home Page Paragraph box */
 .image-container {
   position: relative;
@@ -124,18 +125,16 @@ background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   align-items: center;
   background-image: url("https://cdn.pixabay.com/photo/2013/11/12/01/29/bar-209148_1280.jpg");
 }
-
 .overlay-text {
   position: absolute;
   color: white;
   text-align: center;
   max-width: 500px;
   font-size: var(--font-size-large);
-  /* background-color: #131010cc; */
   border-radius: 4px;
   padding: 20px;
   box-sizing: border-box;
-  /* border: 2px solid red; */
+
 }
 .my-logo-home {
   width: 100%;
@@ -480,11 +479,6 @@ span.psw {
 .menu-item h2 {
   margin: 10px 0;
   font-size: 1.2em;
-  /* background: radial-gradient(
-    circle at 18.7% 37.8%,
-    rgb(250, 250, 250) 0%,
-    rgb(225, 234, 238) 90%
-  ); */
   color: var(--color-grey);
   flex-grow: 1;
   display: flex;

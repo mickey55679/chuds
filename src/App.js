@@ -14,7 +14,7 @@ import {
   Unauthorized,
 } from "./components/index";
 import AdminDash from "./components/AdminDash";
-import ProtectedRoute from "./components/ProtectedRoute";
+// import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   const [activeLink, setActiveLink] = useState("");
@@ -120,12 +120,7 @@ function App() {
               <Route
                 path="/admin"
                 element={
-                  <ProtectedRoute
-                    isAuthenticated={isAuthenticated}
-                    isAdmin={isAdmin}
-                  >
                     <AdminDash />
-                  </ProtectedRoute>
                 }
               />
             </Routes>
@@ -136,14 +131,5 @@ function App() {
     </div>
   );
 }
-
-// Simulate a function to check authentication and admin status
-// async function simulateAuthCheck() {
-//   return new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve({ isAdmin: true }); 
-//     }, 1000);
-//   });
-// }
 
 export default App;
