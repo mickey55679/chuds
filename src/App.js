@@ -11,10 +11,9 @@ import {
   Checkout,
   Login,
   Register,
-  Unauthorized,
+  AdminDash
 } from "./components/index";
-import AdminDash from "./components/AdminDash";
-// import ProtectedRoute from "./components/ProtectedRoute";
+
 
 function App() {
   const [activeLink, setActiveLink] = useState("");

@@ -10,7 +10,7 @@ import Register from './Register';
 import Events from "./Events";
 import MenuCategory from "./MenuCategory";
 import MenuItem from "./menuItem";
-// import ProtectedRoute from "./ProtectedRoute"
+import AdminDash from "./AdminDash"
 
 
 export {
@@ -26,5 +26,6 @@ export {
   Events,
   MenuCategory,
   MenuItem,
-  // ProtectedRoute,
+  AdminDash
+ 
 };
