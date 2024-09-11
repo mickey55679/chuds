@@ -1,4 +1,4 @@
-// App.js
+
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -28,13 +28,9 @@ function App() {
   useEffect(() => {
     const checkAuthStatus = async () => {
       setIsLoading(true);
-      // Check authentication and admin status from storage or API
       const token = localStorage.getItem("token");
       if (token) {
-        // Simulate API call
-        // const user = await simulateAuthCheck();
         setIsAuthenticated(true);
-        // setIsAdmin(user.isAdmin);
       } else {
         setIsAuthenticated(false);
         setIsAdmin(false);
