@@ -142,8 +142,6 @@ background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 
 /* CSS for button on home page */
 .button-home {
-  /* background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%); */
-  /* background: transparent; */
   background-color: var(--color-dark-red);
   border: 2px solid var(--color-red);
   box-sizing: border-box;

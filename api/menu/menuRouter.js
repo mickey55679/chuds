@@ -2,11 +2,10 @@ const express = require("express");
 const knexConfig = require("../../knexfile").development;
 const knex = require("knex")(knexConfig);
 const menuModel = require("./menuModel");
-const { restricted, onlyAdmin } = require("../auth/auth-middleware");
+// const { restricted, onlyAdmin } = require("../auth/auth-middleware");
 
 const router = express.Router();
 
-// Public route to view menu
 router.get("/", async (req, res) => {
   try {
     const {
@@ -37,7 +36,7 @@ router.get("/", async (req, res) => {
 });
 
 // Protected routes for admins to modify the menu
-router.post("/", restricted, onlyAdmin, async (req, res) => {
+router.post("/", async (req, res) => {
   const { name, price, imgurl, category } = req.body;
   try {
     const tableName = menuModel.getTableName(category); 
@@ -53,7 +52,7 @@ router.post("/", restricted, onlyAdmin, async (req, res) => {
   }
 });
 
-router.put("/:id", restricted, onlyAdmin, async (req, res) => {
+router.put("/:id", async (req, res) => {
   const itemId = req.params.id;
   const updatedFields = req.body;
   try {
@@ -64,7 +63,7 @@ router.put("/:id", restricted, onlyAdmin, async (req, res) => {
   }
 });
 
-router.delete("/:id/:category", restricted, onlyAdmin, async (req, res) => {
+router.delete("/:id/:category", async (req, res) => {
   const itemId = req.params.id;
   const category = req.params.category;
   try {
