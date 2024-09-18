@@ -19,7 +19,7 @@ async function validatePayload(req, res, next){
    }
  }
 
-// exposed
+
 module.exports = {
     restricted,
     validatePayload,

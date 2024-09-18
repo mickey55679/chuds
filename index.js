@@ -1,5 +1,5 @@
 
-const server = require("./api/server"); // Import the Express server
+const server = require("./api/server"); 
 
 const port = process.env.PORT || 3000;
 
