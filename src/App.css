@@ -117,17 +117,17 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("https://cdn.pixabay.com/photo/2013/11/12/01/29/bar-209148_1280.jpg");
+  /* background-image: url("https://cdn.pixabay.com/photo/2013/11/12/01/29/bar-209148_1280.jpg"); */
 }
 .overlay-text {
-  position: absolute;
+  /* position: absolute; */
   color: white;
   text-align: center;
   max-width: 500px;
   font-size: var(--font-size-large);
   border-radius: 4px;
   padding: 20px;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 
 }
 .my-logo-home {

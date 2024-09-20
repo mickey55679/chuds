@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MenuHighlights from "./MenuHighlights";
 import { Events } from "./index";
+import bloodyMary from './images/bloodyMary.jpg'
 
 const Home = ({ handleClick }) => {
   const [highlightedItems, setHighlightedItems] = useState([]);
@@ -14,7 +15,7 @@ const Home = ({ handleClick }) => {
       try {
         const response = await fetch("http://localhost:3000/api/menu");
         const data = await response.json();
-        console.log("Fetched menu items for home page:", data);
+        // console.log("Fetched menu items for home page:", data);
         setItems(data);
         highlightItemsForDay(data);
       } catch (error) {
@@ -61,7 +62,7 @@ const Home = ({ handleClick }) => {
       <div className="home-page">
         <div className="image-container">
           <img
-            src="https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_1280.jpg"
+            src={bloodyMary}
             alt="Home"
             className="background-image"
           />
