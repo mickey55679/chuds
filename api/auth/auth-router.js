@@ -17,7 +17,7 @@ router.post('/register', async (req, res, next) => {
     next(err);
   }
 })
-// post because of payload
+
 router.post("/login", async (req, res, next) => {
 try{
     const {username, password} = req.body;
@@ -29,13 +29,12 @@ try{
         next({status: 401, message: 'bad credentials'})
     }
 
-
 } catch (err){
     next(err)
 }
 });
 
-router.get("/check-admin", restricted, (req, res) => {
+router.get("/admin", restricted, (req, res) => {
   if (req.session && req.session.user && req.session.user.admin) {
     res.json({ isAdmin: true });
   } else {

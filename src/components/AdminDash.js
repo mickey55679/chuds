@@ -15,10 +15,10 @@ const AdminDash = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user is authenticated and has admin rights
     axios
-      .get("/api/auth/check-admin", { withCredentials: true})
+      .get("http://localhost:3000/api/auth/admin", { withCredentials: true })
       .then((res) => {
+        console.log("Login success", res.data);
         if (res.data.isAdmin) {
           setIsAdmin(true);
         } else {
