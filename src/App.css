@@ -182,7 +182,7 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
   font-family: Arial, sans-serif;
   background-color: var(--color-red);
   border-radius: 4px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .footer-top {
@@ -437,7 +437,6 @@ span.psw {
   margin-bottom: 20px;
   max-width: calc(25% - 40px);
   transition: transform 0.3s ease;
-  padding-bottom: 30px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   background: radial-gradient(
     circle at 18.7% 37.8%,
