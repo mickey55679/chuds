@@ -9,7 +9,6 @@ const Home = ({ handleClick }) => {
   const [orderItems, setOrderItems] = useState({}); // Holds the user's selected order items
   const [items, setItems] = useState({}); // Holds all fetched items
 
-  // Fetches menu data from the API
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
