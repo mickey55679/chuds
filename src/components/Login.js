@@ -18,11 +18,9 @@ const Login = ({ updateAuthStatus }) => {
         password: password,
       });
 
-      if (response.data && response.data.token) {
-        localStorage.setItem("token", response.data.token);
-        // Simulate API call to fetch user details
-        const user = await simulateAuthCheck(); // Replace with actual user fetching logic
-        updateAuthStatus(true, user.isAdmin);
+      // Session-based login, no token returned, just check for isAdmin
+      if (response.data && response.data.isAdmin !== undefined) {
+        updateAuthStatus(true, response.data.isAdmin); // Update auth status based on isAdmin
         setMessage(`Welcome, ${email}!`);
       } else {
         throw new Error("Invalid login response");
@@ -62,19 +60,10 @@ const Login = ({ updateAuthStatus }) => {
 
   // Function to handle logout
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    updateAuthStatus(false, false);
+    localStorage.removeItem("token"); // No need for this line in session-based auth
+    updateAuthStatus(false, false); // Reset auth status
     setMessage("");
   };
-
-  // Simulate a function to check authentication and admin status
-  async function simulateAuthCheck() {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({ isAdmin: true }); // Simulate a user with admin rights
-      }, 1000);
-    });
-  }
 
   return (
     <form id="authForm">
