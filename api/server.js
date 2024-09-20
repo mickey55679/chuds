@@ -11,7 +11,12 @@ const authRouter = require("./auth/auth-router");
 const server = express();
 
 server.use(express.json());
-server.use(cors());
+server.use(
+  cors({
+    origin: "http://localhost:3001", // Update with your frontend URL
+    credentials: true, // Allow credentials (cookies, sessions)
+  })
+);
 server.use(
   session({
     name: "sadie",

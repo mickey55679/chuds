@@ -13,10 +13,14 @@ const Login = ({ updateAuthStatus }) => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(`${baseUrl}/api/auth/login`, {
-        username: email,
-        password: password,
-      });
+      const response = await axios.post(
+        `${baseUrl}/api/auth/login`,
+        {
+          username: email,
+          password: password,
+        },
+        { withCredentials: true }
+      );
 
       // Session-based login, no token returned, just check for isAdmin
       if (response.data && response.data.isAdmin !== undefined) {
