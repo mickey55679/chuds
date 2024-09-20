@@ -407,7 +407,7 @@ span.psw {
   font-size: 3em;
   background: var(--color-red);
   border-radius: 4px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Menu category styling */
