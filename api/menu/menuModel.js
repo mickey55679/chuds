@@ -28,8 +28,8 @@ const createMenuItem = async (item) => {
 
 const getAllMenuItems = async () => {
   try {
-    const littleChuds = await knex("little chuds");
-    const buildYourOwnBurger = await knex("build your own burger");
+    const littleChuds = await knex("little chuds").select("*");
+    const buildYourOwnBurger = await knex("build your own burger").select("*");
     const burgerItems = await knex("burgers").select("*");
     const sandwichItems = await knex("sandwiches").select("*");
     const sideItems = await knex("sides").select("*");

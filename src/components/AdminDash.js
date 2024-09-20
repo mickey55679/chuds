@@ -17,7 +17,7 @@ const AdminDash = () => {
   useEffect(() => {
     // Check if user is authenticated and has admin rights
     axios
-      .get("/api/check-admin")
+      .get("/api/auth/check-admin", { withCredentials: true})
       .then((res) => {
         if (res.data.isAdmin) {
           setIsAdmin(true);

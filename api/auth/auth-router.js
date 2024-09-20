@@ -2,6 +2,7 @@ const express = require('express')
 const bcrypt = require('bcryptjs')
 const router = express.Router()
 const User = require('../users/users-model')
+const { restricted } = require("../auth/auth-middleware"); 
 
 router.post('/register', async (req, res, next) => {
   try {
@@ -32,6 +33,14 @@ try{
 } catch (err){
     next(err)
 }
+});
+
+router.get("/check-admin", restricted, (req, res) => {
+  if (req.session && req.session.user && req.session.user.admin) {
+    res.json({ isAdmin: true });
+  } else {
+    res.status(403).json({ isAdmin: false });
+  }
 });
 
 router.get("/logout", async (req, res, next) => {
