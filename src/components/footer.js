@@ -13,9 +13,10 @@ const Footer = () => {
       <div className="footer-top"></div>
       <div className="footer-bottom">
         <div className="social-media">
-          <p>Hours:</p>
           <ul>
-            <li>Mon <span>Closed</span></li>
+            <li>
+              Mon Closed
+            </li>
             <li>Tue 10:30 AM - 2:00 PM</li>
             <li>Wed 10:20 AM - 2:00 PM</li>
             <li>Thu 10:20 AM - 2:00 PM</li>

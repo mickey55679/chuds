@@ -127,7 +127,7 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
   border-radius: 4px;
   padding: 20px;
   margin: 20px;
-  border: 2px solid var(--color-dark-red)
+  border: 2px solid var(--color-red)
   /* box-sizing: border-box; */
 
 }
@@ -185,6 +185,10 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
   background-color: var(--color-red);
   border-radius: 4px;
   /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); */
+}
+.footer ul li {
+  list-style: none;
+  padding: 5px;
 }
 
 .footer-top {
