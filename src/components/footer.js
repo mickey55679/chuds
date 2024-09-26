@@ -10,10 +10,19 @@ import { faPhone, faCar} from "@fortawesome/free-solid-svg-icons";
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-top">
-      </div>
+      <div className="footer-top"></div>
       <div className="footer-bottom">
         <div className="social-media">
+          <p>Hours:</p>
+          <ul>
+            <li>Mon <span>Closed</span></li>
+            <li>Tue 10:30 AM - 2:00 PM</li>
+            <li>Wed 10:20 AM - 2:00 PM</li>
+            <li>Thu 10:20 AM - 2:00 PM</li>
+            <li>Fri 10:20 AM - 2:00 PM</li>
+            <li>Sat 10:20 AM - 2:00 PM</li>
+            <li>Sun 10:20 AM - 2:00 PM</li>
+          </ul>
           <a
             href="https://www.facebook.com"
             target="_blank"
@@ -28,7 +37,7 @@ const Footer = () => {
           >
             <FontAwesomeIcon icon={faTwitter} size="2x" />
           </a>
-      
+
           <a href="tel:+17124772469">
             <FontAwesomeIcon icon={faPhone} size="2x" />
           </a>

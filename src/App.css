@@ -111,6 +111,8 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
   height: auto;
   display: block;
   padding: 20px;
+  border: 2px solid var(--color-blue);
+  border-radius: 4px;
 }
 .image-container {
   position: relative;
@@ -124,6 +126,8 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
   font-size: var(--font-size-large);
   border-radius: 4px;
   padding: 20px;
+  margin: 20px;
+  border: 2px solid var(--color-dark-red)
   /* box-sizing: border-box; */
 
 }
@@ -242,7 +246,7 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
 
 /* Contact Form */
 .contact-form-container{
-  background-color: black;
+  /* background-color: black; */
   padding: 10px;
 
 }
@@ -255,12 +259,12 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
 }
 .label-name {
   margin-bottom: 5px;
-  color: var(--color-light);
+  /* color: var(--color-light); */
   font-weight: 600;
   font-size: var(--font-size-medium);
 }
 .label {
-  color: var(--color-light);
+  /* color: var(--color-light); */
   font-weight: var(--color-light);
   font-weight: 600;
   font-size: var(--font-size-medium);
@@ -406,7 +410,7 @@ span.psw {
   font-size: 3em;
   background: var(--color-red);
   border-radius: 4px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); */
 }
 
 /* Menu category styling */
