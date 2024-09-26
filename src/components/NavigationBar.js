@@ -35,6 +35,16 @@ const NavigationBar = ({
         </li>
         <li className="nav-item">
           <NavLink
+            to="/about"
+            exact
+            className={activeLink === "/about" ? "active-link" : ""}
+            onClick={() => handleClick("/about")}
+          >
+            About
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
             to="/menu"
             exact
             className={activeLink === "/menu" ? "active-link" : ""}

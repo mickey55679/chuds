@@ -11,6 +11,7 @@ import Events from "./Events";
 import MenuCategory from "./MenuCategory";
 import MenuItem from "./menuItem";
 import AdminDash from "./AdminDash"
+import About from "./About";
 
 
 export {
@@ -26,6 +27,7 @@ export {
   Events,
   MenuCategory,
   MenuItem,
-  AdminDash
+  AdminDash,
+  About
  
 };

@@ -11,7 +11,8 @@ import {
   Checkout,
   Login,
   Register,
-  AdminDash
+  AdminDash,
+  About
 } from "./components/index";
 
 
@@ -95,6 +96,7 @@ function App() {
                 }
               />
               <Route path="/contact" element={<ContactForm />} />
+              <Route path="/about" element={<About />} />
               <Route
                 path="/checkout"
                 element={
@@ -112,12 +114,7 @@ function App() {
               />
               <Route path="/register" element={<Register />} />
               <Route path="/unauthorized" element={<div>Unauthorized</div>} />
-              <Route
-                path="/admin"
-                element={
-                    <AdminDash />
-                }
-              />
+              <Route path="/admin" element={<AdminDash />} />
             </Routes>
           </Router>
         )}
