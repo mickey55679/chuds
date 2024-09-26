@@ -358,7 +358,7 @@ span.psw {
 }
 .button-contact {
   background-color: var(--color-dark-red);
-  border: 2px solid var(--color-red);
+  border: none;
   box-sizing: border-box;
   color: var(--color-light);
   cursor: pointer;
@@ -391,6 +391,7 @@ span.psw {
 .button-contact:hover {
   box-shadow: rgba(192, 21, 21, 0.25) 0 8px 15px;
   transform: translateY(-2px);
+   border: 2px solid var(--color-red);
 }
 
 .button-contact:active {
@@ -493,7 +494,7 @@ span.psw {
 }
 .menu-item-controls button {
  background-color: var(--color-dark-red);
-  border: 2px solid var(--color-red);
+  border: none;
   box-sizing: border-box;
   color: var(--color-light);
   cursor: pointer;
@@ -530,6 +531,7 @@ span.psw {
 .menu-item-controls button:hover {
   box-shadow: rgba(192, 21, 21, 0.25) 0 8px 15px;
   transform: translateY(-2px);
+   border: 2px solid var(--color-red);
 }
 
 .menu-item-controls button:active {
