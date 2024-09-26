@@ -121,7 +121,7 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
 }
 .overlay-text {
   /* position: absolute; */
-  color: white;
+  /* color: white; */
   text-align: center;
   max-width: 500px;
   font-size: var(--font-size-large);
