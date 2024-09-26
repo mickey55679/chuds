@@ -135,7 +135,7 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
 }
 .button-home {
   background-color: var(--color-dark-red);
-  border: 2px solid var(--color-red);
+  border: none;
   box-sizing: border-box;
   color: var(--color-light);
   cursor: pointer;
@@ -167,6 +167,7 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
 .button-home:hover {
   box-shadow: rgba(192, 21, 21, 0.25) 0 8px 15px;
   transform: translateY(-2px);
+   border: 2px solid var(--color-red);
 }
 
 .button-home:active {
