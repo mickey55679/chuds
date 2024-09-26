@@ -33,8 +33,8 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
   align-items: center;
   z-index: 1000;
   position: relative;
-  background: var(--color-blue);
-  border: 2px solid var(--color-red);
+  /* background: var(--color-blue); */
+  /* border: 2px solid var(--color-red); */
 }
 .nav-items {
   list-style: none;
@@ -46,7 +46,7 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
   text-decoration: none;
   padding: 0.5rem 0.8rem;
   margin: 0 0.2rem;
-  color: var(--color-light);
+  color: var(--color-blue);
   font-weight: 900;
   font-size: var(--font-size-medium);
 }
@@ -110,18 +110,15 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
   width: 50%;
   height: auto;
   display: block;
-  padding: 40px;
+  padding: 20px;
 }
 .image-container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-image: url("https://cdn.pixabay.com/photo/2013/11/12/01/29/bar-209148_1280.jpg"); */
 }
 .overlay-text {
-  /* position: absolute; */
-  /* color: white; */
   text-align: center;
   max-width: 500px;
   font-size: var(--font-size-large);
@@ -183,7 +180,7 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
   font-family: Arial, sans-serif;
   background-color: var(--color-red);
   border-radius: 4px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); */
 }
 
 .footer-top {
