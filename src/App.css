@@ -12,7 +12,7 @@
   --font-size-large: 2rem;
 }
 html {
-background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224, 226, 228) 100.2%);
+/* background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224, 226, 228) 100.2%); */
 }
 /* Navigation hamburger icon */
 .navbar-toggler {
@@ -129,6 +129,15 @@ background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224,
   margin: 20px;
   border: 2px solid var(--color-red)
   /* box-sizing: border-box; */
+
+}
+.second-photo-home {
+  border: 1px solid black;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+
 
 }
 .my-logo-home {
