@@ -60,7 +60,7 @@ const Home = ({ handleClick }) => {
     <>
       <div className="home-page">
         <div className="image-container">
-          <img src={bloodyMary} alt="Home" className="background-image" />
+          <img src={bloodyMary} alt="Home" className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6" />
           <div className="overlay-text">
             <p>
               Chuds Pub and Grub is a family-friendly restaurant offering
