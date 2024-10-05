@@ -103,12 +103,9 @@
 
 /* Home Page */
 
-
-
-
-.my-logo-home {
+/* .my-logo-home {
   width: 100%;
-}
+} */
 .button-home {
   background-color: var(--color-dark-red);
   border: none;
