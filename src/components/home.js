@@ -65,7 +65,7 @@ const Home = ({ handleClick }) => {
             alt="Home"
             className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 border border-black rounded-md flex justify-center p-2"
           />
-          <div className="overlay-text">
+          <div className="text-center max-w-50 text-lg rounded-md p-4 m-4 border border-black">
             <p>
               Chuds Pub and Grub is a family-friendly restaurant offering
               delicious homemade food and a full bar!
