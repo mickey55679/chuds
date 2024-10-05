@@ -59,8 +59,12 @@ const Home = ({ handleClick }) => {
   return (
     <>
       <div className="home-page">
-        <div className="image-container">
-          <img src={bloodyMary} alt="Home" className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6" />
+        <div className="relative flex justify-center items-center">
+          <img
+            src={bloodyMary}
+            alt="Home"
+            className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 border border-black rounded-md flex justify-center p-2"
+          />
           <div className="overlay-text">
             <p>
               Chuds Pub and Grub is a family-friendly restaurant offering
@@ -76,9 +80,13 @@ const Home = ({ handleClick }) => {
             </Link>
           </div>
         </div>
-      </div>{" "}
-      <div className="second-photo-home">
-        <img src="https://scontent.ffsd2-1.fna.fbcdn.net/v/t39.30808-6/460840344_508140455334448_2807475949957204205_n.jpg?stp=c0.296.1152.1152a_dst-jpg_s552x414&_nc_cat=110&ccb=1-7&_nc_sid=50ad20&_nc_ohc=3gWt7xdOOjcQ7kNvgHu2wdx&_nc_ht=scontent.ffsd2-1.fna&_nc_gid=AN7oHXxRJCUjrwQtI6xlxWk&oh=00_AYBYMI05hB_VtlAtGZb2_0kjyGjOV4wGKIl3xRaPi7J61g&oe=67037FF5" />
+      </div>
+      <div className="image-container">
+        <img
+          src="https://scontent.ffsd2-1.fna.fbcdn.net/v/t39.30808-6/460840344_508140455334448_2807475949957204205_n.jpg?stp=c0.296.1152.1152a_dst-jpg_s552x414&_nc_cat=110&ccb=1-7&_nc_sid=50ad20&_nc_ohc=3gWt7xdOOjcQ7kNvgHu2wdx&_nc_ht=scontent.ffsd2-1.fna&_nc_gid=AN7oHXxRJCUjrwQtI6xlxWk&oh=00_AYBYMI05hB_VtlAtGZb2_0kjyGjOV4wGKIl3xRaPi7J61g&oe=67037FF5"
+          alt="woman holding snack"
+          className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 border border-black rounded-md flex justify-center p-2"
+        />
       </div>
       {highlightedItems.length > 0 && (
         <MenuHighlights
