@@ -11,7 +11,7 @@ const About = () => {
 
 `,
     },
-    // You can add more reviews here
+
   ];
 
   const MAX_VISIBILITY = 2;
