@@ -4,7 +4,6 @@ const SelectOrderType = () => {
       <h1 className="text-3xl font-bold mb-8 text-center">Select Order Type</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        {/* To Go */}
         <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center">
           <img src="to-go-icon.png" alt="To Go" className="w-16 mb-4" />
           <h2 className="text-xl font-semibold mb-2">To Go</h2>
