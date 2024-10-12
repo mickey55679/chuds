@@ -156,7 +156,7 @@
   font-family: Arial, sans-serif;
   background-color: var(--color-red);
   border-radius: 4px;
-  /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); */
+
 }
 .footer ul li {
   list-style: none;
@@ -222,7 +222,6 @@
 
 /* Contact Form */
 .contact-form-container{
-  /* background-color: black; */
   padding: 10px;
 
 }
@@ -235,12 +234,12 @@
 }
 .label-name {
   margin-bottom: 5px;
-  /* color: var(--color-light); */
+
   font-weight: 600;
   font-size: var(--font-size-medium);
 }
 .label {
-  /* color: var(--color-light); */
+
   font-weight: var(--color-light);
   font-weight: 600;
   font-size: var(--font-size-medium);
