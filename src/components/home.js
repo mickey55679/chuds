@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MenuHighlights from "./MenuHighlights";
 import { Events } from "./index";
-import { bloodyMary, salad } from "./images/index";
+import {bloodyMary, salad} from "./images/index";
+
 
 const Home = ({ handleClick }) => {
   const [highlightedItems, setHighlightedItems] = useState([]);
@@ -58,7 +59,7 @@ const Home = ({ handleClick }) => {
           homemade food and a full bar!
         </p>
         <Link to="/menu">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Order Now
           </button>
         </Link>
