@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MenuHighlights from "./MenuHighlights";
 import { Events } from "./index";
-import {bloodyMary, salad} from "./images/index";
-
+import { bloodyMary, salad } from "./images/index";
 
 const Home = ({ handleClick }) => {
   const [highlightedItems, setHighlightedItems] = useState([]);
@@ -66,7 +65,7 @@ const Home = ({ handleClick }) => {
       </div>
 
       {/* Image Section */}
-      <div className="w-full flex justify-around border-2 border-black ">
+      <div className="w-full flex flex-col sm:flex-row justify-center items-center sm:justify-around sm:items-center border-2 border-black space-y-4 sm:space-y-0 sm:space-x-4">
         <img src={salad} alt="Salad" className="w-64 h-auto object-cover" />
         <img
           src="https://cdn.pixabay.com/photo/2015/12/09/17/11/vegetables-1085063_1280.jpg"
