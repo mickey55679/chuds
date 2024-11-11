@@ -51,22 +51,30 @@ const Home = ({ handleClick }) => {
   return (
     <div className="flex flex-col items-center space-y-8 p-4">
       {/* Header Section */}
-      <div className="flex flex-col items-center text-center space-y-4">
-        <img src={bloodyMary} alt="Home" className="w-64 h-auto object-cover" />
-        <p>
+      <div className="flex flex-col items-center text-center space-y-4 border-2 p-2 bg-cyan-50 rounded-md">
+        <img src={bloodyMary} alt="Home" className="w-60 h-auto object-cover" />
+        <p className="text-center p-5">
           Chuds Pub and Grub is a family-friendly restaurant offering delicious
           homemade food and a full bar!
         </p>
         <Link to="/menu">
-         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-  Order Now
-</button>
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Order Now
+          </button>
         </Link>
       </div>
 
       {/* Image Section */}
-      <div className="w-full flex justify-center">
+      <div className="w-full flex justify-around border-2 border-black ">
         <img src={salad} alt="Salad" className="w-64 h-auto object-cover" />
+        <img
+          src="https://cdn.pixabay.com/photo/2015/12/09/17/11/vegetables-1085063_1280.jpg"
+          className="w-64 h-auto object-cover"
+        />
+        <img
+          src="https://cdn.pixabay.com/photo/2015/12/09/17/11/vegetables-1085063_1280.jpg"
+          className="w-64 h-auto object-cover"
+        />
       </div>
 
       {/* Highlights Section */}
