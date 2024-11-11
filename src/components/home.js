@@ -51,8 +51,8 @@ const Home = ({ handleClick }) => {
   return (
     <div className="flex flex-col items-center space-y-8 p-4 min-h-max">
       {/* Header Section */}
-      <div className="flex flex-col items-center text-center space-y-4 border-2 p-2 bg-cyan-50 rounded-md">
-        <img src={bloodyMary} alt="Home" className="w-60 h-auto object-cover" />
+      <div className="flex flex-col items-center text-center space-y-4 border-2 p-2 rounded-md bg-cover bg-center min-h-[400px]">
+        <img src="https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_1280.jpg" />
         <p className="text-center p-5">
           Chuds Pub and Grub is a family-friendly restaurant offering delicious
           homemade food and a full bar!
