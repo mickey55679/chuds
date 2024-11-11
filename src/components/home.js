@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MenuHighlights from "./MenuHighlights";
 import { Events } from "./index";
-import { bloodyMary, salad } from "./images/index";
+import { barTap, bloodyMary, potRoastGrilled, salad } from "./images/index";
 
 const Home = ({ handleClick }) => {
   const [highlightedItems, setHighlightedItems] = useState([]);
@@ -52,7 +52,7 @@ const Home = ({ handleClick }) => {
     <div className="flex flex-col items-center space-y-8 p-4 min-h-max">
       {/* Header Section */}
       <div className="flex flex-col items-center text-center space-y-4 border-2 p-2 rounded-md bg-cover bg-center min-h-[400px]">
-        <img src="https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_1280.jpg" />
+        <img src={barTap} />
         <p className="text-center p-5">
           Chuds Pub and Grub is a family-friendly restaurant offering delicious
           homemade food and a full bar!
@@ -66,15 +66,13 @@ const Home = ({ handleClick }) => {
 
       {/* Image Section */}
       <div className="w-full flex flex-col sm:flex-row justify-center items-center sm:justify-around sm:items-center border-2 border-black space-y-4 sm:space-y-0 sm:space-x-4">
-        <img src={salad} alt="Salad" className="w-64 h-auto object-cover" />
+        <img src={salad} alt="Salad" className="w-64 h-64 object-cover" />
         <img
-          src="https://cdn.pixabay.com/photo/2015/12/09/17/11/vegetables-1085063_1280.jpg"
-          className="w-64 h-auto object-cover"
+          src={potRoastGrilled}
+          alt="Pot Roast Grilled"
+          className="w-64 h-64 object-cover"
         />
-        <img
-          src="https://cdn.pixabay.com/photo/2015/12/09/17/11/vegetables-1085063_1280.jpg"
-          className="w-64 h-auto object-cover"
-        />
+        <img src={salad} alt="Salad" className="w-64 h-64 object-cover" />
       </div>
 
       {/* Highlights Section */}
