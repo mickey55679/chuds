@@ -106,7 +106,7 @@
 /* .my-logo-home {
   width: 100%;
 } */
-.button-home {
+/* .button-home {
   background-color: var(--color-dark-red);
   border: none;
   box-sizing: border-box;
@@ -146,7 +146,7 @@
 .button-home:active {
   box-shadow: none;
   transform: translateY(0);
-}
+} */
 
 /* Footer */
 .footer {
