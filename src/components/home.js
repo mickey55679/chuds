@@ -50,18 +50,20 @@ const Home = ({ handleClick }) => {
 
   return (
     <div className="flex flex-col items-center space-y-8 p-4 min-h-max">
+      <h1 className="">Delicious Comfort Food</h1>
+      <p className="text-center p-5 font-serif text-lg">
+        Chuds Pub and Grub is a family-friendly restaurant offering delicious
+        homemade food and a full bar!
+      </p>
+      <Link to="/menu">
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Order Now
+        </button>
+      </Link>
+
       {/* Header Section */}
       <div className="flex flex-col items-center text-center space-y-4 border-2 p-2 rounded-md bg-cover bg-center min-h-[400px]">
         <img src={barTap} />
-        <p className="text-center p-5">
-          Chuds Pub and Grub is a family-friendly restaurant offering delicious
-          homemade food and a full bar!
-        </p>
-        <Link to="/menu">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Order Now
-          </button>
-        </Link>
       </div>
 
       {/* Image Section */}

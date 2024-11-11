@@ -204,13 +204,13 @@ input[type="password"] {
   border-radius: 4px;
 }
 
-h1 {
+/* h1 {
   text-align: center;
   color: var(--color-grey);
   padding: 40px;
   color: var(--color-light);
   -webkit-text-stroke: 1px var(--color-red);
-}
+} */
 h3 {
   text-align: center;
   background-color: var(--color-red);
