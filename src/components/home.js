@@ -50,7 +50,7 @@ const Home = ({ handleClick }) => {
   };
 
   return (
-    <div className="flex flex-col items-center space-y-8 p-4">
+    <div className="flex flex-col items-center space-y-8 p-4 min-h-max">
       {/* Header Section */}
       <div className="flex flex-col items-center text-center space-y-4 border-2 p-2 bg-cyan-50 rounded-md">
         <img src={bloodyMary} alt="Home" className="w-60 h-auto object-cover" />
