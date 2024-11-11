@@ -65,7 +65,7 @@ const Home = ({ handleClick }) => {
       </div>
 
       {/* Image Section */}
-      <div className="w-full flex flex-col sm:flex-row justify-center items-center sm:justify-around sm:items-center border-2 border-black space-y-4 sm:space-y-0 sm:space-x-4">
+      <div className="w-full flex flex-col sm:flex-row justify-center items-center sm:justify-around sm:items-center border-2 border-grey space-y-4 sm:space-y-0 sm:space-x-4 p-5">
         <img src={salad} alt="Salad" className="w-64 h-64 object-cover" />
         <img
           src={potRoastGrilled}
