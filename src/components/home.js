@@ -49,8 +49,8 @@ const Home = ({ handleClick }) => {
   };
 
   return (
-    <div className="flex flex-col items-center space-y-8 p-4 min-h-max">
-      <h1 className="">Delicious Comfort Food</h1>
+    <div className="flex flex-col items-center space-y-8 p-4 min-h-max bg-stone-300">
+      <h1 className="text-xl">Delicious Comfort Food</h1>
       <p className="text-center p-5 font-serif text-lg">
         Chuds Pub and Grub is a family-friendly restaurant offering delicious
         homemade food and a full bar!
