@@ -49,34 +49,53 @@ const Home = ({ handleClick }) => {
   };
 
   return (
-    <div className="flex flex-col items-center space-y-8 p-4 min-h-max bg-stone-300 bg-[url('https://cdn.pixabay.com/photo/2016/12/18/21/23/brick-wall-1916752_1280.jpg')] border-2 border-black]">
-      <div className="flex flex-col items-center space-y-8 p-8 border-2 rounded-md border-black bg-stone-300">
-        <h1 className="text-xl">Delicious Comfort Food</h1>
-        <p className="text-center p-5 font-serif text-lg">
-          Chuds Pub and Grub is a family-friendly restaurant offering delicious
-          homemade food and a full bar!
-        </p>
-        <Link to="/menu">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Order Now
-          </button>
-        </Link>
-      </div>
+    <>
+      <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max bg-stone-300 bg-[url('https://cdn.pixabay.com/photo/2016/12/18/21/23/brick-wall-1916752_1280.jpg')] border-2 border-black">
+        {/* First Box */}
+        <div className="flex flex-col items-center space-y-8 p-8 border-2 rounded-md border-black bg-stone-300">
+          <h1 className="text-xl">Delicious Comfort Food</h1>
+          <p className="text-center p-5 font-serif text-lg">
+            Chuds Pub and Grub is a family-friendly restaurant offering
+            delicious homemade food and a full bar!
+          </p>
+          <Link to="/menu">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Order Now
+            </button>
+          </Link>
+        </div>
 
-      {/* Header Section */}
-      {/* <div className="flex flex-col items-center text-center space-y-4 border-2 p-2 rounded-md bg-cover bg-center min-h-[400px]">
-        <img src={barTap} />
-      </div> */}
+        {/* Second Box */}
+        <div className="flex flex-col items-center space-y-8 p-8 border-2 rounded-md border-black bg-stone-300">
+          <p>
+            Lorem ipsum odor amet, consectetuer adipiscing elit. Eleifend platea
+            et aenean porttitor nullam. Vestibulum sed senectus lobortis
+            condimentum viverra taciti. Volutpat pulvinar finibus amet facilisis
+            dignissim venenatis parturient orci dignissim. Mattis efficitur ante
+            maecenas ullamcorper vitae cursus. Auctor ex integer justo per
+            sollicitudin porttitor quisque. Tempor ipsum potenti et nullam
+            consectetur sit sagittis.
+          </p>
+        </div>
+      </div>
 
       {/* Image Section */}
       <div className="w-full flex flex-col sm:flex-row justify-center items-center sm:justify-around sm:items-center border-2 border-grey space-y-4 sm:space-y-0 sm:space-x-4 p-5">
-        <img src={salad} alt="Salad" className="w-64 h-64 object-cover rounded-md" />
+        <img
+          src={salad}
+          alt="Salad"
+          className="w-64 h-64 object-cover rounded-md"
+        />
         <img
           src={potRoastGrilled}
           alt="Pot Roast Grilled"
           className="w-64 h-64 object-cover rounded-md"
         />
-        <img src={salad} alt="Salad" className="w-64 h-64 object-cover rounded-md" />
+        <img
+          src={salad}
+          alt="Salad"
+          className="w-64 h-64 object-cover rounded-md"
+        />
       </div>
 
       {/* Highlights Section */}
@@ -96,7 +115,7 @@ const Home = ({ handleClick }) => {
       <div className="w-full flex justify-center">
         <Events />
       </div>
-    </div>
+    </>
   );
 };
 
