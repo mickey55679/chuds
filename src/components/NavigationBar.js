@@ -13,7 +13,7 @@ const NavigationBar = ({
   isAuthenticated,
 }) => {
   return (
-    <nav className="navbar bg-stone-300 ">
+    <nav className="navbar ">
       <div className="logo">
         <NavLink to="/" exact>
           <img src={logo} alt="Logo" className="logo" />

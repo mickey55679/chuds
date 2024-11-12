@@ -50,7 +50,7 @@ const Home = ({ handleClick }) => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max bg-stone-300">
+      <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max">
         {/* First Box */}
         <div className="flex flex-col items-center space-y-8 p-8 border-2 rounded-md  bg-slate-100">
           <img
@@ -77,22 +77,24 @@ const Home = ({ handleClick }) => {
       </div>
 
       {/* Image Section */}
-      <div className="w-full flex flex-col sm:flex-row justify-center items-center sm:justify-around sm:items-center border-2 border-grey space-y-4 sm:space-y-0 sm:space-x-4 p-5  bg-slate-100">
-        <img
-          src={salad}
-          alt="Salad"
-          className="w-64 h-64 object-cover rounded-md"
-        />
-        <img
-          src={potRoastGrilled}
-          alt="Pot Roast Grilled"
-          className="w-64 h-64 object-cover rounded-md"
-        />
-        <img
-          src={salad}
-          alt="Salad"
-          className="w-64 h-64 object-cover rounded-md"
-        />
+      <div className="flex flex-col items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max">
+        <div className="flex flex-col sm:flex-row justify-center items-center sm:justify-around sm:items-center border-2 border-grey space-y-4 sm:space-y-0 sm:space-x-4 p-5  bg-slate-100 ">
+          <img
+            src={salad}
+            alt="Salad"
+            className="w-64 h-64 object-cover rounded-md"
+          />
+          <img
+            src={potRoastGrilled}
+            alt="Pot Roast Grilled"
+            className="w-64 h-64 object-cover rounded-md"
+          />
+          <img
+            src={salad}
+            alt="Salad"
+            className="w-64 h-64 object-cover rounded-md"
+          />
+        </div>
       </div>
 
       {/* Highlights Section */}
