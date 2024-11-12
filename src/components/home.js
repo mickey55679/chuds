@@ -52,7 +52,7 @@ const Home = ({ handleClick }) => {
     <>
       <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max bg-stone-300  border-2 border-black">
         {/* First Box */}
-        <div className="flex flex-col items-center space-y-8 p-8 border-2 rounded-md border-black bg-stone-300">
+        <div className="flex flex-col items-center space-y-8 p-8 border-2 rounded-md border-black  bg-slate-100">
           <h1 className="text-xl">Delicious Comfort Food</h1>
           <p className="text-center p-5 font-serif text-lg">
             Chuds Pub and Grub is a family-friendly restaurant offering
@@ -66,8 +66,12 @@ const Home = ({ handleClick }) => {
         </div>
 
         {/* Second Box */}
-        <div className="flex flex-col items-center space-y-8 p-8 border-2 rounded-md border-black bg-stone-300">
-          <img src={barTap} />
+        <div className="flex flex-col items-center space-y-8 p-8 border-2 rounded-md border-black  bg-slate-100">
+          <img
+            src={barTap}
+            alt="Description of barTap image"
+            className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto object-cover rounded-md"
+          />
           <p className="text-center">
             Lorem ipsum odor amet, consectetuer adipiscing elit. Eleifend platea
             et aenean porttitor nullam. Vestibulum sed senectus lobortis
@@ -81,7 +85,7 @@ const Home = ({ handleClick }) => {
       </div>
 
       {/* Image Section */}
-      <div className="w-full flex flex-col sm:flex-row justify-center items-center sm:justify-around sm:items-center border-2 border-grey space-y-4 sm:space-y-0 sm:space-x-4 p-5">
+      <div className="w-full flex flex-col sm:flex-row justify-center items-center sm:justify-around sm:items-center border-2 border-grey space-y-4 sm:space-y-0 sm:space-x-4 p-5  bg-slate-100">
         <img
           src={salad}
           alt="Salad"
