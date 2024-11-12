@@ -60,13 +60,16 @@ const Home = ({ handleClick }) => {
           />
           <h1 className="text-xl">Delicious Comfort Food</h1>
           <p className="text-center">
-            Lorem ipsum odor amet, consectetuer adipiscing elit. Eleifend platea
-            et aenean porttitor nullam. Vestibulum sed senectus lobortis
-            condimentum viverra taciti. Volutpat pulvinar finibus amet facilisis
-            dignissim venenatis parturient orci dignissim. Mattis efficitur ante
-            maecenas ullamcorper vitae cursus. Auctor ex integer justo per
-            sollicitudin porttitor quisque. Tempor ipsum potenti et nullam
-            consectetur sit sagittis.
+            Lorem ipsum odor amet, consectetuer adipiscing elit. Suspendisse
+            vitae eu urna torquent erat ultricies. Et turpis malesuada hac erat
+            odio vitae ad. Cubilia praesent maximus himenaeos elit purus
+            ultrices congue. Quam litora taciti nam per, elit luctus urna. Nunc
+            a cursus tincidunt pulvinar pharetra egestas. Commodo quisque cras
+            ipsum suspendisse penatibus. Proin aptent condimentum semper viverra
+            potenti purus ornare. Parturient tempus turpis mauris ad; vehicula
+            congue. Est felis euismod lobortis luctus accumsan fermentum.
+            Suspendisse interdum nisl leo tempus non amet. Malesuada mus litora
+          
           </p>
           <Link to="/menu">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
