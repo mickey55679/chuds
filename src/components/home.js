@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MenuHighlights from "./MenuHighlights";
 import { Events } from "./index";
-import { barTap, bloodyMary, potRoastGrilled, salad } from "./images/index";
+import { barTap, bloodyMary, potRoastGrilled, salad } from "./images/index"; // Correct import
 
 const Home = ({ handleClick }) => {
   const [highlightedItems, setHighlightedItems] = useState([]);
@@ -50,7 +50,7 @@ const Home = ({ handleClick }) => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max">
+      <div className="flex flex-col items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max">
         {/* First Box */}
         <div className="flex flex-col items-center space-y-8 p-8 border-2 rounded-md">
           <img
@@ -60,16 +60,8 @@ const Home = ({ handleClick }) => {
           />
           <h1 className="text-xl">Delicious Comfort Food</h1>
           <p className="text-center">
-            Lorem ipsum odor amet, consectetuer adipiscing elit. Suspendisse
-            vitae eu urna torquent erat ultricies. Et turpis malesuada hac erat
-            odio vitae ad. Cubilia praesent maximus himenaeos elit purus
-            ultrices congue. Quam litora taciti nam per, elit luctus urna. Nunc
-            a cursus tincidunt pulvinar pharetra egestas. Commodo quisque cras
-            ipsum suspendisse penatibus. Proin aptent condimentum semper viverra
-            potenti purus ornare. Parturient tempus turpis mauris ad; vehicula
-            congue. Est felis euismod lobortis luctus accumsan fermentum.
-            Suspendisse interdum nisl leo tempus non amet. Malesuada mus litora
-          
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            vitae eu urna torquent erat ultricies.
           </p>
           <Link to="/menu">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
