@@ -49,8 +49,8 @@ const Home = ({ handleClick }) => {
   };
 
   return (
-    <div className="flex flex-col items-center space-y-8 p-4 min-h-max bg-stone-300 bg-[url('https://cdn.pixabay.com/photo/2016/11/18/14/05/brick-wall-1834784_1280.jpg')] border-2 border-black]">
-      <div className="flex flex-col items-center space-y-8 p-4 border-2 rounded-md border-black bg-cyan-50">
+    <div className="flex flex-col items-center space-y-8 p-4 min-h-max bg-stone-300 bg-[url('https://cdn.pixabay.com/photo/2016/12/18/21/23/brick-wall-1916752_1280.jpg')] border-2 border-black]">
+      <div className="flex flex-col items-center space-y-8 p-8 border-2 rounded-md border-black bg-stone-300">
         <h1 className="text-xl">Delicious Comfort Food</h1>
         <p className="text-center p-5 font-serif text-lg">
           Chuds Pub and Grub is a family-friendly restaurant offering delicious
@@ -70,13 +70,13 @@ const Home = ({ handleClick }) => {
 
       {/* Image Section */}
       <div className="w-full flex flex-col sm:flex-row justify-center items-center sm:justify-around sm:items-center border-2 border-grey space-y-4 sm:space-y-0 sm:space-x-4 p-5">
-        <img src={salad} alt="Salad" className="w-64 h-64 object-cover" />
+        <img src={salad} alt="Salad" className="w-64 h-64 object-cover rounded-md" />
         <img
           src={potRoastGrilled}
           alt="Pot Roast Grilled"
-          className="w-64 h-64 object-cover"
+          className="w-64 h-64 object-cover rounded-md"
         />
-        <img src={salad} alt="Salad" className="w-64 h-64 object-cover" />
+        <img src={salad} alt="Salad" className="w-64 h-64 object-cover rounded-md" />
       </div>
 
       {/* Highlights Section */}
