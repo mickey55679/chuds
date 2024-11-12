@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import  logo from "./images/Logochuds.jpg";
+import  logo from "./images/Logochuds-removebg-preview.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
@@ -13,7 +13,7 @@ const NavigationBar = ({
   isAuthenticated,
 }) => {
   return (
-    <nav className="navbar">
+    <nav className="navbar bg-stone-300 ">
       <div className="logo">
         <NavLink to="/" exact>
           <img src={logo} alt="Logo" className="logo" />
