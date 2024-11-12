@@ -52,7 +52,7 @@ const Home = ({ handleClick }) => {
     <>
       <div className="flex flex-col items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max bg-black">
         {/* First Box */}
-        <div className="flex flex-col items-center space-y-8 p-8 border-2 rounded-md">
+        <div className="flex flex-col items-center space-y-8 p-8 rounded-md">
           <img
             src={barTap}
             alt="Description of barTap image"
@@ -82,6 +82,21 @@ const Home = ({ handleClick }) => {
           <img
             src={potRoastGrilled}
             alt="Pot Roast Grilled"
+            className="w-64 h-64 object-cover rounded-md"
+          />
+          <img
+            src={salad}
+            alt="Salad"
+            className="w-64 h-64 object-cover rounded-md"
+          />
+          <img
+            src={salad}
+            alt="Salad"
+            className="w-64 h-64 object-cover rounded-md"
+          />
+          <img
+            src={salad}
+            alt="Salad"
             className="w-64 h-64 object-cover rounded-md"
           />
           <img
