@@ -50,7 +50,7 @@ const Home = ({ handleClick }) => {
 
   return (
     <>
-      <div className="flex flex-col items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max">
+      <div className="flex flex-col items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max bg-black">
         {/* First Box */}
         <div className="flex flex-col items-center space-y-8 p-8 border-2 rounded-md">
           <img
@@ -58,8 +58,8 @@ const Home = ({ handleClick }) => {
             alt="Description of barTap image"
             className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto object-cover rounded-md"
           />
-          <h1 className="text-xl">Delicious Comfort Food</h1>
-          <p className="text-center">
+          <h1 className="text-xl text-white">Delicious Comfort Food</h1>
+          <p className="text-center text-white">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             vitae eu urna torquent erat ultricies.
           </p>
