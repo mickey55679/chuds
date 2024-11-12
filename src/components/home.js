@@ -50,9 +50,9 @@ const Home = ({ handleClick }) => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max bg-stone-300  border-2 border-black">
+      <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max bg-stone-300">
         {/* First Box */}
-        <div className="flex flex-col items-center space-y-8 p-8 border-2 rounded-md border-black  bg-slate-100">
+        <div className="flex flex-col items-center space-y-8 p-8 border-2 rounded-md  bg-slate-100">
           <img
             src={barTap}
             alt="Description of barTap image"
