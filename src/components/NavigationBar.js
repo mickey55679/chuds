@@ -14,7 +14,7 @@ const NavigationBar = ({
 }) => {
   return (
     <nav className="navbar flex justify-between p-2 items-center z-[1000] relative ">
-      <div className="logo">
+      <div className="logo w-[200px] h-auto">
         <NavLink to="/" exact>
           <img src={logo} alt="Logo" className="logo" />
         </NavLink>

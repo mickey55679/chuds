@@ -11,16 +11,10 @@
   --font-size-medium: 1.3rem;
   --font-size-large: 2rem;
 }
-
-
 .nav-item a.active-link {
   color: var(--color-red);
 }
-/* Chuds logo img */
-.logo img {
-  width: 200px;
-  height: auto;
-}
+
 /* Navbar styling for smaller screens */
 @media screen and (max-width: 900px) {
   .nav-items {
