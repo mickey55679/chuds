@@ -11,21 +11,7 @@
   --font-size-medium: 1.3rem;
   --font-size-large: 2rem;
 }
-/* Navigation hamburger icon */
-.navbar-toggler {
-  color: var(--color-red);
-}
-.nav-item a {
-  /* text-decoration: none; */
-  /* padding: 0.5rem 0.8rem; */
-  /* margin: 0 0.2rem; */
-  color: var(--color-blue);
-  /* font-weight: 900; */
-  /* font-size: var(--font-size-medium); */
-}
-.nav-item a:hover {
-  color: var(--color-red);
-}
+
 
 .nav-item a.active-link {
   color: var(--color-red);

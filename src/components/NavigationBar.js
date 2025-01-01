@@ -20,7 +20,7 @@ const NavigationBar = ({
         </NavLink>
       </div>
       <button
-        className="navbar-toggler text-2xl m-1 p-2 z-[1100] cursor-pointer bg-transparent"
+        className="navbar-toggler text-2xl m-1 p-2 z-[1100] cursor-pointer bg-transparent text-red"
         type="button"
         onClick={handleToggle}
       >
@@ -31,7 +31,7 @@ const NavigationBar = ({
           isOpen ? "show-nav ml-auto" : ""
         }`}
       >
-        <li className="nav-item decoration-0 p-2 font-medium">
+        <li className="nav-item decoration-0 p-2 font-medium text-blue hover:text-purple">
           <NavLink
             to="/"
             exact
@@ -41,7 +41,7 @@ const NavigationBar = ({
             Home
           </NavLink>
         </li>
-        <li className="nav-item decoration-0 p-2 font-medium">
+        <li className="nav-item decoration-0 p-2 font-medium text-blue hover:text-purple">
           <NavLink
             to="/about"
             exact
@@ -51,7 +51,7 @@ const NavigationBar = ({
             About
           </NavLink>
         </li>
-        <li className="nav-item decoration-0 p-2 font-medium">
+        <li className="nav-item decoration-0 p-2 font-medium text-blue hover:text-purple">
           <NavLink
             to="/menu"
             exact
@@ -61,7 +61,7 @@ const NavigationBar = ({
             Menu
           </NavLink>
         </li>
-        <li className="nav-item decoration-0 p-2 font-medium">
+        <li className="nav-item decoration-0 p-2 font-medium text-blue hover:text-purple">
           <NavLink
             to="/contact"
             exact
@@ -72,7 +72,7 @@ const NavigationBar = ({
           </NavLink>
         </li>
         {isAuthenticated && (
-          <li className="nav-item decoration-0 p-2 font-medium">
+          <li className="nav-item decoration-0 p-2 font-medium text-blue hover:text-purple">
             <NavLink
               to="/admin"
               exact
@@ -83,7 +83,7 @@ const NavigationBar = ({
             </NavLink>
           </li>
         )}
-        <li className="nav-item decoration-0 p-2 font-medium">
+        <li className="nav-item decoration-0 p-2 font-medium text-blue hover:text-purple">
           <NavLink
             to="/login"
             exact
@@ -93,7 +93,7 @@ const NavigationBar = ({
             Login
           </NavLink>
         </li>
-        <li className="nav-item decoration-0 p-2 font-medium">
+        <li className="nav-item decoration-0 p-2 font-medium text-blue">
           <NavLink to="/checkout" className="cart-icon-link">
             <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" />
             {totalItemsInCart > 0 && (
