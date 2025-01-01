@@ -14,15 +14,9 @@
 /* Navigation hamburger icon */
 .navbar-toggler {
   color: var(--color-red);
-  font-size: var(--font-size-large);
-  cursor: pointer;
-  border: 2px solid var(--color-red);
+
   border-radius: 4px;
   background: transparent;
-  position: relative;
-  z-index: 1100;  
-  padding: 5px;
-  margin: 5px;
 }
 /* Navigation Bar */
 .navbar {

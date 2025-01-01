@@ -50,7 +50,7 @@ const Home = ({ handleClick }) => {
 
   return (
     <>
-      <div className="flex flex-col items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max bg-black">
+      <div className="flex flex-col items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max bg-slate-400">
         {/* First Box */}
         <div className="flex flex-col items-center space-y-8 p-8 rounded-md">
           <img
