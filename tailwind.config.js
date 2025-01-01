@@ -23,6 +23,14 @@ module.exports = {
       borderRadius: {
         "4xl": "2rem",
       },
+      colors: {
+        light: "var(--color-light)",
+        blue: "var(--color-blue)",
+        red: "var(--color-red)",
+        grey: "var(--color-grey)",
+        purple: "var(--color-purple)",
+        "dark-red": "var(--color-dark-red)",
+      },
     },
   },
   plugins: [], // You can add any Tailwind plugins here if needed
