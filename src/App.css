@@ -14,19 +14,8 @@
 /* Navigation hamburger icon */
 .navbar-toggler {
   color: var(--color-red);
-
-  border-radius: 4px;
-  background: transparent;
 }
 /* Navigation Bar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.8rem 1.2rem;
-  align-items: center;
-  z-index: 1000;
-  position: relative;
-}
 .nav-items {
   list-style: none;
   display: flex;

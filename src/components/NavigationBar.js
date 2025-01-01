@@ -13,13 +13,13 @@ const NavigationBar = ({
   isAuthenticated,
 }) => {
   return (
-    <nav className="navbar">
+    <nav className="navbar flex justify-between p-2 items-center z-[1000] relative ">
       <div className="logo">
         <NavLink to="/" exact>
           <img src={logo} alt="Logo" className="logo" />
         </NavLink>
       </div>
-      <button className="navbar-toggler text-2xl m-1 p-2 z-[1100] cursor-pointer " type="button" onClick={handleToggle}>
+      <button className="navbar-toggler text-2xl m-1 p-2 z-[1100] cursor-pointer bg-transparent" type="button" onClick={handleToggle}>
         <FontAwesomeIcon icon={isOpen ? faX : faBars} />
       </button>
       <ul className={`nav-items ${isOpen ? "show-nav ml-auto" : ""}`}>
