@@ -19,11 +19,19 @@ const NavigationBar = ({
           <img src={logo} alt="Logo" className="logo" />
         </NavLink>
       </div>
-      <button className="navbar-toggler text-2xl m-1 p-2 z-[1100] cursor-pointer bg-transparent" type="button" onClick={handleToggle}>
+      <button
+        className="navbar-toggler text-2xl m-1 p-2 z-[1100] cursor-pointer bg-transparent"
+        type="button"
+        onClick={handleToggle}
+      >
         <FontAwesomeIcon icon={isOpen ? faX : faBars} />
       </button>
-      <ul className={`nav-items list-none flex gap-3 ml-auto ${isOpen ? "show-nav ml-auto" : ""}`}>
-        <li className="nav-item">
+      <ul
+        className={`nav-items list-none flex gap-3 ml-auto ${
+          isOpen ? "show-nav ml-auto" : ""
+        }`}
+      >
+        <li className="nav-item decoration-0 p-2 font-medium">
           <NavLink
             to="/"
             exact
@@ -33,7 +41,7 @@ const NavigationBar = ({
             Home
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li className="nav-item decoration-0 p-2 font-medium">
           <NavLink
             to="/about"
             exact
@@ -43,7 +51,7 @@ const NavigationBar = ({
             About
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li className="nav-item decoration-0 p-2 font-medium">
           <NavLink
             to="/menu"
             exact
@@ -53,7 +61,7 @@ const NavigationBar = ({
             Menu
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li className="nav-item decoration-0 p-2 font-medium">
           <NavLink
             to="/contact"
             exact
@@ -64,7 +72,7 @@ const NavigationBar = ({
           </NavLink>
         </li>
         {isAuthenticated && (
-          <li className="nav-item">
+          <li className="nav-item decoration-0 p-2 font-medium">
             <NavLink
               to="/admin"
               exact
@@ -75,7 +83,7 @@ const NavigationBar = ({
             </NavLink>
           </li>
         )}
-        <li className="nav-item">
+        <li className="nav-item decoration-0 p-2 font-medium">
           <NavLink
             to="/login"
             exact
@@ -85,7 +93,7 @@ const NavigationBar = ({
             Login
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li className="nav-item decoration-0 p-2 font-medium">
           <NavLink to="/checkout" className="cart-icon-link">
             <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" />
             {totalItemsInCart > 0 && (
