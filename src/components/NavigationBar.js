@@ -22,7 +22,7 @@ const NavigationBar = ({
       <button className="navbar-toggler text-2xl m-1 p-2 z-[1100] cursor-pointer bg-transparent" type="button" onClick={handleToggle}>
         <FontAwesomeIcon icon={isOpen ? faX : faBars} />
       </button>
-      <ul className={`nav-items ${isOpen ? "show-nav ml-auto" : ""}`}>
+      <ul className={`nav-items list-none flex gap-3 ml-auto ${isOpen ? "show-nav ml-auto" : ""}`}>
         <li className="nav-item">
           <NavLink
             to="/"
