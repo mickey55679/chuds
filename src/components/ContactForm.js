@@ -91,7 +91,7 @@ const ContactForm = () => {
           />
         </div>
 
-        <button type="submit" className="button-contact" disabled={isLoading}>
+        <button type="submit" className="button-contact bg-dark-red text-light cursor-pointer inline-block font-medium" disabled={isLoading}>
           {isLoading ? "Sending..." : "Submit"}
         </button>
 
