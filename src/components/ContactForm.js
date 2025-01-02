@@ -53,40 +53,43 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-form-container">
-      <form onSubmit={handleSubmit} className="contact-form">
-        <div className="form-group">
-          <label className="label-name">Name:</label>
+    <div className="contact-form-container p-[10px]">
+      <form
+        onSubmit={handleSubmit}
+        className="contact-form max-w-[400px] m-[200px]"
+      >
+        <div className="form-group mb-[20px]">
+          <label className="label-name mb-[5px] font-[600] ">Name:</label>
           <input
             type="text"
             name="name"
             placeholder="Your name"
             value={formData.name}
             onChange={handleChange}
-            className="input"
+            className="input w-full p-[10px] rounded font-medium"
             required
           />
         </div>
         <div className="form-group">
-          <label className="label">Email:</label>
+          <label className="label font-[600]">Email:</label>
           <input
             type="email"
             name="email"
             placeholder="Your email"
             value={formData.email}
             onChange={handleChange}
-            className="input"
+            className="input w-full p-[10px] rounded font-medium "
             required
           />
         </div>
         <div className="form-group">
-          <label className="label">Message:</label>
+          <label className="label font-[600]">Message:</label>
           <textarea
             name="message"
             value={formData.message}
             onChange={handleChange}
             placeholder="Your message"
-            className="input textarea"
+            className="input textarea w-full p-[10px] rounded font-medium"
             required
           />
         </div>
