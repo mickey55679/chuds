@@ -53,11 +53,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-form-container p-[10px]">
-      <form
-        onSubmit={handleSubmit}
-        className="contact-form max-w-[400px] m-[200px]"
-      >
+    <div className="contact-form-container flex items-center justify-center  min-h-screen bg-gray-100  p-[10px]">
+      <form onSubmit={handleSubmit} className="contact-form max-w-[400px] ">
         <div className="form-group mb-[20px]">
           <label className="label-name mb-[5px] font-[600] ">Name:</label>
           <input
@@ -66,7 +63,7 @@ const ContactForm = () => {
             placeholder="Your name"
             value={formData.name}
             onChange={handleChange}
-            className="input w-full p-[10px] rounded font-medium border border-cutomGray"
+            className="input w-full p-[10px] rounded font-medium border border-cutomGray "
             required
           />
         </div>

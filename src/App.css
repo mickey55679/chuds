@@ -48,17 +48,6 @@
   }
 }
 
-
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  box-sizing: border-box;
-  border-radius: 4px;
-}
-
 h3 {
   text-align: center;
   background-color: var(--color-red);
