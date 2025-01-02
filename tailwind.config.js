@@ -30,6 +30,7 @@ module.exports = {
         grey: "var(--color-grey)",
         purple: "var(--color-purple)",
         "dark-red": "var(--color-dark-red)",
+        cutomGray: '#ccc',
       },
     },
   },

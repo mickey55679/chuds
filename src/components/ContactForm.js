@@ -66,7 +66,7 @@ const ContactForm = () => {
             placeholder="Your name"
             value={formData.name}
             onChange={handleChange}
-            className="input w-full p-[10px] rounded font-medium"
+            className="input w-full p-[10px] rounded font-medium border border-cutomGray"
             required
           />
         </div>
@@ -78,7 +78,7 @@ const ContactForm = () => {
             placeholder="Your email"
             value={formData.email}
             onChange={handleChange}
-            className="input w-full p-[10px] rounded font-medium "
+            className="input w-full p-[10px] rounded font-medium border border-cutomGray"
             required
           />
         </div>
@@ -89,7 +89,7 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             placeholder="Your message"
-            className="input textarea w-full p-[10px] rounded font-medium"
+            className="input textarea h-[150px] w-full p-[10px] rounded font-medium border border-cutomGray"
             required
           />
         </div>
