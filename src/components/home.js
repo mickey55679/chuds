@@ -50,12 +50,12 @@ const Home = ({ handleClick }) => {
 
   return (
     <>
-      <div className="flex flex-col items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max bg-slate-400">
+      <div className="flex flex-col items-center md:space-x-8 space-y-8 md:space-y-0 p-4 min-h-max bg-slate-600">
         {/* First Box */}
         <div className="flex flex-col items-center space-y-8 p-8 rounded-md">
           <img
             src={barTap}
-            alt="Description of barTap image"
+            alt="barTap"
             className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto object-cover rounded-md"
           />
           <h1 className="text-xl text-white">Delicious Comfort Food</h1>
@@ -64,7 +64,7 @@ const Home = ({ handleClick }) => {
             vitae eu urna torquent erat ultricies.
           </p>
           <Link to="/menu">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button className="bg-blue hover:bg-[#3498db] text-white font-bold py-2 px-4 rounded">
               Order Now
             </button>
           </Link>

@@ -5,7 +5,7 @@ import { faPhone, faCar } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
-    <footer className="text-light p-2 text-center font-sans bg-red-500 rounded-md">
+    <footer className="text-light bg-red p-2 text-center font-sans bg-red-500 rounded-md">
       {/* Footer Bottom */}
       <div className="flex flex-col items-center">
         {/* Hours */}

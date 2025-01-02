@@ -48,63 +48,10 @@
   }
 }
 
-/* Home Page */
 
 
 
-/* Footer */
 
-
-.logo-section {
-  flex: 1;
-  text-align: left;
-  padding-left: 20px;
-}
-
-.nav-section {
-  flex: 3;
-  display: flex;
-  justify-content: space-around;
-}
-
-.nav-column {
-  text-align: left;
-}
-
-.nav-column h3 {
-  margin-bottom: 10px;
-  font-size: var(--font-size-small);
-}
-
-.nav-column p {
-  margin: 5px 0;
-}
-
-.footer-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 20px;
-}
-
-.social-media {
-  margin-bottom: 10px;
-}
-
-.social-media a {
-  color: var(--color-light);
-  margin: 0 10px;
-  transition: color 0.3s;
-}
-
-.social-media a:hover {
-  color: var(--color-blue);
-}
-
-.footer-bottom p {
-  margin-top: 10px;
-  font-size: var(--font-size-small);
-}
 
 /* Contact Form */
 .contact-form-container{
