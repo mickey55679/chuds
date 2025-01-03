@@ -8,9 +8,9 @@ const MenuCategory = ({
   orderItems,
 }) => {
   return (
-    <div className="menu-container">
-      <h1 className="title-menu">{title}</h1>
-      <div className="menu-category">
+    <div className="menu-container flex flex-col p-[10px]">
+      <h1 className="title-menu text-[2em] text-center">{title}</h1>
+      <div className="menu-category flex flex-wrap justify-around m-5">
         {items ? (
           items.map((item, index) => (
             <MenuItem

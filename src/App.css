@@ -59,26 +59,8 @@
   transform: translateY(0);
 }
 
-/* Menu container styling */
-.menu-container {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-.title-menu {
-  font-size: 3em;
-  background: var(--color-red);
-  border-radius: 4px;
-
-}
 
 /* Menu category styling */
-.menu-category {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 10px 0;
-}
 
 .menu-category h2 {
   font-size: 2em;
