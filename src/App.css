@@ -48,11 +48,6 @@
   }
 }
 
-
-.button-contact:disabled {
-  pointer-events: none;
-}
-
 .button-contact:hover {
   box-shadow: rgba(192, 21, 21, 0.25) 0 8px 15px;
   transform: translateY(-2px);
