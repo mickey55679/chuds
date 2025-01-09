@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { TiChevronLeftOutline, TiChevronRightOutline } from "react-icons/ti";
+import chudsBackground from './images/chudsoutside.jpg';
 
 const About = () => {
   const REVIEWS = [
@@ -79,7 +80,13 @@ const About = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div
+      className="flex flex-col items-center justify-center min-h-screen"
+      style={{
+        backgroundImage: `url(${chudsBackground})`,
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="max-w-3xl text-center p-6 bg-white rounded-lg shadow-md">
         <h1 className="text-4xl font-bold text-gray-800 mb-6">About Us</h1>
         <p className="text-lg text-gray-600 mb-4">
