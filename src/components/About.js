@@ -85,6 +85,8 @@ const About = () => {
       style={{
         backgroundImage: `url(${chudsBackground})`,
         backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <div className="max-w-3xl text-center p-6 bg-white rounded-lg shadow-md">
