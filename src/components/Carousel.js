@@ -39,10 +39,10 @@ const Carousel = () => {
     <div className="carousel-container relative w-full max-w-lg mx-auto">
       {active > 0 && (
         <button
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black text-white p-2 rounded-full"
+          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-red text-white p-2 rounded-full"
           onClick={() => handleClick("prev")}
         >
-          <TiChevronLeftOutline size={24} />
+          <TiChevronLeftOutline size={20} />
         </button>
       )}
       <div className="review-card bg-white rounded-lg shadow-lg p-6 text-center transition-transform duration-500">
@@ -52,10 +52,10 @@ const Carousel = () => {
       </div>
       {active < REVIEWS.length - 1 && (
         <button
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black text-white p-2 rounded-full"
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-red text-white p-2 rounded-full"
           onClick={() => handleClick("next")}
         >
-          <TiChevronRightOutline size={24} />
+          <TiChevronRightOutline size={20} />
         </button>
       )}
     </div>
