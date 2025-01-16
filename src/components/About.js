@@ -13,10 +13,10 @@ const About = () => {
       }}
     >
       {/* About Us Section */}
-      <div className="max-w-3xl text-center p-6 bg-white rounded-lg shadow-md mb-12">
+      <div className="w-full text-center p-16 bg-light shadow-md mb-20 ">
         <h1 className="text-4xl font-bold text-gray-800 mb-6">About Us</h1>
         <div>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-600 p-10">
             CHUDS is a veteran-owned and operated restaurant with homemade food.
             We are known for our delicious menu selection and great service. We
             offer a full bar, flatbreads, hand-pattied burgers, sandwiches, and
