@@ -3,10 +3,13 @@ import { TiChevronLeftOutline, TiChevronRightOutline } from "react-icons/ti";
 
 const REVIEWS = [
   {
-    uname: "DuggerSD S",
-    dateOf: "Sep 21, 2024",
+    uname: "Barb C",
+    dateOf: "Apr 20, 2024",
     points: "5 Stars",
-    description: `This was our first time visiting Chuds, so we really did not know what to expect. We arrived early and it was not very crowded. The waitress came by and was very friendly without being overbearing. She was able to answer our questions. I had to ask what a Slawsome Chud Burger was. My wife ordered a bacon chicken flatbread. There are no sides that come with the sandwiches, a la carte. I asked the Kellie, the waitress if I needed a side. She told me with what was on the burger, probably not. I really appreciated that. I did see some of the sides offered that other customers ordered. They were generous in their serving size. When our meals arrived, I was glad I skipped the side. That burger had to be 4" tall and maybe 5". This was a first for me. I ate the burger with a knife and fork! My burger was very good--not overdone or undercooked. My wife enjoyed her flatbread. I thanked our waitress for suggesting just the sandwich. I would have been more full than I would have been comfortable being. The food, service and atmosphere are all very nice. We look forward to coming again.`,
+    description: `Best grilled tuna and pesto chicken sandwich.
+Great service
+Great family atmosphere`,
+   seeReview: 'https://www.yelp.com/biz/chuds-pub-and-grub-larchwood?hrid=T8l_mqLbagC5Syvfpm4UMA&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)',
   },
   {
     uname: "Matt D",
@@ -48,7 +51,8 @@ const Carousel = () => {
       <div className="review-card bg-white rounded-lg shadow-lg p-20 text-center transition-transform duration-500">
         <h2 className="text-2xl font-bold mb-2">{REVIEWS[active].uname}</h2>
         <p className="text-sm text-gray-500">{REVIEWS[active].dateOf}</p>
-        <p className="mt-4 text-gray-700">{REVIEWS[active].description}</p>
+        <p className="mt-4 text-gray-700 m-4">{REVIEWS[active].description}</p>
+        <a href={REVIEWS[active].seeReview} className="bg-red rounded-sm p-1 text-white">See Review</a>
       </div>
       {active < REVIEWS.length - 1 && (
         <button
