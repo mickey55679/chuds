@@ -9,7 +9,8 @@ const REVIEWS = [
     description: `Best grilled tuna and pesto chicken sandwich.
 Great service
 Great family atmosphere`,
-   seeReview: 'https://www.yelp.com/biz/chuds-pub-and-grub-larchwood?hrid=T8l_mqLbagC5Syvfpm4UMA&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)',
+    seeReview:
+      "https://www.yelp.com/biz/chuds-pub-and-grub-larchwood?hrid=T8l_mqLbagC5Syvfpm4UMA&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)",
   },
   {
     uname: "Matt D",
@@ -17,13 +18,17 @@ Great family atmosphere`,
     points: "5 Stars",
     description:
       "Great servers, good environment. It's pretty classic bar-oriented food, but it's worth the drive out to visit.",
+    seeReview:
+      "https://www.yelp.com/biz/chuds-pub-and-grub-larchwood?hrid=vPdjC0TZ45UdINTOYFFm9g&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)",
   },
   {
-    uname: "John K",
-    dateOf: "Dec 2, 2024",
-    points: "4 Stars",
+    uname: "Kris S",
+    dateOf: "Sep 10, 2023",
+    points: "5 Stars",
     description:
-      "The burgers are good, and the ambiance is cozy. Service was a bit slow, but overall, a great experience.",
+      "A group of us stopped here for lunch on a Sunday. Food was soooooo good. I had their patty melt and fries. I tried a friends Bloody Mary and it was bomb. They have so many options on the menu that we will be back for sure to try everything! Highly recommend!",
+    seeReview:
+      "https://www.yelp.com/biz/chuds-pub-and-grub-larchwood?hrid=hvHTiahlyFML8YIV6lRKfQ&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)",
   },
 ];
 
