@@ -45,7 +45,7 @@ const Carousel = () => {
           <TiChevronLeftOutline size={20} />
         </button>
       )}
-      <div className="review-card bg-white rounded-lg shadow-lg p-6 text-center transition-transform duration-500">
+      <div className="review-card bg-white rounded-lg shadow-lg p-20 text-center transition-transform duration-500">
         <h2 className="text-2xl font-bold mb-2">{REVIEWS[active].uname}</h2>
         <p className="text-sm text-gray-500">{REVIEWS[active].dateOf}</p>
         <p className="mt-4 text-gray-700">{REVIEWS[active].description}</p>
