@@ -58,7 +58,7 @@ const Carousel = () => {
         <h2 className="text-2xl font-bold mb-2">{REVIEWS[active].uname}</h2>
         <p className="text-sm text-gray-500">{REVIEWS[active].dateOf}</p>
         <p className="mt-4 text-gray-700 m-4">{REVIEWS[active].description}</p>
-        <p>{REVIEWS[active].points}</p>
+        <p className="m-4">{REVIEWS[active].points}</p>
         <a href={REVIEWS[active].seeReview} className="bg-red rounded-sm p-1 text-white">See Review</a>
       </div>
       {active < REVIEWS.length - 1 && (
