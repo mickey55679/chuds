@@ -5,7 +5,7 @@ const REVIEWS = [
   {
     uname: "Barb C",
     dateOf: "Apr 20, 2024",
-    points: "5 Stars",
+    points: "⭐️⭐️⭐️⭐️⭐️",
     description: `Best grilled tuna and pesto chicken sandwich.
 Great service
 Great family atmosphere`,
@@ -15,7 +15,7 @@ Great family atmosphere`,
   {
     uname: "Matt D",
     dateOf: "Nov 11, 2024",
-    points: "5 Stars",
+    points: "⭐️⭐️⭐️⭐️⭐️",
     description:
       "Great servers, good environment. It's pretty classic bar-oriented food, but it's worth the drive out to visit.",
     seeReview:
@@ -24,7 +24,7 @@ Great family atmosphere`,
   {
     uname: "Kris S",
     dateOf: "Sep 10, 2023",
-    points: "5 Stars",
+    points: "⭐️⭐️⭐️⭐️⭐️",
     description:
       "A group of us stopped here for lunch on a Sunday. Food was soooooo good. I had their patty melt and fries. I tried a friends Bloody Mary and it was bomb. They have so many options on the menu that we will be back for sure to try everything! Highly recommend!",
     seeReview:
@@ -42,6 +42,7 @@ const Carousel = () => {
       setActive(active + 1);
     }
   };
+ 
 
   return (
     <div className="carousel-container relative w-full max-w-lg mx-auto">
@@ -57,6 +58,7 @@ const Carousel = () => {
         <h2 className="text-2xl font-bold mb-2">{REVIEWS[active].uname}</h2>
         <p className="text-sm text-gray-500">{REVIEWS[active].dateOf}</p>
         <p className="mt-4 text-gray-700 m-4">{REVIEWS[active].description}</p>
+        <p>{REVIEWS[active].points}</p>
         <a href={REVIEWS[active].seeReview} className="bg-red rounded-sm p-1 text-white">See Review</a>
       </div>
       {active < REVIEWS.length - 1 && (
