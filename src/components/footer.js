@@ -50,7 +50,7 @@ const Footer = () => {
           </a>
         </div>
 
-        {/* Copyright */}
+        
         <p className="mt-2 text-white text-xs">
           © Copyright. All rights reserved.
         </p>
