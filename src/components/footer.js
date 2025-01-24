@@ -19,7 +19,7 @@ const Footer = () => {
           <li>Sun 10:20 AM - 2:00 PM</li>
         </ul>
 
-        {/* Social Media Links */}
+  
         <div className="flex justify-center gap-3 mt-2">
           <a
             href="https://www.facebook.com"
