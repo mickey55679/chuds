@@ -12,7 +12,7 @@ const About = () => {
         backgroundPosition: "center",
       }}
     >
-      {/* About Us Section */}
+   
       <div className="w-full text-center p-16 bg-light shadow-md mb-20 ">
         <h1 className="text-4xl font-bold text-gray-800 mb-6">About Us</h1>
         <div>
@@ -25,8 +25,6 @@ const About = () => {
           </p>
         </div>
       </div>
-
-      {/* Carousel Section */}
       <Carousel />
     </div>
   );
