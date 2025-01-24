@@ -16,7 +16,6 @@ const SelectOrderType = () => {
           </button>
         </div>
 
-        {/* Catering Pickup */}
         <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center">
           <img
             src="pickup-icon.png"
@@ -32,7 +31,7 @@ const SelectOrderType = () => {
           </button>
         </div>
 
-        {/* Catering Delivery */}
+      
         <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center">
           <img
             src="delivery-icon.png"
